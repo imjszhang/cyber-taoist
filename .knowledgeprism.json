@@ -1,0 +1,13 @@
+{
+  "name": "cyber-taoist",
+  "api": {},
+  "process": {
+    "batchSize": 5,
+    "temperature": 0.3,
+    "maxTokens": 8192,
+    "timeoutMs": 1800000
+  },
+  "output": {
+    "bindings": []
+  }
+}
