@@ -1,0 +1,36 @@
+# ============ 环境变量与密钥（隐私保护） ============
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+*.pem
+*.key
+secrets/
+credentials/
+
+# ============ 用户/本地配置 ============
+.knowledgeprism.json
+
+# ============ 生成/输出目录 ============
+outputs/
+dist/
+build/
+*.log
+
+# ============ 操作系统 ============
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ============ IDE / 编辑器 ============
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ============ 临时文件 ============
+*.tmp
+*.temp
+.cache/
