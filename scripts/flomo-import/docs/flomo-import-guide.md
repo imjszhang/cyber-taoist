@@ -1,5 +1,9 @@
 # Flomo 素材导入指南
 
+> **版本**：v1.0.0
+> **创建**：2026-03-18
+> **更新**：2026-03-18
+
 ## 背景与目标
 
 cyber-taoist 理论的核心公式为 **进化 = f(R, T, N)**：
@@ -197,3 +201,11 @@ npm run atoms
 - 无外部 npm 依赖，仅使用 `child_process`、`fs`、`path` 等内置模块
 - `scripts/data/` 目录已加入 `.gitignore`，中间产物不入库
 - atom 文件格式严格遵循 `pyramid/analysis/atoms/README.md` 的模板规范
+
+---
+
+## 变更记录
+
+| 版本 | 日期 | 变更内容 |
+|------|------|----------|
+| v1.0.0 | 2026-03-18 | 初版：三脚本管道（search → review → atoms）、搜索配置、审阅流程、扩展策略 |
