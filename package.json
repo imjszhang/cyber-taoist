@@ -1,0 +1,10 @@
+{
+  "name": "cyber-taoist",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "search": "node scripts/search-flomo.mjs",
+    "review": "node scripts/generate-review.mjs",
+    "atoms": "node scripts/generate-atoms.mjs"
+  }
+}
