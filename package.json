@@ -3,8 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "search": "node scripts/search-flomo.mjs",
-    "review": "node scripts/generate-review.mjs",
-    "atoms": "node scripts/generate-atoms.mjs"
+    "search": "node scripts/flomo-import/search-flomo.mjs",
+    "review": "node scripts/flomo-import/generate-review.mjs",
+    "atoms": "node scripts/flomo-import/generate-atoms.mjs"
   }
 }
