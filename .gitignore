@@ -25,6 +25,7 @@ desktop.ini
 
 # ============ IDE / 编辑器 ============
 .idea/
+.cursor/
 .vscode/
 *.swp
 *.swo
