@@ -4,6 +4,23 @@
 
 版本规则见 [README — 版本管理](README.md#版本管理)。
 
+## V1.2.0 — 2026-03-20
+
+原始素材层扩展，与 **js-knowledge-prism** 工具的 **corpus** 管线对齐。
+
+### 架构
+
+- 新增 [`corpus/`](corpus/)：按系列子目录存放外部长文；可选每系列 `_series.md` 作为系列上下文
+- 约定文章文件名以四位序号开头（如 `0010-chapter.md`），便于 atom 编号 `XX-0010-01` 形式与排序
+- 拆解产出的 atoms 落在 `pyramid/analysis/atoms/corpus-<系列名>/`，与按月目录 `YYYY-MM/` 并存
+- 提供 [`corpus/_template/_series.md`](corpus/_template/_series.md) 作为系列说明模板
+
+### 工作流
+
+- 长文 / 连载 → 放入 `corpus/<系列>/` → `prism process`（可用 `--series` 仅处理指定系列）
+- 短笔记 / 日记 → 仍使用 `journal/YYYY-MM-DD/`
+- `scripts/flomo-import` 仍以 journal 为主；corpus 适合非 flomo 形态的外部正文
+
 ## V1.1.0 — 2026-03-11
 
 产出层架构优化，引入组件化、类型抽象、多粒度、多阶段、多源绑定。

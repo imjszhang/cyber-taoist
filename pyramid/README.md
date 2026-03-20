@@ -1,17 +1,17 @@
 # 金字塔拆解
 
-基于《金字塔原理》对 journal 原始学习日志进行结构化拆解，从零散素材中提炼出系统化的认知地图。
+基于《金字塔原理》对 **journal**（按日笔记）与 **corpus**（外部长文系列）原始素材进行结构化拆解，从零散与连载正文中提炼出系统化的认知地图。
 
 ## 方法论
 
 拆解分两个阶段，对应两种思考方式：
 
-- **自下而上（分析阶段）**：从 journal 素材出发，打散为信息单元（atoms），归组提炼观点（groups），收敛为顶层观点候选（synthesis）
+- **自下而上（分析阶段）**：从 journal / corpus 素材出发，打散为信息单元（atoms），归组提炼观点（groups），收敛为顶层观点候选（synthesis）
 - **自上而下（组织阶段）**：从读者视角出发，构造序言（SCQA），展开金字塔全树（tree），验证 MECE 和逻辑链（validation）。不同视角会产生不同的 SCQA 和 tree，共享同一套 analysis 产出。
 
 ```mermaid
 flowchart LR
-    J[journal] --> A[atoms]
+    J[journal / corpus] --> A[atoms]
     A --> G[groups]
     G --> S[synthesis]
     S -.->|"衔接点"| P1_SCQA["视角1: scqa"]

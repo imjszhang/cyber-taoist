@@ -68,9 +68,10 @@
 <!--
 使用说明：
 
-1. 文件存放位置：docs/prism/journal/YYYY-MM-DD/<slug>.md
+1. 文件存放位置：`journal/YYYY-MM-DD/<slug>.md`
    - slug 用英文小写 + 连字符，如 js-cursor-agent-project-creation
    - 每天一个目录，一天可以有多篇日记
+   - 长文、连载、外部正文请放在 `corpus/<系列名>/`（见 [corpus/README.md](corpus/README.md)），勿与日记混用
 
 2. 类型参考：
    - 架构设计：新项目创建、系统重构、模块拆分

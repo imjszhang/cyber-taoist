@@ -12,7 +12,7 @@ cyber-taoist 理论的核心公式为 **进化 = f(R, T, N)**：
 - **T** (Transaction) — 价值创造方式
 - **N** (Niche) — 生态位占据状态
 
-理论素材大量散落在 flomo 笔记中（通过 `js-knowledge-flomo` 项目访问）。本套脚本的目标是系统化地从 flomo 中发现、筛选、导入与 R×T×N 理论相关的笔记，充实 cyber-taoist 的知识库（journal → atoms → groups → synthesis）。
+理论素材大量散落在 flomo 笔记中（通过 `js-knowledge-flomo` 项目访问）。本套脚本的目标是系统化地从 flomo 中发现、筛选、导入与 R×T×N 理论相关的笔记，充实 cyber-taoist 的知识库（journal → atoms → groups → synthesis）。**长文或连载**更适合放入仓库根目录的 `corpus/<系列>/`，由 js-knowledge-prism 的 corpus 流程拆解，与 flomo 短笔记流互补。
 
 ---
 
