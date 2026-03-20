@@ -18,7 +18,7 @@ function parseReview(md) {
     const includeMatch = section.match(/- 纳入: \[([xX])\]/);
     if (!includeMatch) continue;
 
-    const dimMatch = section.match(/- 维度:\s*([RTN])/);
+    const dimMatch = section.match(/- 维度:\s*(NI|[NRT])\b/);
     const typeMatch = section.match(/- 类型:\s*(事实|经验|判断|步骤)/);
     const interpretMatch = section.match(/- 一句话解读:\s*(.+)/);
 
@@ -83,8 +83,8 @@ function buildJournalContent(dimLabel, memos) {
 
 // ── Generate atom file ──────────────────────────────────────────────
 
-const DIM_ABBREV = { R: 'FR', T: 'FT', N: 'FN' };
-const DIM_LABELS = { R: '规则 (R)', T: '交易 (T)', N: '生态位 (N)' };
+const DIM_ABBREV = { N: 'FN', R: 'FR', T: 'FT', NI: 'FNI' };
+const DIM_LABELS = { N: '天道 (N)', R: '法则 (R)', T: '交易 (T)', NI: '生态位 (NI)' };
 
 function buildAtomContent(dim, journalRelPath, memos) {
   const abbrev = DIM_ABBREV[dim];
@@ -142,7 +142,7 @@ async function main() {
   const candidatesData = await loadCandidatesForReview(reviewPath);
   const memoMap = new Map(candidatesData.candidates.map(m => [m.id, m]));
 
-  const grouped = { R: [], T: [], N: [] };
+  const grouped = { N: [], R: [], T: [], NI: [] };
   for (const item of items) {
     const memo = memoMap.get(item.id);
     if (!memo) {
@@ -156,7 +156,7 @@ async function main() {
   const yearMonth = today.slice(0, 7);
   let totalGenerated = 0;
 
-  for (const dim of ['R', 'T', 'N']) {
+  for (const dim of ['N', 'R', 'T', 'NI']) {
     const memos = grouped[dim];
     if (!memos.length) continue;
 
@@ -185,7 +185,7 @@ async function main() {
 
   process.stderr.write(`\n完成: 共生成 ${totalGenerated} 条 atom\n`);
   process.stderr.write('\n请手动更新以下文件：\n');
-  process.stderr.write('  1. pyramid/analysis/atoms/README.md — 缩写映射表追加 FR/FT/FN\n');
+  process.stderr.write('  1. pyramid/analysis/atoms/README.md — 缩写映射表追加 FN/FR/FT/FNI\n');
   process.stderr.write('  2. pyramid/analysis/groups/ — 将新 atom 归入对应 group\n');
   process.stderr.write('  3. pyramid/analysis/synthesis.md — 检查是否需要调整顶层观点\n');
 }

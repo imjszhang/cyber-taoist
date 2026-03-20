@@ -6,13 +6,14 @@
 
 ## 背景与目标
 
-cyber-taoist 理论的核心公式为 **进化 = f(R, T, N)**：
+cyber-taoist 进化学宪章的核心公式为 **进化 = f(N, R, T)**：
 
-- **R** (Rules) — 环境规则 / 筛选压力
-- **T** (Transaction) — 价值创造方式
-- **N** (Niche) — 生态位占据状态
+- **N** (Nature/自然) — 天道，客观环境及其内在演化法则，不可直接观测
+- **R** (Rules/法则) — 人之道，对天道的近似模拟，主体的防火墙
+- **T** (Transaction/交易) — 与环境及其他主体之间的交互与反馈，感知天道的探头
+- **NI** (Niche/生态位) — 主体在法则（R）框架内的功能定位，随法则变化动态漂移
 
-理论素材大量散落在 flomo 笔记中（通过 `js-knowledge-flomo` 项目访问）。本套脚本的目标是系统化地从 flomo 中发现、筛选、导入与 R×T×N 理论相关的笔记，充实 cyber-taoist 的知识库（journal → atoms → groups → synthesis）。**长文或连载**更适合放入仓库根目录的 `corpus/<系列>/`，由 js-knowledge-prism 的 corpus 流程拆解，与 flomo 短笔记流互补。
+理论素材大量散落在 flomo 笔记中（通过 `js-knowledge-flomo` 项目访问）。本套脚本的目标是系统化地从 flomo 中发现、筛选、导入与进化学理论相关的笔记，充实 cyber-taoist 的知识库（journal → atoms → groups → synthesis）。**长文或连载**更适合放入仓库根目录的 `corpus/<系列>/`，由 js-knowledge-prism 的 corpus 流程拆解，与 flomo 短笔记流互补。
 
 ---
 
@@ -27,7 +28,7 @@ cyber-taoist 理论的核心公式为 **进化 = f(R, T, N)**：
 | 搜索（从 flomo 捞候选） | 最多漏捞，不污染理论，可重来 | 脚本 |
 | 粗筛评分排序 | 排序不准而已，人还会终审 | 脚本 |
 | 判断是否纳入 | 直接影响理论素材质量 | **人** |
-| 标注维度（R/T/N）和所属 group | 错误会扭曲理论结构 | **人** |
+| 标注维度（N/R/T/NI）和所属 group | 错误会扭曲理论结构 | **人** |
 | 写一句话解读 | 体现理论构建者的理解 | **人** |
 | 生成 journal + atom 文件 | 格式错了好修，不影响理论 | 脚本 |
 | 更新 group / synthesis | 理论走形风险高 | **人** |
@@ -83,7 +84,7 @@ npm run search
 # 或：node scripts/search-flomo.mjs
 ```
 
-脚本按 `search-config.json` 中定义的关键词和标签逐条搜索 flomo，去重后输出到 `scripts/data/candidates-YYYY-MM-DD.json`。
+脚本按 `search-config.json` 中定义的关键词和标签逐条搜索 flomo，去重后输出到 `scripts/flomo-import/data/candidates-YYYY-MM-DD.json`。
 
 输出示例：
 ```
@@ -101,7 +102,7 @@ npm run review
 # 或：node scripts/generate-review.mjs [candidates文件路径]
 ```
 
-脚本读取候选 JSON，按 R/T/N 关键词命中数评分，生成 `scripts/data/review-YYYY-MM-DD.md`。零分候选自动过滤。不传参数时默认读取最新的 candidates 文件。
+脚本读取候选 JSON，按 N/R/T/NI 关键词命中数评分，生成 `scripts/flomo-import/data/review-YYYY-MM-DD.md`。零分候选自动过滤。不传参数时默认读取最新的 candidates 文件。
 
 ### 第三步：人工审阅（核心环节）
 
@@ -111,7 +112,7 @@ npm run review
 
 ```markdown
 - 纳入: [x]              ← 把 [ ] 改为 [x] 表示纳入
-- 维度: R                 ← 确认或修改：R / T / N
+- 维度: R                 ← 确认或修改：N / R / T / NI
 - 类型: 判断              ← 填写：事实 / 经验 / 判断 / 步骤
 - 一句话解读: 这条笔记对理论意味着什么
 ```
@@ -119,9 +120,10 @@ npm run review
 **审阅建议**：
 
 - 高分排在前面，可以从上往下看，觉得质量不够时随时停
-- 不是所有 flomo 笔记都值得进 cyber-taoist，只有能回答"R/T/N 中某个变量怎么运作"的才值得纳入
+- 不是所有 flomo 笔记都值得进 cyber-taoist，只有能回答"N/R/T/NI 中某个概念怎么运作"的才值得纳入
+- N（天道）维度：笔记揭示客观环境的根本变化或不可抗力；R（法则）维度：笔记涉及人为规则、认知框架、制度；T（交易）维度：笔记涉及交互反馈、价值交换、感知天道的手段；NI（生态位）维度：笔记涉及定位、竞争、资源占据
 - 同一条笔记归到不同维度，代表对理论的不同理解，请慎重选择
-- 解读不要复述原文，而是写"这条笔记对 R×T×N 理论意味着什么"
+- 解读不要复述原文，而是写"这条笔记对进化学理论意味着什么"
 
 ### 第四步：生成 atom 文件
 
@@ -132,16 +134,16 @@ npm run atoms
 
 脚本解析审阅文件中所有 `纳入: [x]` 的条目，按维度分组，生成：
 
-- `journal/YYYY-MM-DD/flomo-import-{R|T|N}.md` — 原始素材存档
-- `pyramid/analysis/atoms/YYYY-MM/flomo-import-{R|T|N}.md` — 格式化 atom 文件
+- `journal/YYYY-MM-DD/flomo-import-{N|R|T|NI}.md` — 原始素材存档
+- `pyramid/analysis/atoms/YYYY-MM/flomo-import-{N|R|T|NI}.md` — 格式化 atom 文件
 
-缩写对照：FR = flomo-import-R，FT = flomo-import-T，FN = flomo-import-N。
+缩写对照：FN = flomo-import-N（天道），FR = flomo-import-R（法则），FT = flomo-import-T（交易），FNI = flomo-import-NI（生态位）。
 
 ### 第五步：人工收尾
 
 脚本生成 atom 后，需要手动完成：
 
-1. **更新缩写映射表**：`pyramid/analysis/atoms/README.md` 中追加 FR/FT/FN
+1. **更新缩写映射表**：`pyramid/analysis/atoms/README.md` 中追加 FN/FR/FT/FNI
 2. **归入 group**：将新 atom 条目添加到 `pyramid/analysis/groups/` 对应的 group 文件中
 3. **检查 synthesis**：`pyramid/analysis/synthesis.md` 是否需要调整顶层观点
 
@@ -167,15 +169,16 @@ npm run atoms
 { "limit": 50 }              // 每次搜索最多返回条数
 ```
 
-### scoring — R/T/N 评分关键词
+### scoring — N/R/T/NI 评分关键词
 
-每个维度一组关键词，用于对候选笔记评分和建议维度归属：
+四个维度各一组关键词，用于对候选笔记评分和建议维度归属：
 
 ```json
 {
-  "R": ["规则", "认知", "恐惧", "未知", "合规", "变化", "判断", "T-1", "环境", "压力", "筛选", "风险", "约束"],
-  "T": ["共识", "资格", "数量", "财富", "价值", "交易", "套利", "生产", "期权", "杠杆", "现金流", "价格", "故事"],
-  "N": ["生态位", "基本盘", "需求", "竞争", "挤占", "诅咒", "分化", "抢占", "占据", "生态", "组织", "权力"]
+  "N":  ["天道", "进化", "灭亡", "物种", "淘汰", "周期", "趋势", "大势", "客观", "不可逆", "环境变化", "天机"],
+  "R":  ["规则", "认知", "恐惧", "未知", "合规", "变化", "判断", "T-1", "环境", "压力", "筛选", "风险", "约束"],
+  "T":  ["共识", "资格", "数量", "财富", "价值", "交易", "套利", "生产", "期权", "杠杆", "现金流", "价格", "故事"],
+  "NI": ["生态位", "基本盘", "需求", "竞争", "挤占", "诅咒", "分化", "抢占", "占据", "生态", "组织", "权力"]
 }
 ```
 
@@ -187,11 +190,12 @@ npm run atoms
 
 首轮搜索已覆盖核心术语。后续可按以下优先级扩展：
 
-1. **R 维度优先**（当前素材最薄）：搜索"合规"、"法规"、"政策"、"制度"等
-2. **T 维度补充**：搜索"商业模式"、"定价"、"IP"等
-3. **N 维度补实证**：搜索历史人物、朝代、公司名等具体案例
-4. **AI 相关**：搜索"AI"、"人工智能"、"大模型"，补充"分化时刻"素材
-5. **利用 flomo 标签树**：运行 `node cli/cli.js tags` 查看完整标签体系，发现未覆盖的分支
+1. **N 维度（天道）**：搜索"周期"、"趋势"、"时代"、"不可逆"等，捕捉对客观环境根本变化的感知
+2. **R 维度（法则）优先**（当前素材最薄）：搜索"合规"、"法规"、"政策"、"制度"等
+3. **T 维度（交易）补充**：搜索"商业模式"、"定价"、"IP"等
+4. **NI 维度（生态位）补实证**：搜索历史人物、朝代、公司名等具体案例
+5. **AI 相关**：搜索"AI"、"人工智能"、"大模型"，补充"分化时刻"素材（横跨 N/R/T/NI）
+6. **利用 flomo 标签树**：运行 `node cli/cli.js tags` 查看完整标签体系，发现未覆盖的分支
 
 ---
 
