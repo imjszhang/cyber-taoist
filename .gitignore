@@ -14,6 +14,7 @@ credentials/
 
 # ============ 生成/输出目录 ============
 outputs/
+work_dir/
 dist/
 build/
 *.log
