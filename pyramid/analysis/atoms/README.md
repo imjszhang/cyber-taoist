@@ -25,6 +25,8 @@
 
 | 缩写 | journal 文件名 / corpus 系列键 | 月份 / atoms 子目录 |
 | ---- | ------------------------------- | ------------------- |
+| DJ | corpus:dao-de-jing | corpus-dao-de-jing |
+| CN | corpus:constitution | corpus-constitution |
 
 Journal 行：第二列为 **journal 文件名**（不含 `.md`），第三列为 `YYYY-MM`。Corpus 行：第二列为 **`corpus:<系列目录名>`**（与 `corpus/` 下文件夹名一致），第三列为 **`corpus-<系列目录名>`**（无尾斜杠）。工具解析表行格式为 `| XX | stem-or-key | month |`，其中 `XX` 须为两位大写字母。
 
