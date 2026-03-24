@@ -5,6 +5,9 @@
   "scripts": {
     "search": "node scripts/flomo-import/search-flomo.mjs",
     "review": "node scripts/flomo-import/generate-review.mjs",
-    "atoms": "node scripts/flomo-import/generate-atoms.mjs"
+    "atoms": "node scripts/flomo-import/generate-atoms.mjs",
+    "site:dev": "npx serve site/src",
+    "site:build": "node build/build.js",
+    "site:preview": "npx serve docs -l 3000"
   }
 }

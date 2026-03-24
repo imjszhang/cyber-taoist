@@ -16,7 +16,6 @@ credentials/
 outputs/
 work_dir/
 dist/
-build/
 *.log
 
 # ============ 操作系统 ============

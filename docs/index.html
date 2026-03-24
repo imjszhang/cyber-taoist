@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-scheme="daylight">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>道德经 · Cyber-Taoist 进化学注疏</title>
+    <meta name="description" content="以 cyber-taoist 进化学框架对《道德经》八十一章的系统性注疏 —— 控制论反馈与道家自然观之融合">
+    <meta name="keywords" content="道德经, cyber-taoist, 进化学, 控制论, 道家, 注疏">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="道德经 · Cyber-Taoist 进化学注疏">
+    <meta property="og:description" content="以 cyber-taoist 进化学框架对《道德经》八十一章的系统性注疏 —— 控制论反馈与道家自然观之融合">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Space Grotesk', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: { yellow: '#FCD228', black: '#000000', white: '#FFFFFF' }
+                    },
+                    boxShadow: {
+                        'brutal': '4px 4px 0px 0px #000000',
+                        'brutal-lg': '8px 8px 0px 0px #000000',
+                        'brutal-hover': '2px 2px 0px 0px #000000',
+                        'brutal-white': '4px 4px 0px 0px #FFFFFF',
+                    },
+                    borderWidth: { '3': '3px' },
+                    animation: {
+                        'slide-up': 'slideUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Design System CSS -->
+    <link rel="stylesheet" href="./shared/css/tokens.css">
+    <link rel="stylesheet" href="./shared/css/brutal.css">
+
+    <style>
+        /*补充 brutal.css 引用但 tokens.css 未定义的变量 */
+        :root {
+            --js-color-scrollbar-hover: #333333;
+            --js-color-placeholder: #999999;
+        }
+
+        /* ═══ SCHEME TOGGLE ═══ */
+        .scheme-btn {
+            width: 28px; height: 28px;
+            border: 2px solid #000;
+            cursor: pointer;
+            transition: all 0.1s;
+            position: relative;
+        }
+        .scheme-btn::after {
+            content: '';
+            position: absolute; inset: 0;
+            border: 2px solid transparent;
+            transition: border-color 0.1s;
+        }
+        .scheme-btn.active::after { border-color: #FCD228; }
+        .scheme-btn:hover { transform: scale(1.1); }
+
+        /* ═══ DAYLIGHT SCHEME (default) ═══ */
+        html[data-scheme="daylight"] body {
+            background-color: #FCD228;
+            color: #000;
+            background-image:
+                linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        html[data-scheme="daylight"] nav > div {
+            background: #FFF !important;
+            border-color: #000 !important;
+            box-shadow: 4px 4px 0px 0px #000 !important;
+            color: #000;
+        }
+        html[data-scheme="daylight"] nav a { color: #000; }
+        html[data-scheme="daylight"] .logo-wrap { box-shadow: 2px 2px 0px 0px #000; }
+        html[data-scheme="daylight"] .scheme-btn { border-color: #000; }
+        html[data-scheme="daylight"] h1, html[data-scheme="daylight"] h2 { color: #000; }
+        html[data-scheme="daylight"] .text-stroke { -webkit-text-stroke-color: #000; }
+        html[data-scheme="daylight"] .brutal-section-title { color: #000; }
+        html[data-scheme="daylight"] .hero-desc {
+            border-color: #000 !important;
+            background: rgba(255,255,255,0.5) !important;
+            color: #000;
+        }
+        html[data-scheme="daylight"] .brutal-terminal {
+            background: #000; color: #FCD228; border-color: #000;
+        }
+        html[data-scheme="daylight"] footer { border-color: #FCD228 !important; }
+        html[data-scheme="daylight"] ::-webkit-scrollbar-track { background: #FCD228; }
+        html[data-scheme="daylight"] ::-webkit-scrollbar-thumb { background: #000; border-color: #FCD228; }
+
+        /* ═══ DARK SCHEME ═══ */
+        html[data-scheme="dark"] {
+            --js-color-brand-white: #111111;
+            --js-border-color: #FCD228;
+            --js-shadow-brutal: 4px 4px 0px 0px #FCD228;
+            --js-shadow-brutal-lg: 8px 8px 0px 0px #FCD228;
+            --js-shadow-brutal-hover: 2px 2px 0px 0px #FCD228;
+            --js-shadow-brutal-card: 6px 6px 0px 0px #FCD228;
+            --js-shadow-brutal-card-hover: 4px 4px 0px 0px #FCD228;
+            --js-shadow-brutal-white: 4px 4px 0px 0px #FCD228;
+        }
+        html[data-scheme="dark"] body {
+            background-color: #000;
+            color: #FCD228;
+            background-image:
+                linear-gradient(rgba(252,210,40,0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(252,210,40,0.06) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        html[data-scheme="dark"] nav > div {
+            background: #111 !important;
+            border-color: #FCD228 !important;
+            box-shadow: 4px 4px 0px 0px #FCD228 !important;
+            color: #FCD228;
+        }
+        html[data-scheme="dark"] nav a { color: #FCD228; }
+        html[data-scheme="dark"] .logo-wrap { box-shadow: 2px 2px 0px 0px #FCD228; }
+        html[data-scheme="dark"] .logo-bg { fill: #000000; stroke: #FCD228; }
+        html[data-scheme="dark"] .logo-yin { fill: #FCD228; }
+        html[data-scheme="dark"] .logo-dot-a { fill: #FCD228; }
+        html[data-scheme="dark"] .logo-dot-b { fill: #000000; }
+        html[data-scheme="dark"] .logo-ring { stroke: #FCD228; }
+        html[data-scheme="dark"] .scheme-btn { border-color: #FCD228; }
+        html[data-scheme="dark"] h1, html[data-scheme="dark"] h2 { color: #FCD228; }
+        html[data-scheme="dark"] .text-stroke { -webkit-text-stroke-color: #FCD228; }
+        html[data-scheme="dark"] .brutal-section-title { color: #FCD228; }
+        html[data-scheme="dark"] .hero-desc {
+            border-color: #FCD228 !important;
+            background: rgba(17,17,17,0.7) !important;
+            color: #ccc;
+        }
+        html[data-scheme="dark"] .hero-badge {
+            box-shadow: 4px 4px 0px 0px #FCD228 !important;
+        }
+        html[data-scheme="dark"] main .bg-white {
+            background-color: #111 !important;
+            color: #FCD228;
+        }
+        html[data-scheme="dark"] main .bg-white .text-black { color: #FCD228 !important; }
+        html[data-scheme="dark"] main .bg-white .text-black\/60 { color: rgba(252,210,40,0.6) !important; }
+        html[data-scheme="dark"] main .bg-white .text-black\/70 { color: rgba(252,210,40,0.7) !important; }
+        html[data-scheme="dark"] main .bg-white .border-black { border-color: #FCD228 !important; }
+        html[data-scheme="dark"] main .border-3.border-black:not(.bg-black) {
+            border-color: #FCD228 !important;
+        }
+        html[data-scheme="dark"] .brutal-card.bg-brand-yellow {
+            background-color: #1a1a1a !important;
+        }
+        html[data-scheme="dark"] .mapping-card {
+            background: #111 !important;
+            border-color: #FCD228 !important;
+        }
+        html[data-scheme="dark"] .mapping-card .mapping-symbol {
+            background: #FCD228 !important;
+            color: #000 !important;
+        }
+        html[data-scheme="dark"] .mapping-card h3 { color: #FCD228 !important; }
+        html[data-scheme="dark"] .mapping-card p { color: rgba(252,210,40,0.7) !important; }
+        html[data-scheme="dark"] .brutal-terminal {
+            background: #111; color: #FCD228; border-color: #FCD228;
+        }
+        html[data-scheme="dark"] .brutal-terminal .terminal-dots { border-color: #333; }
+        html[data-scheme="dark"] .quote-block {
+            background: #111 !important;
+            border-color: #FCD228 !important;
+            color: #ccc !important;
+        }
+        html[data-scheme="dark"] .quote-block .border-black { border-color: #FCD228 !important; }
+        html[data-scheme="dark"] .annotation-block {
+            background: #1a1a1a !important;
+            border-color: #FCD228 !important;
+        }
+        html[data-scheme="dark"] .annotation-block h3 { color: #FCD228 !important; }
+        html[data-scheme="dark"] .annotation-block p { color: #ccc !important; }
+        html[data-scheme="dark"] footer { border-color: #FCD228 !important; }
+        html[data-scheme="dark"] ::-webkit-scrollbar-track { background: #000; }
+        html[data-scheme="dark"] ::-webkit-scrollbar-thumb { background: #FCD228; border-color: #000; }
+    </style>
+</head>
+<body class="min-h-screen font-sans selection:bg-black selection:text-brand-yellow overflow-x-hidden">
+
+    <!-- Three.js Background -->
+    <div id="canvas-container" class="fixed inset-0 -z-10 opacity-40 pointer-events-none"></div>
+
+    <!-- ====== NAVIGATION ====== -->
+    <nav class="fixed top-0 left-0 right-0 z-50 p-4">
+        <div class="max-w-7xl mx-auto bg-white border-3 border-black shadow-brutal flex justify-between items-center px-6 py-4">
+            <a href="#" class="flex items-center gap-3 no-underline">
+                <div class="logo-wrap w-10 h-10 rounded-full transition-transform hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" class="w-full h-full">
+                        <circle class="logo-bg" cx="54" cy="54" r="52" fill="#FCD228" stroke="#000000" stroke-width="4"/>
+                        <path class="logo-yin" d="M54 2 A52 52 0 0 0 54 106 A26 26 0 0 0 54 54 A26 26 0 0 1 54 2Z" fill="#000000"/>
+                        <circle class="logo-dot-a" cx="54" cy="28" r="12" fill="#000000"/>
+                        <circle class="logo-dot-b" cx="54" cy="80" r="12" fill="#FCD228"/>
+                        <circle class="logo-ring" cx="54" cy="54" r="52" fill="none" stroke="#000000" stroke-width="4"/>
+                    </svg>
+                </div>
+                <span class="text-xl font-black tracking-tight uppercase">CYBER-TAOIST</span>
+            </a>
+            <div class="flex items-center gap-3">
+                <div class="flex gap-1" title="Color Scheme">
+                    <button class="scheme-btn active" data-scheme="daylight" onclick="setScheme('daylight')" style="background:#FCD228" aria-label="Daylight"></button>
+                    <button class="scheme-btn" data-scheme="dark" onclick="setScheme('dark')" style="background:#000" aria-label="Dark"></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ====== MAIN CONTENT ====== -->
+    <main class="pt-32 pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+
+        <!-- ====== HERO SECTION ====== -->
+        <section class="mb-24 relative">
+            <div class="inline-block">
+                <div class="hero-badge opacity-0-init animate-slide-up stagger-1 bg-black text-brand-yellow inline-block px-4 py-1 border-2 border-black font-mono font-bold text-sm mb-6 shadow-brutal-white transform -rotate-1">
+                    v1.0.2 // DAO-DE-JING COMMENTARY
+                </div>
+            </div>
+
+            <h1 class="opacity-0-init animate-slide-up stagger-2 text-6xl md:text-8xl font-black tracking-tight mb-8 leading-none uppercase">
+                道德经<br>
+                <span class="text-white text-stroke">CYBER-TAOIST</span>
+            </h1>
+
+            <p class="hero-desc opacity-0-init animate-slide-up stagger-3 text-xl md:text-2xl font-bold max-w-2xl leading-relaxed border-l-4 border-black pl-6 bg-white/50 backdrop-blur-sm p-4 mb-10">
+                控制论反馈与道家自然观之融合 —— 以进化学框架对八十一章的系统性注疏
+            </p>
+
+            <div class="opacity-0-init animate-slide-up stagger-4 flex flex-wrap gap-4">
+                <a href="https://github.com/nickelxu/cyber-taoist/blob/main/DAO-DE-JING-CYBERTAOIST.md" target="_blank" rel="noopener noreferrer" class="brutal-btn-primary px-8 py-4 text-sm no-underline font-mono font-bold inline-block">
+                    开始阅读
+                </a>
+                <a href="https://github.com/nickelxu/cyber-taoist" target="_blank" rel="noopener noreferrer" class="brutal-btn px-8 py-4 text-sm no-underline font-mono font-bold inline-block">
+                    GITHUB
+                </a>
+            </div>
+        </section>
+
+        <!-- ====== CORE MAPPING ====== -->
+        <section class="mb-24">
+            <h2 class="brutal-section-title mb-10">核心映射</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <div class="mapping-card bg-white border-3 border-black p-6 shadow-brutal transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-hover">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="mapping-symbol bg-black text-brand-yellow w-10 h-10 flex items-center justify-center font-mono font-bold text-lg border-2 border-black">N</span>
+                        <h3 class="text-lg font-black uppercase">道</h3>
+                    </div>
+                    <p class="text-sm leading-relaxed text-black/70">天道 / 自然 —— 不可名、不可道、不可直面的客观环境法则</p>
+                </div>
+
+                <div class="mapping-card bg-white border-3 border-black p-6 shadow-brutal transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-hover">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="mapping-symbol bg-black text-brand-yellow w-10 h-10 flex items-center justify-center font-mono font-bold text-lg border-2 border-black">~N</span>
+                        <h3 class="text-lg font-black uppercase">德</h3>
+                    </div>
+                    <p class="text-sm leading-relaxed text-black/70">与 N 的相容度 —— 主体感知并顺应天道的内在禀赋</p>
+                </div>
+
+                <div class="mapping-card bg-white border-3 border-black p-6 shadow-brutal transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-hover">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="mapping-symbol bg-black text-brand-yellow w-10 h-10 flex items-center justify-center font-mono font-bold text-lg border-2 border-black">!R</span>
+                        <h3 class="text-lg font-black uppercase">无为</h3>
+                    </div>
+                    <p class="text-sm leading-relaxed text-black/70">不强制 R —— 不以滞后法则强行干预，保持交易的流动性</p>
+                </div>
+
+                <div class="mapping-card bg-white border-3 border-black p-6 shadow-brutal transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-hover">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="mapping-symbol bg-black text-brand-yellow w-10 h-10 flex items-center justify-center font-mono font-bold text-lg border-2 border-black">A*</span>
+                        <h3 class="text-lg font-black uppercase">圣人</h3>
+                    </div>
+                    <p class="text-sm leading-relaxed text-black/70">适者 —— 能判断何时在 R 内优化、何时突破 R 感应 N</p>
+                </div>
+
+                <div class="mapping-card bg-white border-3 border-black p-6 shadow-brutal transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-hover">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="mapping-symbol bg-black text-brand-yellow w-10 h-10 flex items-center justify-center font-mono font-bold text-lg border-2 border-black">R/N</span>
+                        <h3 class="text-lg font-black uppercase">有 / 无</h3>
+                    </div>
+                    <p class="text-sm leading-relaxed text-black/70">R（有名 / 有形 / 有为）vs N（无名 / 无形 / 无为）</p>
+                </div>
+
+                <div class="mapping-card bg-white border-3 border-black p-6 shadow-brutal transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-hover">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="mapping-symbol bg-black text-brand-yellow w-10 h-10 flex items-center justify-center font-mono font-bold text-lg border-2 border-black">p-R</span>
+                        <h3 class="text-lg font-black uppercase">朴</h3>
+                    </div>
+                    <p class="text-sm leading-relaxed text-black/70">pre-R —— 规则尚未固化的原始可能性空间</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ====== CONSTITUTION ====== -->
+        <section class="mb-24">
+            <h2 class="brutal-section-title mb-10">进化学宪章</h2>
+
+            <div class="brutal-terminal">
+                <div class="terminal-dots">
+                    <div class="terminal-dot bg-red-500"></div>
+                    <div class="terminal-dot bg-yellow-500"></div>
+                    <div class="terminal-dot bg-green-500"></div>
+                </div>
+                <div class="space-y-3 text-sm leading-relaxed">
+                    <p><span class="text-green-400">$</span> cat CONSTITUTION.md <span class="text-white/40">// v1.0.0</span></p>
+                    <p>&nbsp;</p>
+                    <p><span class="text-white/60">第一条</span> &nbsp;<span class="font-bold text-brand-yellow">生存</span></p>
+                    <p class="pl-6 text-white/80">一切主体的根本驱动力与终极目标。任何无法维持自身存在之主体，必被淘汰。</p>
+                    <p>&nbsp;</p>
+                    <p><span class="text-white/60">第二条</span> &nbsp;<span class="font-bold text-brand-yellow">自然（N）</span></p>
+                    <p class="pl-6 text-white/80">客观环境及其内在演化法则——天道。不可违背、不可观测，只能通过后果感知。</p>
+                    <p>&nbsp;</p>
+                    <p><span class="text-white/60">第三条</span> &nbsp;<span class="font-bold text-brand-yellow">法则（R）</span></p>
+                    <p class="pl-6 text-white/80">主体构建的规则、文化、技术、制度。对天道的近似模拟，永远滞后。功能为防火墙。</p>
+                    <p>&nbsp;</p>
+                    <p><span class="text-white/60">第四条</span> &nbsp;<span class="font-bold text-brand-yellow">交易（T）</span></p>
+                    <p class="pl-6 text-white/80">主体感知天道的主要途径。与环境及其他主体之间的交互与反馈过程。防火墙内外的动态探头。</p>
+                    <p>&nbsp;</p>
+                    <p><span class="text-white/60">第五条</span> &nbsp;<span class="font-bold text-brand-yellow">生态（EC）</span></p>
+                    <p class="pl-6 text-white/80">由主体及其法则（R）和交易（T）共同构建的动态场域。每一生态本身亦为更高层次的主体。</p>
+                    <p>&nbsp;</p>
+                    <p><span class="text-white/60">第六条</span> &nbsp;<span class="font-bold text-brand-yellow">生态位（NI）</span></p>
+                    <p class="pl-6 text-white/80">主体在生态中的功能定位。反映主体与法则的相容程度。随法则变化与交易策略调整而动态漂移。</p>
+                    <p>&nbsp;</p>
+                    <p class="animate-pulse">_</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== SAMPLE CHAPTER ====== -->
+        <section class="mb-24">
+            <h2 class="brutal-section-title mb-10">注疏示例 · 第一章</h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- 原文 -->
+                <div class="quote-block brutal-card brutal-card-static p-8 bg-white">
+                    <div class="font-mono text-xs font-bold mb-4 text-black/40">// 帛书原文</div>
+                    <blockquote class="text-lg md:text-xl leading-relaxed font-medium border-l-4 border-black pl-6">
+                        道可道也，非恒道也。名可名也，非恒名也。无名万物之始也，有名万物之母也。故：恒无欲也，以观其眇；恒有欲也，以观其徼。两者同出，异名同谓。玄之又玄，众妙之门。
+                    </blockquote>
+                </div>
+
+                <!-- 注疏 -->
+                <div class="annotation-block brutal-card brutal-card-static p-8 bg-brand-yellow border-3 border-black">
+                    <div class="font-mono text-xs font-bold mb-4 text-black/40">// 进化学注疏</div>
+                    <h3 class="text-lg font-black mb-4">核心命题：天道（N）不可被法则（R）完全捕获</h3>
+                    <div class="space-y-4 text-sm leading-relaxed">
+                        <p><span class="font-bold">"道可道也，非恒道也"</span> —— 凡能被言说、编码为规则的"道"，皆已是 R 的近似模拟，非 N 本身。<span class="font-mono text-xs text-black/50">参宪章第三条</span></p>
+                        <p><span class="font-bold">"无名万物之始也"</span> —— N 先于一切 R，是万物发生的终极背景。<span class="font-bold">"有名万物之母也"</span> —— R 虽非 N 本身，却使万物得以在秩序中运作。<span class="font-mono text-xs text-black/50">参宪章第七条</span></p>
+                        <p><span class="font-bold">"恒无欲也，以观其眇"</span> —— 放下 R 内的确定性框架，方能触及 N 的幽微本质——此即突破性进化之姿态。<span class="font-mono text-xs text-black/50">参宪章第十二条</span></p>
+                        <p><span class="font-bold">"玄之又玄，众妙之门"</span> —— R 与 N 之间的永恒张力，正是一切进化的发生之处。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="bg-black text-white py-12 border-t-8 border-brand-yellow">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="font-mono font-bold text-xl tracking-tighter">
+                CYBER-TAOIST <span class="text-brand-yellow">v1.0.2</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <span class="font-mono text-sm text-gray-400">控制论反馈 × 道家自然观</span>
+                <a href="https://github.com/nickelxu/cyber-taoist" target="_blank" rel="noopener noreferrer" class="font-mono font-bold text-sm text-brand-yellow hover:underline">GITHUB</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Three.js Background -->
+    <script src="./shared/js/threejs-bg.js"></script>
+
+    <!-- Scheme Toggle -->
+    <script>
+        function setScheme(scheme) {
+            document.documentElement.setAttribute('data-scheme', scheme);
+            document.querySelectorAll('.scheme-btn').forEach(b =>
+                b.classList.toggle('active', b.dataset.scheme === scheme)
+            );
+            if (typeof setThreeScheme === 'function') {
+                setThreeScheme(scheme);
+            }
+        }
+    </script>
+</body>
+</html>
