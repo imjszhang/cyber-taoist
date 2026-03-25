@@ -80,5 +80,7 @@ function setThreeScheme(scheme) {
 document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('canvas-container')) {
         initThreeJS();
+        const currentScheme = document.documentElement.getAttribute('data-scheme') || 'dark';
+        setThreeScheme(currentScheme);
     }
 });
