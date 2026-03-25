@@ -30,9 +30,10 @@ mkdirSync(DOCS, { recursive: true });
 console.log('  [2/3] Copying site/src/ -> docs/ ...');
 cpSync(SRC, DOCS, { recursive: true });
 
-// 3. Write .nojekyll
-console.log('  [3/3] Writing .nojekyll ...');
+// 3. Write .nojekyll + CNAME
+console.log('  [3/3] Writing .nojekyll + CNAME ...');
 writeFileSync(join(DOCS, '.nojekyll'), '');
+writeFileSync(join(DOCS, 'CNAME'), 'cyber-taoist.ai');
 
 const elapsed = Date.now() - start;
 console.log('  ' + '='.repeat(40));
