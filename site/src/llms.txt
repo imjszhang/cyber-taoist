@@ -1,0 +1,26 @@
+# Cyber-Taoist
+
+> Cyber-Taoist 是一套以控制论反馈机制重新解读道家自然观的操作化思想框架，探索天道(N)、法则(R)与交易(T)的进化动力学。核心理论由二十条公理组成的「进化学宪章」定义，并以此框架对《道德经》八十一章作系统性注疏。
+
+关键概念与符号：
+
+- **N（自然/天道）**：客观环境及其内在演化法则，不可违背、不可观测，只能通过后果感知
+- **R（法则）**：主体构建的规则、文化、技术、制度，对天道的近似模拟，永远滞后，功能为防火墙
+- **T（交易）**：主体感知天道的主要途径，与环境及其他主体之间的交互与反馈过程
+- **EC（生态）**：由主体及其法则和交易共同构建的动态场域，每一生态本身亦为更高层次的主体
+- **NI（生态位）**：主体在生态中的功能定位，反映主体与法则的相容程度，动态漂移
+
+核心映射（道家术语 → 进化学符号）：道 → N，德 → 与 N 的相容度，无为 → 不强制 R，圣人 → 适者(A*)，有/无 → R/N，朴 → pre-R。
+
+本框架的核心论点是：进化是主体通过交易感知天道、在必要时突破法则以直接感应天道的过程。法则永远滞后于天道，固守则亡；突破虽险，或得新生。这一逻辑在微观（个体）、中观（群体）、宏观（文明）各层次呈分形自相似结构。
+
+## Docs
+
+- [进化学宪章 CONSTITUTION](https://cyber-taoist.ai/CONSTITUTION.md): 二十条公理体系，定义生存元规则、核心概念(N/R/T/EC/NI)、基本关系、进化本质、分形结构与死亡之意义，是整个框架的公理基础
+- [道德经 · 进化学注疏](https://raw.githubusercontent.com/imjszhang/cyber-taoist/main/DAO-DE-JING-CYBERTAOIST.md): 以宪章符号对《道德经》八十一章的完整系统性注疏(v1.0.2)，揭示道家思想与控制论反馈的结构性同构
+- [项目说明 README](https://raw.githubusercontent.com/imjszhang/cyber-taoist/main/README.md): 项目概览、核心概念映射表、内容产出索引与知识库结构说明
+
+## Optional
+
+- [道德经原文](https://raw.githubusercontent.com/imjszhang/cyber-taoist/main/DAO-DE-JING.md): 帛书《老子》（王弼本章序）八十一章全文，作为注疏底本
+- [架构变更日志](https://raw.githubusercontent.com/imjszhang/cyber-taoist/main/CHANGELOG.md): 知识库架构的语义化版本变更记录
