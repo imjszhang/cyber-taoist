@@ -12,6 +12,9 @@ credentials/
 # ============ 用户/本地配置 ============
 .knowledgeprism.json
 
+# ============ 站点 dev 同步产物（ canonical 在仓库根目录 CONSTITUTION.md ） ============
+site/src/CONSTITUTION.md
+
 # ============ 生成/输出目录 ============
 outputs/
 work_dir/
