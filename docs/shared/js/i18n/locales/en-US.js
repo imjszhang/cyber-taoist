@@ -118,6 +118,10 @@
             art20Name: 'The Eternal Tableau',
             art20Desc: 'Nature (N) is ever-changing, the Way shows no favoritism. Agents build Rules (R) as firewalls, conduct Transactions (T) to probe the Way, and compete for Niche (NI) within Rules. Yet Rules forever lag — cling to them and perish; breakthrough is perilous, yet may yield renewal. Death metabolizes, fractals evolve, individuals pave the way for collectives, collectives lay foundations for civilizations. This is the core of Cyber-Taoist Evolution Theory — an eternal dance at the edge of extinction, with survival as meta-rule, Transactions as dialogue, Rules as temporary shelter, Ecology as stage, ever-flowing, never-ceasing.',
             epilogue: 'This Constitution is founded upon the fusion of cybernetic feedback and Taoist naturalism, revealing unified evolutionary principles from dust to civilization. Let all who observe change and align with the Way take this as their guide.',
+            btnCopyText: 'COPY TEXT',
+            btnCopyLink: 'COPY LINK',
+            toastTextCopied: 'Constitution text copied',
+            toastLinkCopied: 'Constitution link copied',
         },
 
         works: {
