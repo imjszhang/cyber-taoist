@@ -209,6 +209,21 @@
         html[data-scheme="dark"] footer { border-color: #FCD228 !important; }
         html[data-scheme="dark"] ::-webkit-scrollbar-track { background: #000; }
         html[data-scheme="dark"] ::-webkit-scrollbar-thumb { background: #FCD228; border-color: #000; }
+
+        /* ═══ MOBILE OPTIMIZATIONS ═══ */
+        @media (max-width: 640px) {
+            #canvas-container { opacity: 0.15 !important; }
+            .brutal-terminal {
+                font-size: 0.8125rem;
+                padding: 12px;
+            }
+            #constitution .brutal-terminal [class*="pl-6"] {
+                padding-left: 0.75rem;
+            }
+            .brutal-section-title {
+                font-size: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body class="min-h-screen font-sans selection:bg-black selection:text-brand-yellow overflow-x-hidden">
@@ -255,8 +270,8 @@
             <h1 class="opacity-0-init animate-slide-up stagger-2 text-6xl md:text-8xl font-black tracking-tight mb-4 leading-none uppercase">
                 CYBER-TAOIST
             </h1>
-            <p class="opacity-0-init animate-slide-up stagger-2 text-2xl md:text-3xl font-black tracking-tight mb-8 leading-none uppercase text-white text-stroke" data-i18n="hero.subtitle">
-                控制论 × 道家自然观
+            <p class="opacity-0-init animate-slide-up stagger-2 text-2xl md:text-3xl font-black tracking-tight mb-8 leading-none uppercase">
+                <span class="bg-black text-brand-yellow px-2 py-1 box-decoration-clone" data-i18n="hero.subtitle">控制论 × 道家自然观</span>
             </p>
 
             <p class="hero-desc opacity-0-init animate-slide-up stagger-3 text-xl md:text-2xl font-bold max-w-2xl leading-relaxed border-l-4 border-black pl-6 bg-white/50 backdrop-blur-sm p-4 mb-10" data-i18n="hero.desc">
@@ -273,6 +288,63 @@
             </div>
         </section>
 
+        <!-- ====== CORE CONCEPTS ====== -->
+        <section class="mb-24">
+            <h2 class="brutal-section-title mb-10" data-i18n="concepts.title">核心概念</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <div class="mapping-card bg-white border-3 border-black p-6 shadow-brutal transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-hover">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="mapping-symbol bg-black text-brand-yellow w-10 h-10 flex items-center justify-center font-mono font-bold text-lg border-2 border-black">S</span>
+                        <h3 class="text-lg font-black uppercase" data-i18n="concepts.survivalName">生存</h3>
+                    </div>
+                    <p class="text-sm leading-relaxed text-black/70" data-i18n="concepts.survivalDesc">一切主体的根本驱动力与终极目标。任何无法维持自身存在之主体，必被淘汰。</p>
+                </div>
+
+                <div class="mapping-card bg-white border-3 border-black p-6 shadow-brutal transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-hover">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="mapping-symbol bg-black text-brand-yellow w-10 h-10 flex items-center justify-center font-mono font-bold text-lg border-2 border-black">N</span>
+                        <h3 class="text-lg font-black uppercase" data-i18n="concepts.natureName">自然（N）</h3>
+                    </div>
+                    <p class="text-sm leading-relaxed text-black/70" data-i18n="concepts.natureDesc">客观环境及其内在演化法则——天道。不可违背、不可观测，只能通过后果感知。</p>
+                </div>
+
+                <div class="mapping-card bg-white border-3 border-black p-6 shadow-brutal transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-hover">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="mapping-symbol bg-black text-brand-yellow w-10 h-10 flex items-center justify-center font-mono font-bold text-lg border-2 border-black">R</span>
+                        <h3 class="text-lg font-black uppercase" data-i18n="concepts.ruleName">法则（R）</h3>
+                    </div>
+                    <p class="text-sm leading-relaxed text-black/70" data-i18n="concepts.ruleDesc">主体构建的规则、文化、技术、制度。对天道的近似模拟，永远滞后。功能为防火墙。</p>
+                </div>
+
+                <div class="mapping-card bg-white border-3 border-black p-6 shadow-brutal transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-hover">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="mapping-symbol bg-black text-brand-yellow w-10 h-10 flex items-center justify-center font-mono font-bold text-lg border-2 border-black">T</span>
+                        <h3 class="text-lg font-black uppercase" data-i18n="concepts.transactionName">交易（T）</h3>
+                    </div>
+                    <p class="text-sm leading-relaxed text-black/70" data-i18n="concepts.transactionDesc">主体感知天道的主要途径。与环境及其他主体之间的交互与反馈过程。防火墙内外的动态探头。</p>
+                </div>
+
+                <div class="mapping-card bg-white border-3 border-black p-6 shadow-brutal transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-hover">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="mapping-symbol bg-black text-brand-yellow w-10 h-10 flex items-center justify-center font-mono font-bold text-lg border-2 border-black">EC</span>
+                        <h3 class="text-lg font-black uppercase" data-i18n="concepts.ecologyName">生态（EC）</h3>
+                    </div>
+                    <p class="text-sm leading-relaxed text-black/70" data-i18n="concepts.ecologyDesc">由主体及其法则（R）和交易（T）共同构建的动态场域。每一生态本身亦为更高层次的主体。</p>
+                </div>
+
+                <div class="mapping-card bg-white border-3 border-black p-6 shadow-brutal transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-hover">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="mapping-symbol bg-black text-brand-yellow w-10 h-10 flex items-center justify-center font-mono font-bold text-lg border-2 border-black">NI</span>
+                        <h3 class="text-lg font-black uppercase" data-i18n="concepts.nicheName">生态位（NI）</h3>
+                    </div>
+                    <p class="text-sm leading-relaxed text-black/70" data-i18n="concepts.nicheDesc">主体在生态中的功能定位。反映主体与法则的相容程度。随法则变化与交易策略调整而动态漂移。</p>
+                </div>
+
+            </div>
+        </section>
+
         <!-- ====== CONSTITUTION ====== -->
         <section id="constitution" class="mb-24">
             <h2 class="brutal-section-title mb-10" data-i18n="constitution.title">进化学宪章</h2>
@@ -286,103 +358,126 @@
                 <div class="space-y-3 text-sm leading-relaxed">
                     <p><span class="text-green-400">$</span> cat CONSTITUTION.md <span class="text-white/40">// v1.0.0</span></p>
                     <p>&nbsp;</p>
+                    <p class="text-white/60 italic" data-i18n="constitution.preface">宇宙万物流变不息，生存为一切主体之元规则。主体无法直面终极法则——天道，故创制规则以为屏障，行交易以探天机。个体代谢，群体演化，皆为此理。本宪章立 cyber-taoist 进化学之根本，明分形结构之自相似，述生存、规则、交易、生态、生态位之奥义，以为后世观变适道之纲纪。</p>
+                    <p>&nbsp;</p>
+                    <p class="text-green-400/40">─────────────────────────────────</p>
+                    <p>&nbsp;</p>
+                    <p class="text-green-400 font-bold" data-i18n="constitution.ch1Title">## 第一章 元规则</p>
+                    <p>&nbsp;</p>
                     <p><span class="text-white/60" data-i18n="constitution.art1Label">第一条</span> &nbsp;<span class="font-bold text-brand-yellow" data-i18n="constitution.art1Name">生存</span></p>
-                    <p class="pl-6 text-white/80" data-i18n="constitution.art1Desc">一切主体的根本驱动力与终极目标。任何无法维持自身存在之主体，必被淘汰。</p>
+                    <p class="pl-6 text-white/80" data-i18n="constitution.art1Desc">生存是一切主体的根本驱动力与终极目标。任何无法维持自身存在之主体，必被淘汰。此元规则贯穿所有层次，从微尘至文明，莫不遵从。</p>
+                    <p>&nbsp;</p>
+                    <p class="text-green-400/40">─────────────────────────────────</p>
+                    <p>&nbsp;</p>
+                    <p class="text-green-400 font-bold" data-i18n="constitution.ch2Title">## 第二章 核心概念与符号</p>
                     <p>&nbsp;</p>
                     <p><span class="text-white/60" data-i18n="constitution.art2Label">第二条</span> &nbsp;<span class="font-bold text-brand-yellow" data-i18n="constitution.art2Name">自然（N）</span></p>
-                    <p class="pl-6 text-white/80" data-i18n="constitution.art2Desc">客观环境及其内在演化法则——天道。不可违背、不可观测，只能通过后果感知。</p>
+                    <p class="pl-6 text-white/80" data-i18n="constitution.art2Desc">自然为自变量，即客观环境及其内在演化法则——天道。天道不可违背、不可观测，只能通过后果感知：符合则存，违之则亡。主体任何无保护地直面天道，必致灭亡。</p>
                     <p>&nbsp;</p>
                     <p><span class="text-white/60" data-i18n="constitution.art3Label">第三条</span> &nbsp;<span class="font-bold text-brand-yellow" data-i18n="constitution.art3Name">法则（R）</span></p>
-                    <p class="pl-6 text-white/80" data-i18n="constitution.art3Desc">主体构建的规则、文化、技术、制度。对天道的近似模拟，永远滞后。功能为防火墙。</p>
+                    <p class="pl-6 text-white/80" data-i18n="constitution.art3Desc">法则即人之道，是主体构建的规则、文化、技术、制度等人为秩序。它是对天道的近似模拟，永远滞后。其功能为防火墙，为主体划定相对安全的活动范围，使在法则内活动者大概率免于触犯天道而灭亡。然法则滞后则成牢笼，固守过时法则者终将灭亡。</p>
                     <p>&nbsp;</p>
                     <p><span class="text-white/60" data-i18n="constitution.art4Label">第四条</span> &nbsp;<span class="font-bold text-brand-yellow" data-i18n="constitution.art4Name">交易（T）</span></p>
-                    <p class="pl-6 text-white/80" data-i18n="constitution.art4Desc">主体感知天道的主要途径。与环境及其他主体之间的交互与反馈过程。防火墙内外的动态探头。</p>
+                    <p class="pl-6 text-white/80" data-i18n="constitution.art4Desc">交易为主体感知天道的主要途径，是与环境及其他主体之间的交互与反馈过程。交易有双重功能：在法则内进行常规互动以获取生存资源、提升生态位；亦可突破法则以直接感应天道，但伴随极高灭亡风险。交易是防火墙内外的动态探头，为主体与天道的唯一对话渠道。</p>
                     <p>&nbsp;</p>
                     <p><span class="text-white/60" data-i18n="constitution.art5Label">第五条</span> &nbsp;<span class="font-bold text-brand-yellow" data-i18n="constitution.art5Name">生态（EC）</span></p>
-                    <p class="pl-6 text-white/80" data-i18n="constitution.art5Desc">由主体及其法则（R）和交易（T）共同构建的动态场域。每一生态本身亦为更高层次的主体。</p>
+                    <p class="pl-6 text-white/80" data-i18n="constitution.art5Desc">生态是由主体及其法则（R）和交易（T）共同构建的动态场域。在分形结构中，每一生态本身亦为一更高层次的主体，拥有自身的法则、交易和生态位。生态的生存依赖于其内部主体与天道的整体相容性。</p>
                     <p>&nbsp;</p>
                     <p><span class="text-white/60" data-i18n="constitution.art6Label">第六条</span> &nbsp;<span class="font-bold text-brand-yellow" data-i18n="constitution.art6Name">生态位（NI）</span></p>
-                    <p class="pl-6 text-white/80" data-i18n="constitution.art6Desc">主体在生态中的功能定位。反映主体与法则的相容程度。随法则变化与交易策略调整而动态漂移。</p>
+                    <p class="pl-6 text-white/80" data-i18n="constitution.art6Desc">生态位是主体在所处生态（EC）中的功能定位，由主体在现行法则（R）框架内进行的交易（T）所定义。它反映主体与法则的相容程度——即主体在现行规则体系中的适应性与资源获取能力。生态位高者未必与天道相容，因法则可能已滞后；生态位低者未必终将灭亡，因其可能通过突破性交易率先契合新天道。生态位随法则变化与主体交易策略调整而动态漂移。</p>
+                    <p>&nbsp;</p>
+                    <p class="text-green-400/40">─────────────────────────────────</p>
+                    <p>&nbsp;</p>
+                    <p class="text-green-400 font-bold" data-i18n="constitution.ch3Title">## 第三章 基本关系</p>
+                    <p>&nbsp;</p>
+                    <p><span class="text-white/60" data-i18n="constitution.art7Label">第七条</span> &nbsp;<span class="font-bold text-brand-yellow" data-i18n="constitution.art7Name">法则为生态之基</span></p>
+                    <p class="pl-6 text-white/80" data-i18n="constitution.art7Desc">无法则则无生态。法则为交易提供可预期框架，使主体得以在相对安全范围内互动、积累经验、形成稳定结构。生态位正是基于此框架定义。</p>
+                    <p>&nbsp;</p>
+                    <p><span class="text-white/60" data-i18n="constitution.art8Label">第八条</span> &nbsp;<span class="font-bold text-brand-yellow" data-i18n="constitution.art8Name">法则繁则交易稀，生态脆</span></p>
+                    <p class="pl-6 text-white/80" data-i18n="constitution.art8Desc">法则过度繁复将挤出交易空间：遵循成本上升，创新受限，信息流动受阻，感知天道能力下降。生态失其敏感性，结构僵化，生态位多样性萎缩。譬如过度监管之市场，生物多样性低之生态系统，遇变即溃。</p>
+                    <p>&nbsp;</p>
+                    <p><span class="text-white/60" data-i18n="constitution.art9Label">第九条</span> &nbsp;<span class="font-bold text-brand-yellow" data-i18n="constitution.art9Name">交易可突破法则，然突破即风险</span></p>
+                    <p class="pl-6 text-white/80" data-i18n="constitution.art9Desc">当法则严重滞后，常规交易无法提供真实反馈时，主体可冒险突破。突破或得新生（若与天道相容），或致灭亡（若触犯天道）。此乃进化之核心张力：防火墙内安全但可能滞后，防火墙外危险但可能超前。</p>
+                    <p>&nbsp;</p>
+                    <p><span class="text-white/60" data-i18n="constitution.art10Label">第十条</span> &nbsp;<span class="font-bold text-brand-yellow" data-i18n="constitution.art10Name">生态位仅反映与法则之相容</span></p>
+                    <p class="pl-6 text-white/80" data-i18n="constitution.art10Desc">生态位衡量"适人之道"，非"适天道"。法则内生态位高者，天道变时或首当其冲；法则内生态位低者，或成新规则奠基者。生态位非进化终极指标。</p>
+                    <p>&nbsp;</p>
+                    <p class="text-green-400/40">─────────────────────────────────</p>
+                    <p>&nbsp;</p>
+                    <p class="text-green-400 font-bold" data-i18n="constitution.ch4Title">## 第四章 进化本质</p>
+                    <p>&nbsp;</p>
+                    <p><span class="text-white/60" data-i18n="constitution.art11Label">第十一条</span> &nbsp;<span class="font-bold text-brand-yellow" data-i18n="constitution.art11Name">进化之定义</span></p>
+                    <p class="pl-6 text-white/80" data-i18n="constitution.art11Desc">进化是主体在生存元规则驱动下，通过交易（T）感知天道变化，在必要时突破法则（R）以直接感应天道，调整自身行为，寻求与天道新相容，避免灭亡之过程。</p>
+                    <p>&nbsp;</p>
+                    <p><span class="text-white/60" data-i18n="constitution.art12Label">第十二条</span> &nbsp;<span class="font-bold text-brand-yellow" data-i18n="constitution.art12Name">进化之双重路径</span></p>
+                    <p class="pl-6 text-white/80" data-i18n="constitution.art12Path1">一曰常规进化：在法则内优化交易，提升生态位。此为主流，风险低而进步缓，然不能保长期安全，因天道随时可使法则失效。</p>
+                    <p class="pl-6 text-white/80" data-i18n="constitution.art12Path2">二曰突破性进化：突破法则以直接感应天道。此路径或牺牲旧法则内生态位，但若成功契合新天道，则开创全新生存空间，成新规则奠基者。</p>
+                    <p>&nbsp;</p>
+                    <p><span class="text-white/60" data-i18n="constitution.art13Label">第十三条</span> &nbsp;<span class="font-bold text-brand-yellow" data-i18n="constitution.art13Name">进化之完整过程</span></p>
+                    <p class="pl-6 text-white/80"><span class="text-brand-yellow">1.</span> <span data-i18n="constitution.art13Step1">常规阶段：主体在法则内交易，提升生态位，生态稳定，感知天道限于法则内间接反馈。</span></p>
+                    <p class="pl-6 text-white/80"><span class="text-brand-yellow">2.</span> <span data-i18n="constitution.art13Step2">感知滞后：天道变，法则现偏差，常规交易反馈模糊，灭亡风险积聚。</span></p>
+                    <p class="pl-6 text-white/80"><span class="text-brand-yellow">3.</span> <span data-i18n="constitution.art13Step3">试探性突破：部分主体冒险突破法则，边缘交易试探天道。成功者得新生，失败者亡。</span></p>
+                    <p class="pl-6 text-white/80"><span class="text-brand-yellow">4.</span> <span data-i18n="constitution.art13Step4">成败筛选：契合天道者存活，其行为模式被模仿；触犯天道者灭，其经验成警示。</span></p>
+                    <p class="pl-6 text-white/80"><span class="text-brand-yellow">5.</span> <span data-i18n="constitution.art13Step5">规则更新：成功经验沉淀为新法则，防火墙更新。主体在新法则内重新争夺生态位，待下一轮天道变迁。</span></p>
+                    <p>&nbsp;</p>
+                    <p><span class="text-white/60" data-i18n="constitution.art14Label">第十四条</span> &nbsp;<span class="font-bold text-brand-yellow" data-i18n="constitution.art14Name">适者之真义</span></p>
+                    <p class="pl-6 text-white/80" data-i18n="constitution.art14Desc">适者非生态位最高者，非最强者，乃能准确判断何时在法则内优化、何时突破法则感应天道，并在突破后成功与新天道相容者。适者或暂居低生态位，然具生存之韧性。</p>
+                    <p>&nbsp;</p>
+                    <p class="text-green-400/40">─────────────────────────────────</p>
+                    <p>&nbsp;</p>
+                    <p class="text-green-400 font-bold" data-i18n="constitution.ch5Title">## 第五章 分形结构</p>
+                    <p>&nbsp;</p>
+                    <p><span class="text-white/60" data-i18n="constitution.art15Label">第十五条</span> &nbsp;<span class="font-bold text-brand-yellow" data-i18n="constitution.art15Name">分形自相似</span></p>
+                    <p class="pl-6 text-white/80" data-i18n="constitution.art15Desc">任意尺度之实体（个体、群体、生态系统）皆为主体，遵循相同生存逻辑。各主体有其法则（R）、交易（T）、生态位（NI），并处于该尺度之生态（EC）中。该生态本身又为更高层次主体，参与更大尺度演化。</p>
+                    <p class="pl-6 text-white/60 mt-1" data-i18n-html="constitution.art15Micro"><span class="text-brand-yellow">微观</span> 个体 → 个人习惯·道德 → 日常互动 → 社群地位</p>
+                    <p class="pl-6 text-white/60" data-i18n-html="constitution.art15Meso"><span class="text-brand-yellow">中观</span> 群体 → 文化·法律·制度 → 群体竞合 → 宏观影响力</p>
+                    <p class="pl-6 text-white/60" data-i18n-html="constitution.art15Macro"><span class="text-brand-yellow">宏观</span> 生态系统 → 国际法·文明规则 → 国际交流·战争 → 全球话语权</p>
+                    <p>&nbsp;</p>
+                    <p><span class="text-white/60" data-i18n="constitution.art16Label">第十六条</span> &nbsp;<span class="font-bold text-brand-yellow" data-i18n="constitution.art16Name">天道贯穿</span></p>
+                    <p class="pl-6 text-white/80" data-i18n="constitution.art16Desc">天道（N）为贯穿所有层次之终极自变量，其变化通过各层次交易层层传递。任何层次忽视天道，必面临灭亡。高层次法则变化重塑低层次法则环境，低层次突破积累推动高层次法则演化。</p>
+                    <p>&nbsp;</p>
+                    <p class="text-green-400/40">─────────────────────────────────</p>
+                    <p>&nbsp;</p>
+                    <p class="text-green-400 font-bold" data-i18n="constitution.ch6Title">## 第六章 死亡之意义</p>
+                    <p>&nbsp;</p>
+                    <p><span class="text-white/60" data-i18n="constitution.art17Label">第十七条</span> &nbsp;<span class="font-bold text-brand-yellow" data-i18n="constitution.art17Name">死亡为进化之必须</span></p>
+                    <p class="pl-6 text-white/80" data-i18n="constitution.art17Desc">死亡非目的，乃手段。个体死亡服务于更高层次主体之生存。</p>
+                    <p>&nbsp;</p>
+                    <p><span class="text-white/60" data-i18n="constitution.art18Label">第十八条</span> &nbsp;<span class="font-bold text-brand-yellow" data-i18n="constitution.art18Name">死亡之多重功能</span></p>
+                    <p class="pl-6 text-white/80"><span class="text-brand-yellow">·</span> <span data-i18n="constitution.art18Fn1">成败筛选之执行：突破法则者，方向错则亡；固守过时法则者，天道变则亡。死亡实现"适者生存"。</span></p>
+                    <p class="pl-6 text-white/80"><span class="text-brand-yellow">·</span> <span data-i18n="constitution.art18Fn2">突破探索之代价：冒险者以死亡为代价，为群体探明天道新界。</span></p>
+                    <p class="pl-6 text-white/80"><span class="text-brand-yellow">·</span> <span data-i18n="constitution.art18Fn3">生态位释放：死亡使被占生态位空出，为新主体腾出空间，防止生态僵化。</span></p>
+                    <p class="pl-6 text-white/80"><span class="text-brand-yellow">·</span> <span data-i18n="constitution.art18Fn4">天道信息之传递：集体性死亡是对天道变化的最强警示，幸存者得以警醒。</span></p>
+                    <p>&nbsp;</p>
+                    <p><span class="text-white/60" data-i18n="constitution.art19Label">第十九条</span> &nbsp;<span class="font-bold text-brand-yellow" data-i18n="constitution.art19Name">死亡与法则之辩证</span></p>
+                    <p class="pl-6 text-white/80" data-i18n="constitution.art19Desc">法则内之死亡维持规则稳定，强化筛选；法则外之死亡推动规则更新，防止防火墙僵化。二者皆为进化所必需。</p>
+                    <p>&nbsp;</p>
+                    <p class="text-green-400/40">─────────────────────────────────</p>
+                    <p>&nbsp;</p>
+                    <p class="text-green-400 font-bold" data-i18n="constitution.ch7Title">## 第七章 总结</p>
+                    <p>&nbsp;</p>
+                    <p><span class="text-white/60" data-i18n="constitution.art20Label">第二十条</span> &nbsp;<span class="font-bold text-brand-yellow" data-i18n="constitution.art20Name">永恒图景</span></p>
+                    <p class="pl-6 text-white/80" data-i18n="constitution.art20Desc">自然（N）恒变，天道无亲。主体筑法则（R）为防火墙，行交易（T）以探天机，争生态位（NI）于法则之内。然法则永滞后，固守则亡；突破虽险，或得新生。死亡代谢，分形演化，个体为群体铺路，群体为文明奠基。此乃 cyber-taoist 进化学之核心——在灭亡边缘永恒舞蹈，以生存为元规则，以交易为对话，以法则为暂栖，以生态为舞台，生生不息。</p>
+                    <p>&nbsp;</p>
+                    <p class="text-green-400/40">─────────────────────────────────</p>
+                    <p>&nbsp;</p>
+                    <p class="text-white/40 italic" data-i18n="constitution.epilogue">本宪章立论于控制论反馈与道家自然观之融合，揭示从微尘至文明之统一演化原理。凡观变适道者，当以此为鉴。</p>
                     <p>&nbsp;</p>
                     <p class="animate-pulse">_</p>
                 </div>
             </div>
         </section>
 
-        <!-- ====== CORE CONCEPTS ====== -->
-        <section class="mb-24">
-            <h2 class="brutal-section-title mb-10" data-i18n="concepts.title">核心概念</h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                <div class="mapping-card bg-white border-3 border-black p-6 shadow-brutal transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-hover">
-                    <div class="flex items-center gap-3 mb-3">
-                        <span class="mapping-symbol bg-black text-brand-yellow w-10 h-10 flex items-center justify-center font-mono font-bold text-lg border-2 border-black">N</span>
-                        <h3 class="text-lg font-black uppercase" data-i18n="concepts.dao">道</h3>
-                    </div>
-                    <p class="text-sm leading-relaxed text-black/70" data-i18n="concepts.daoDesc">天道 / 自然 —— 不可名、不可道、不可直面的客观环境法则</p>
-                </div>
-
-                <div class="mapping-card bg-white border-3 border-black p-6 shadow-brutal transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-hover">
-                    <div class="flex items-center gap-3 mb-3">
-                        <span class="mapping-symbol bg-black text-brand-yellow w-10 h-10 flex items-center justify-center font-mono font-bold text-lg border-2 border-black">~N</span>
-                        <h3 class="text-lg font-black uppercase" data-i18n="concepts.de">德</h3>
-                    </div>
-                    <p class="text-sm leading-relaxed text-black/70" data-i18n="concepts.deDesc">与 N 的相容度 —— 主体感知并顺应天道的内在禀赋</p>
-                </div>
-
-                <div class="mapping-card bg-white border-3 border-black p-6 shadow-brutal transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-hover">
-                    <div class="flex items-center gap-3 mb-3">
-                        <span class="mapping-symbol bg-black text-brand-yellow w-10 h-10 flex items-center justify-center font-mono font-bold text-lg border-2 border-black">!R</span>
-                        <h3 class="text-lg font-black uppercase" data-i18n="concepts.wuwei">无为</h3>
-                    </div>
-                    <p class="text-sm leading-relaxed text-black/70" data-i18n="concepts.wuweiDesc">不强制 R —— 不以滞后法则强行干预，保持交易的流动性</p>
-                </div>
-
-                <div class="mapping-card bg-white border-3 border-black p-6 shadow-brutal transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-hover">
-                    <div class="flex items-center gap-3 mb-3">
-                        <span class="mapping-symbol bg-black text-brand-yellow w-10 h-10 flex items-center justify-center font-mono font-bold text-lg border-2 border-black">A*</span>
-                        <h3 class="text-lg font-black uppercase" data-i18n="concepts.sage">圣人</h3>
-                    </div>
-                    <p class="text-sm leading-relaxed text-black/70" data-i18n="concepts.sageDesc">适者 —— 能判断何时在 R 内优化、何时突破 R 感应 N</p>
-                </div>
-
-                <div class="mapping-card bg-white border-3 border-black p-6 shadow-brutal transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-hover">
-                    <div class="flex items-center gap-3 mb-3">
-                        <span class="mapping-symbol bg-black text-brand-yellow w-10 h-10 flex items-center justify-center font-mono font-bold text-lg border-2 border-black">R/N</span>
-                        <h3 class="text-lg font-black uppercase" data-i18n="concepts.youWu">有 / 无</h3>
-                    </div>
-                    <p class="text-sm leading-relaxed text-black/70" data-i18n="concepts.youWuDesc">R（有名 / 有形 / 有为）vs N（无名 / 无形 / 无为）</p>
-                </div>
-
-                <div class="mapping-card bg-white border-3 border-black p-6 shadow-brutal transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-hover">
-                    <div class="flex items-center gap-3 mb-3">
-                        <span class="mapping-symbol bg-black text-brand-yellow w-10 h-10 flex items-center justify-center font-mono font-bold text-lg border-2 border-black">p-R</span>
-                        <h3 class="text-lg font-black uppercase" data-i18n="concepts.pu">朴</h3>
-                    </div>
-                    <p class="text-sm leading-relaxed text-black/70" data-i18n="concepts.puDesc">pre-R —— 规则尚未固化的原始可能性空间</p>
-                </div>
-
-            </div>
-        </section>
-
         <!-- ====== WORKS ====== -->
         <section class="mb-24">
-            <h2 class="brutal-section-title mb-10" data-i18n="works.title">内容产出</h2>
+            <h2 class="brutal-section-title mb-10" data-i18n="works.title">应用</h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 gap-8">
                 <a href="https://github.com/imjszhang/cyber-taoist/blob/main/DAO-DE-JING-CYBERTAOIST.md" target="_blank" rel="noopener noreferrer" class="works-card brutal-card bg-white border-3 border-black p-8 shadow-brutal transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-hover no-underline block">
                     <div class="font-mono text-xs font-bold mb-3 text-black/40" data-i18n="works.corpusTag">// CORPUS · 81 章注疏 · v1.0.2</div>
                     <h3 class="text-xl font-black uppercase mb-3 text-black" data-i18n="works.corpusName">道德经 · 进化学注疏</h3>
                     <p class="text-sm leading-relaxed text-black/70 mb-4" data-i18n="works.corpusDesc">以 Cyber-Taoist 进化学框架对《道德经》八十一章的系统性注疏 —— 揭示道家思想与控制论反馈的结构性同构</p>
-                    <span class="font-mono font-bold text-sm text-brand-yellow bg-black px-3 py-1 border-2 border-black inline-block" data-i18n="works.corpusBtn">阅读全文 →</span>
-                </a>
-
-                <a href="https://github.com/imjszhang/cyber-taoist/blob/main/corpus/constitution/0001-CONSTITUTION.md" target="_blank" rel="noopener noreferrer" class="works-card brutal-card bg-white border-3 border-black p-8 shadow-brutal transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-hover no-underline block">
-                    <div class="font-mono text-xs font-bold mb-3 text-black/40" data-i18n="works.charterTag">// CONSTITUTION · 宪章全文 · v1.0.0</div>
-                    <h3 class="text-xl font-black uppercase mb-3 text-black" data-i18n="works.charterName">进化学宪章</h3>
-                    <p class="text-sm leading-relaxed text-black/70 mb-4" data-i18n="works.charterDesc">Cyber-Taoist 进化学的公理体系 —— 二十条基本法则，从生存驱动到代谢淘汰的完整进化论述</p>
-                    <span class="font-mono font-bold text-sm text-brand-yellow bg-black px-3 py-1 border-2 border-black inline-block" data-i18n="works.charterBtn">阅读全文 →</span>
+                    <span class="font-mono font-bold text-sm text-brand-yellow bg-black px-3 py-1 border-2 border-black inline-block" data-i18n="works.corpusBtn">在 GitHub 阅读 ↗</span>
                 </a>
             </div>
         </section>
