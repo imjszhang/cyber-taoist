@@ -130,6 +130,12 @@
             corpusName: 'Dao De Jing · Evolution Theory Commentary',
             corpusDesc: 'A systematic commentary on all 81 chapters of the Dao De Jing through the Cyber-Taoist evolution framework — revealing structural isomorphism between Taoist thought and cybernetic feedback',
             corpusBtn: 'Read on GitHub ↗',
+            skillTag: '// GUIDE · 7-Step Framework · v1.0.0',
+            skillName: 'Evolution Theory Field Guide',
+            skillDesc: 'Operational manual for the N/R/T/EC/NI five-element analysis framework — 7 steps to dissect any situation, with Guard/Break decision heuristics and fractal analysis templates',
+            skillBtnView: 'View ↗',
+            skillBtnCopy: 'Copy Link',
+            toastSkillLinkCopied: 'Guide link copied',
         },
 
         footer: {

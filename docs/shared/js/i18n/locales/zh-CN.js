@@ -130,6 +130,12 @@
             corpusName: '道德经 · 进化学注疏',
             corpusDesc: '以 Cyber-Taoist 进化学框架对《道德经》八十一章的系统性注疏 —— 揭示道家思想与控制论反馈的结构性同构',
             corpusBtn: '在 GitHub 阅读 ↗',
+            skillTag: '// GUIDE · 七步框架 · v1.0.0',
+            skillName: '进化学应用指南',
+            skillDesc: 'N/R/T/EC/NI 五元分析框架的操作手册 —— 七步拆解任意情境，配合守/破决策启发式与分形分析模板',
+            skillBtnView: '查看 ↗',
+            skillBtnCopy: '复制链接',
+            toastSkillLinkCopied: '已复制应用指南链接',
         },
 
         footer: {

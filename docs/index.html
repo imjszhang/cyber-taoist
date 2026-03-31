@@ -492,6 +492,23 @@
                     <p class="text-sm leading-relaxed text-black/70 mb-4" data-i18n="works.corpusDesc">以 Cyber-Taoist 进化学框架对《道德经》八十一章的系统性注疏 —— 揭示道家思想与控制论反馈的结构性同构</p>
                     <span class="font-mono font-bold text-sm text-brand-yellow bg-black px-3 py-1 border-2 border-black inline-block" data-i18n="works.corpusBtn">在 GitHub 阅读 ↗</span>
                 </a>
+
+                <div class="works-card brutal-card bg-white border-3 border-black p-8 shadow-brutal transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-hover relative">
+                    <div id="skill-toast" class="absolute top-4 right-4 px-4 py-2 bg-brand-yellow text-black font-mono font-bold text-xs border-2 border-black shadow-brutal opacity-0 pointer-events-none transition-opacity duration-300 z-10"></div>
+                    <div class="font-mono text-xs font-bold mb-3 text-black/40" data-i18n="works.skillTag">// GUIDE · 七步框架 · v1.0.0</div>
+                    <h3 class="text-xl font-black uppercase mb-3 text-black" data-i18n="works.skillName">进化学应用指南</h3>
+                    <p class="text-sm leading-relaxed text-black/70 mb-4" data-i18n="works.skillDesc">N/R/T/EC/NI 五元分析框架的操作手册 —— 七步拆解任意情境，配合守/破决策启发式与分形分析模板</p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="./SKILL.md" target="_blank" rel="noopener noreferrer" class="font-mono font-bold text-sm text-brand-yellow bg-black px-3 py-1 border-2 border-black inline-flex items-center gap-1.5 no-underline hover:bg-brand-yellow hover:text-black transition-colors" data-i18n="works.skillBtnView">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" stroke-width="2"/></svg>
+                            查看 ↗
+                        </a>
+                        <button onclick="copySkillLink()" class="font-mono font-bold text-sm text-black bg-transparent px-3 py-1 border-2 border-black inline-flex items-center gap-1.5 cursor-pointer hover:bg-black hover:text-brand-yellow transition-colors" data-i18n="works.skillBtnCopy">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            复制链接
+                        </button>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -580,6 +597,17 @@
             var link = location.origin + '/CONSTITUTION.md';
             navigator.clipboard.writeText(link).then(function() {
                 showCopyToast('constitution.toastLinkCopied');
+            });
+        }
+
+        function copySkillLink() {
+            var link = location.origin + '/SKILL.md';
+            navigator.clipboard.writeText(link).then(function() {
+                var toast = document.getElementById('skill-toast');
+                toast.textContent = I18nManager.t('works.toastSkillLinkCopied');
+                toast.style.opacity = '1';
+                clearTimeout(toast._timer);
+                toast._timer = setTimeout(function() { toast.style.opacity = '0'; }, 1800);
             });
         }
     </script>
