@@ -1,7 +1,7 @@
 ---
 name: cyber-taoist
 description: "进化学分析框架 — 基于五元模型（N/R/T/EC/NI）的多尺度决策思维工具，融合控制论反馈与道家自然观，适用于职业决策、创业产品到文明兴衰的统一分析"
-version: 1.0.0
+version: 1.0.1
 metadata:
   openclaw:
     emoji: "\u2630"
@@ -121,5 +121,5 @@ metadata:
 
 ## Links
 
-- Source: https://github.com/user/cyber-taoist
+- Source: https://cyber-taoist.ai
 - License: MIT
