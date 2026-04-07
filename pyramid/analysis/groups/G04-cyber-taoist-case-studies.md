@@ -6,8 +6,8 @@
 
 | 编号  | 来源                     | 内容摘要 |
 | ----- | ------------------------ | -------- |
-| CT-16 | cyber-taoist-theory-birth | KL01 实验解读为设定法则 R（目标），由 AI 创造交易 T（5 个项目），最终占据生态位 NI（Moltbook 前 30） |
-| CT-18 | cyber-taoist-theory-birth | JS-Eyes 项目通过降低登录态等法则约束（R），扩大交易空间（T），从而巩固技术优势的生态位（NI） |
+| CT-16 | Cyber-Taoist-theory-birth | KL01 实验解读为设定法则 R（目标），由 AI 创造交易 T（5 个项目），最终占据生态位 NI（Moltbook 前 30） |
+| CT-18 | Cyber-Taoist-theory-birth | JS-Eyes 项目通过降低登录态等法则约束（R），扩大交易空间（T），从而巩固技术优势的生态位（NI） |
 
 ## 组内逻辑顺序
 

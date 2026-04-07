@@ -1,7 +1,7 @@
 # Cyber-Taoist 进化学理论框架诞生
 
 > 日期：2026-03-17
-> 项目：cyber-taoist
+> 项目：Cyber-Taoist
 > 类型：调研分析
 > 来源：Cursor Agent 对话（01:30 - 02:18 Asia/Shanghai）
 

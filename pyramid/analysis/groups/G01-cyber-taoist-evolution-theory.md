@@ -6,12 +6,12 @@
 
 | 编号  | 来源                     | 内容摘要 |
 | ----- | ------------------------ | -------- |
-| CT-01 | cyber-taoist-theory-birth | 进化论笔记时间跨度为 4.5 年（2021-08 至 2026-03），包含 30+ 条笔记和 19 个子标签 |
-| CT-02 | cyber-taoist-theory-birth | 进化本质上是一种强化学习过程，其中环境变化等同于奖励值（R 值）的变化 |
-| CT-05 | cyber-taoist-theory-birth | 水库理论中 R 对应法则（人之道，对天道的近似），T 对应交易（与环境的交互与反馈） |
-| CT-06 | cyber-taoist-theory-birth | 适者生存 ≠ 生态位最高者，而是能判断何时在法则内优化、何时突破法则感应天道者 |
-| CT-07 | cyber-taoist-theory-birth | 生态（EC）是基于某套法则共识并以此运作的群体，生态位（NI）是主体在法则框架内的功能定位 |
-| CT-09 | cyber-taoist-theory-birth | Cyber-Taoist 统一公式为：进化 = f(N, R, T)，其中 N 为天道，R 为法则，T 为交易，NI 为生态位 |
+| CT-01 | Cyber-Taoist-theory-birth | 进化论笔记时间跨度为 4.5 年（2021-08 至 2026-03），包含 30+ 条笔记和 19 个子标签 |
+| CT-02 | Cyber-Taoist-theory-birth | 进化本质上是一种强化学习过程，其中环境变化等同于奖励值（R 值）的变化 |
+| CT-05 | Cyber-Taoist-theory-birth | 水库理论中 R 对应法则（人之道，对天道的近似），T 对应交易（与环境的交互与反馈） |
+| CT-06 | Cyber-Taoist-theory-birth | 适者生存 ≠ 生态位最高者，而是能判断何时在法则内优化、何时突破法则感应天道者 |
+| CT-07 | Cyber-Taoist-theory-birth | 生态（EC）是基于某套法则共识并以此运作的群体，生态位（NI）是主体在法则框架内的功能定位 |
+| CT-09 | Cyber-Taoist-theory-birth | Cyber-Taoist 统一公式为：进化 = f(N, R, T)，其中 N 为天道，R 为法则，T 为交易，NI 为生态位 |
 
 ## 组内逻辑顺序
 

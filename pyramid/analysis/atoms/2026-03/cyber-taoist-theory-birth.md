@@ -1,6 +1,6 @@
 # 2026-03-17 — Cyber-Taoist 理论诞生
 
-> 来源：[../../../../journal/2026-03-17/cyber-taoist-theory-birth.md](../../../../journal/2026-03-17/cyber-taoist-theory-birth.md)
+> 来源：[../../../../journal/2026-03-17/Cyber-Taoist-theory-birth.md](../../../../journal/2026-03-17/Cyber-Taoist-theory-birth.md)
 > 缩写：CT
 
 ## Atoms

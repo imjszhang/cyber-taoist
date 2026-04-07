@@ -1,7 +1,7 @@
 # 道德经第 4 章"挫锐解纷和光同尘"注疏改写
 
 > 日期：2026-03-24
-> 项目：cyber-taoist（DAO-DE-JING-CYBERTAOIST.md）
+> 项目：Cyber-Taoist（DAO-DE-JING-CYBERTAOIST.md）
 > 类型：调研分析
 > 来源：Cursor Agent 对话
 

@@ -1,6 +1,6 @@
-# Cyber-Taoist
+# Cyber-Taoism
 
-> Cyber-Taoist 是一套以控制论反馈机制重新解读道家自然观的操作化思想框架，探索天道(N)、法则(R)与交易(T)的进化动力学。核心理论由二十条公理组成的「进化学宪章」定义，并以此框架对《道德经》八十一章作系统性注疏。
+> Cyber-Taoism 是一套以控制论反馈机制重新解读道家自然观的操作化思想框架，探索天道(N)、法则(R)与交易(T)的进化动力学。核心理论由二十条公理组成的「进化学宪章」定义，并以此框架对《道德经》八十一章作系统性注疏。
 
 关键概念与符号：
 
@@ -17,7 +17,7 @@
 ## Docs
 
 - [进化学宪章 CONSTITUTION](https://cyber-taoist.ai/CONSTITUTION.md): 二十条公理体系，定义生存元规则、核心概念(N/R/T/EC/NI)、基本关系、进化本质、分形结构与死亡之意义，是整个框架的公理基础
-- [道德经 · 进化学注疏](https://raw.githubusercontent.com/imjszhang/cyber-taoist/main/DAO-DE-JING-CYBERTAOIST.md): 以宪章符号对《道德经》八十一章的完整系统性注疏(v1.0.2)，揭示道家思想与控制论反馈的结构性同构
+- [道德经 · 进化学注疏](https://raw.githubusercontent.com/imjszhang/cyber-taoist/main/DAO-DE-JING-CYBERTAOIST.md): 以宪章符号对《道德经》八十一章的完整系统性注疏(v1.0.3)，揭示道家思想与控制论反馈的结构性同构
 - [项目说明 README](https://raw.githubusercontent.com/imjszhang/cyber-taoist/main/README.md): 项目概览、核心概念映射表、内容产出索引与知识库结构说明
 
 ## Optional

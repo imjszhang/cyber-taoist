@@ -5,8 +5,8 @@
 (function() {
     const locale = {
         meta: {
-            title: 'Cyber-Taoist | Evolution Theory Framework',
-            desc: 'Cyber-Taoist — An operational thought framework reinterpreting Taoist naturalism through cybernetic feedback mechanisms',
+            title: 'Cyber-Taoism | Evolution Theory Framework',
+            desc: 'Cyber-Taoism — An operational thought framework reinterpreting Taoist naturalism through cybernetic feedback mechanisms',
         },
 
         nav: {
@@ -126,7 +126,7 @@
 
         works: {
             title: 'APPLICATIONS',
-            corpusTag: '// CORPUS · 81 Chapters Commentary · v1.0.2',
+            corpusTag: '// CORPUS · 81 Chapters Commentary · v1.0.3',
             corpusName: 'Dao De Jing · Evolution Theory Commentary',
             corpusDesc: 'A systematic commentary on all 81 chapters of the Dao De Jing through the Cyber-Taoist evolution framework — revealing structural isomorphism between Taoist thought and cybernetic feedback',
             corpusBtn: 'Read on GitHub ↗',

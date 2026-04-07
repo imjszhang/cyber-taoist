@@ -6,12 +6,12 @@
 
 | 编号  | 来源                     | 内容摘要 |
 | ----- | ------------------------ | -------- |
-| CT-08 | cyber-taoist-theory-birth | 认知被定义为识别和理解生态中规则的能力，财富本质是他人的共识，资格的底层是数量 |
-| CT-10 | cyber-taoist-theory-birth | 知 R 原则要求具备识别理解生态中规则的能力 |
-| CT-11 | cyber-taoist-theory-birth | 创 T 原则指出财富来自他人共识，资格来自数量积累 |
-| CT-12 | cyber-taoist-theory-birth | 占 NI 原则强调生态位即需求，基本盘即支撑资源，但不执着——NI 仅反映与法则之相容 |
-| CT-13 | cyber-taoist-theory-birth | 顺势不是选择无为或有为，而是判断何时该无为、何时该进取 |
-| CT-15 | cyber-taoist-theory-birth | 在群体环境中找出共识点并快速创造数量以获取资格，是利用 AI 占据有利生态位和获取财富的法门 |
+| CT-08 | Cyber-Taoist-theory-birth | 认知被定义为识别和理解生态中规则的能力，财富本质是他人的共识，资格的底层是数量 |
+| CT-10 | Cyber-Taoist-theory-birth | 知 R 原则要求具备识别理解生态中规则的能力 |
+| CT-11 | Cyber-Taoist-theory-birth | 创 T 原则指出财富来自他人共识，资格来自数量积累 |
+| CT-12 | Cyber-Taoist-theory-birth | 占 NI 原则强调生态位即需求，基本盘即支撑资源，但不执着——NI 仅反映与法则之相容 |
+| CT-13 | Cyber-Taoist-theory-birth | 顺势不是选择无为或有为，而是判断何时该无为、何时该进取 |
+| CT-15 | Cyber-Taoist-theory-birth | 在群体环境中找出共识点并快速创造数量以获取资格，是利用 AI 占据有利生态位和获取财富的法门 |
 
 ## 组内逻辑顺序
 

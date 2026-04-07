@@ -1,6 +1,6 @@
 # 2026-03-17-03 — Cyber-Taoist 核心主张完整阐述
 
-> 来源：[../../../../journal/2026-03-17/03-cyber-taoist-core-proposal.md](../../../../journal/2026-03-17/03-cyber-taoist-core-proposal.md)
+> 来源：[../../../../journal/2026-03-17/03-Cyber-Taoist-core-proposal.md](../../../../journal/2026-03-17/03-Cyber-Taoist-core-proposal.md)
 > 缩写：CC
 
 ## Atoms
@@ -30,4 +30,4 @@
 | CC-21 | 步骤 | KL02 实施路径：知 R（理解边界）→ 控 R（本地部署）→ 保 NI（安全生态位）                          | 与现有项目的关联          |
 | CC-22 | 步骤 | KL03 实施路径：降低 R 约束（如登录态）→ 扩大 T 机会 → 巩固 NI（技术优势）                         | 与现有项目的关联          |
 | CC-23 | 事实 | KL 规划共 6 篇，涵盖从分化时刻理论到 OpenClaw 实验解读的完整体系                               | KL 规划                   |
-| CC-24 | 事实 | Prism 知识库已注册 cyber-taoist 条目，本篇日记为该体系的第一篇记录                             | 系统状态                  |
+| CC-24 | 事实 | Prism 知识库已注册 Cyber-Taoist 条目，本篇日记为该体系的第一篇记录                             | 系统状态                  |

@@ -1,4 +1,4 @@
-# cyber-taoist 进化学宪章
+# Cyber-Taoist 进化学宪章
 
 > 来源：[../../../../corpus/constitution/0001-CONSTITUTION.md](../../../../corpus/constitution/0001-CONSTITUTION.md)
 > 缩写：CN

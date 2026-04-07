@@ -1,4 +1,4 @@
-# cyber-taoist 进化学应用指南
+# Cyber-Taoist 进化学应用指南
 
 > **版本**: v1.0.0 | **基于**: [宪章 CONSTITUTION.md](CONSTITUTION.md)
 
@@ -100,4 +100,4 @@
 
 ---
 
-*本指南基于 [cyber-taoist 进化学宪章](CONSTITUTION.md)，详细概念定义与推演请参阅宪章原文。*
+*本指南基于 [Cyber-Taoist 进化学宪章](CONSTITUTION.md)，详细概念定义与推演请参阅宪章原文。*

@@ -4,6 +4,25 @@
 
 版本规则见 [README — 版本管理](README.md#版本管理)。
 
+## V1.2.1 — 2026-04-08
+
+命名规范统一：确立 **Cyber-Taoism**（名词，指思想体系本身）与 **Cyber-Taoist**（形容词/实践者）的区分用法。
+
+### 变更
+
+- 全部散文中的小写 `cyber-taoist` 统一为 `Cyber-Taoist`（形容词）或 `Cyber-Taoism`（名词）
+- 站点 meta title / description / OG 标签改用 `Cyber-Taoism` 指代框架本身
+- keywords 新增 `cyber-taoism` 提升 SEO 覆盖
+- 技术标识符（npm 包名、域名、localStorage 键、GitHub URL）保持小写 `cyber-taoist` 不变
+- archive/ 历史版本保持原样
+
+### 涉及文件
+
+- 核心理论：`CONSTITUTION.md`（→ v1.0.1）、`DAO-DE-JING-CYBERTAOIST.md`（→ v1.0.3）、`README.md`
+- 站点源码：`site/src/index.html`、i18n 语言包、`llms.txt`、`SKILL.md`
+- 构建输出：`docs/` 同步更新
+- Corpus / Pyramid / Journal / clawhub-skill / scripts — 批量大写化
+
 ## V1.2.0 — 2026-03-20
 
 原始素材层扩展，与 **js-knowledge-prism** 工具的 **corpus** 管线对齐。

@@ -8,10 +8,10 @@
 
 | 编号  | 来源                     | 内容摘要 |
 | ----- | ------------------------ | -------- |
-| CT-03 | cyber-taoist-theory-birth | 掌握 AI 技能的人群与未掌握者将在分化时刻演变成两个不同的物种 |
-| CT-04 | cyber-taoist-theory-birth | 恐惧源于未知，而掌控感源于对事物的理解 |
-| CT-14 | cyber-taoist-theory-birth | 终极目标是在分化时刻成为信息处理能力超越 AI 的新贵族，占据 AI 时代信息炼丹师的生态位 |
-| CT-17 | cyber-taoist-theory-birth | 掌控 AI 的核心在于理解其边界（知 R）并通过本地部署控制规则（控 R），从而保护安全生态位 |
+| CT-03 | Cyber-Taoist-theory-birth | 掌握 AI 技能的人群与未掌握者将在分化时刻演变成两个不同的物种 |
+| CT-04 | Cyber-Taoist-theory-birth | 恐惧源于未知，而掌控感源于对事物的理解 |
+| CT-14 | Cyber-Taoist-theory-birth | 终极目标是在分化时刻成为信息处理能力超越 AI 的新贵族，占据 AI 时代信息炼丹师的生态位 |
+| CT-17 | Cyber-Taoist-theory-birth | 掌控 AI 的核心在于理解其边界（知 R）并通过本地部署控制规则（控 R），从而保护安全生态位 |
 
 ## 组内逻辑顺序
 
