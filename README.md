@@ -21,7 +21,7 @@
 | 第五条 | **EC** | **生态** | 由主体及其法则(R)和交易(T)共同构建的动态场域。每一生态本身亦为更高层次的主体 |
 | 第六条 | **NI** | **生态位** | 主体在生态中的功能定位。反映主体与法则的相容程度。随法则变化与交易策略调整而动态漂移 |
 
-→ [阅读完整宪章](CONSTITUTION.md)
+→ [阅读完整宪章](docs/CONSTITUTION.md)
 
 ---
 
@@ -44,8 +44,8 @@
 
 | 产出 | 说明 | 链接 |
 |------|------|------|
-| **道德经 · 进化学注疏** | 以 Cyber-Taoist 进化学框架对《道德经》八十一章的系统性注疏 —— 揭示道家思想与控制论反馈的结构性同构 | [DAO-DE-JING-CYBERTAOIST.md](DAO-DE-JING-CYBERTAOIST.md) |
-| **进化学宪章** | Cyber-Taoist 进化学的公理体系 —— 二十条基本法则，从生存驱动到代谢淘汰的完整进化论述 | [CONSTITUTION.md](CONSTITUTION.md) |
+| **道德经 · 进化学注疏** | 以 Cyber-Taoist 进化学框架对《道德经》八十一章的系统性注疏 —— 揭示道家思想与控制论反馈的结构性同构 | [docs/DAO-DE-JING-CYBERTAOIST.md](docs/DAO-DE-JING-CYBERTAOIST.md) |
+| **进化学宪章** | Cyber-Taoist 进化学的公理体系 —— 二十条基本法则，从生存驱动到代谢淘汰的完整进化论述 | [docs/CONSTITUTION.md](docs/CONSTITUTION.md) |
 
 ---
 
