@@ -134,7 +134,10 @@
             skillName: '进化学应用指南',
             skillDesc: 'N/R/T/EC/NI 五元分析框架的操作手册 —— 七步拆解任意情境，配合守/破决策启发式与分形分析模板',
             skillBtnView: '查看 ↗',
+            skillBtnCopyFull: '复制全文',
             skillBtnCopy: '复制链接',
+            toastSkillTextCopied: '已复制应用指南全文',
+            toastSkillTextFailed: '无法加载应用指南全文',
             toastSkillLinkCopied: '已复制应用指南链接',
         },
 

@@ -134,7 +134,10 @@
             skillName: 'Evolution Theory Field Guide',
             skillDesc: 'Operational manual for the N/R/T/EC/NI five-element analysis framework — 7 steps to dissect any situation, with Guard/Break decision heuristics and fractal analysis templates',
             skillBtnView: 'View ↗',
+            skillBtnCopyFull: 'Copy Full Text',
             skillBtnCopy: 'Copy Link',
+            toastSkillTextCopied: 'Guide full text copied',
+            toastSkillTextFailed: 'Could not load guide text',
             toastSkillLinkCopied: 'Guide link copied',
         },
 
