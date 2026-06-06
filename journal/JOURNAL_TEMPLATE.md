@@ -1,7 +1,7 @@
 # [标题：简明描述本次工作内容]
 
 > 日期：YYYY-MM-DD
-> 项目：[涉及的项目名称，如 js-cursor-agent、openclaw、js-knowledge-flomo]
+> 项目：[涉及的项目名称，如 cyber-taoist、js-cursor-agent]
 > 类型：[选一个或组合] 架构设计 / 功能实现 / 问题排查 / 调研分析 / 升级迁移 / 技能开发
 > 来源：Cursor Agent 对话
 
@@ -71,7 +71,6 @@
 1. 文件存放位置：`journal/YYYY-MM-DD/<slug>.md`
    - slug 用英文小写 + 连字符，如 js-cursor-agent-project-creation
    - 每天一个目录，一天可以有多篇日记
-   - 长文、连载、外部正文请放在 `corpus/<系列名>/`（见 [corpus/README.md](corpus/README.md)），勿与日记混用
 
 2. 类型参考：
    - 架构设计：新项目创建、系统重构、模块拆分

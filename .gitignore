@@ -13,7 +13,6 @@ credentials/
 site/src/CONSTITUTION.md
 
 # ============ 生成/输出目录 ============
-outputs/
 work_dir/
 dist/
 *.log
