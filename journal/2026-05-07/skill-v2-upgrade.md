@@ -69,7 +69,7 @@ v1.0.0 的应用指南把宪章里的 N/R/T/EC/NI 五元拆成了一套"七步�
 | 文件 | 变更 |
 | ---- | ---- |
 | `site/src/SKILL.md` | 由 v1.0.0 全文改写为 v2.0.0，结构由 4 节 → 6 节 |
-| `archive/cybertaoist-docs-history/SKILL/v1-0-0.md` | 归档旧版本，保留对照来源 |
+| `archive/cybertaoist-docs-history/GUIDE/v1-0-0.md` | 归档旧版本，保留对照来源 |
 
 ### v2 章节骨架
 

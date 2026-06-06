@@ -136,15 +136,16 @@ async function updatePages(headers, owner, repo, body) {
     });
 }
 
-async function createPagesSite(headers, owner, repoName, source) {
-    const path = source.path?.startsWith('/') ? source.path : `/${source.path || 'docs'}`;
+async function createPagesSite(headers, owner, repoName, buildType, source) {
+    const body = { build_type: buildType };
+    if (buildType === 'legacy') {
+        const path = source.path?.startsWith('/') ? source.path : `/${source.path || 'docs'}`;
+        body.source = { branch: source.branch, path };
+    }
     await ghFetch(`/repos/${owner}/${repoName}/pages`, headers, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            build_type: 'legacy',
-            source: { branch: source.branch, path },
-        }),
+        body: JSON.stringify(body),
     });
 }
 
@@ -186,11 +187,11 @@ export async function setupCloudflare() {
 
 export async function setupGithubPages() {
     const cfg = getDeployConfig();
-    const { domain, githubRepo, pagesDefaultSource } = cfg;
+    const { domain, githubRepo, pagesBuildType, pagesDefaultSource } = cfg;
     const [owner, repo] = githubRepo.split('/');
 
     console.log('=== GitHub Pages 自定义域名配置 ===\n');
-    console.log(`仓库: ${githubRepo}，域名: ${domain}\n`);
+    console.log(`仓库: ${githubRepo}，域名: ${domain}，构建模式: ${pagesBuildType}\n`);
 
     const env = loadEnv();
     const headers = getGhAuthHeaders(env);
@@ -200,9 +201,9 @@ export async function setupGithubPages() {
         pages = await ghFetch(`/repos/${owner}/${repo}/pages`, headers);
     } catch (e) {
         if (!isGhNotFound(e)) throw e;
-        console.log('未检测到已启用的 Pages，正在通过 API 启用（legacy，分支 ' + pagesDefaultSource.branch + '，/docs）...');
+        console.log(`未检测到已启用的 Pages，正在通过 API 启用（${pagesBuildType}）...`);
         try {
-            await createPagesSite(headers, owner, repo, pagesDefaultSource);
+            await createPagesSite(headers, owner, repo, pagesBuildType, pagesDefaultSource);
         } catch (createErr) {
             if (!/409|Conflict/i.test(createErr.message)) throw createErr;
             console.log('Pages 已存在（409），继续读取配置...');
@@ -210,13 +211,14 @@ export async function setupGithubPages() {
         pages = await ghFetch(`/repos/${owner}/${repo}/pages`, headers);
     }
 
-    let source = { ...pagesDefaultSource };
-    if (pages.source) {
-        source = { branch: pages.source.branch, path: pages.source.path || '/' };
-    }
-
     console.log(`设置自定义域名: ${domain} ...`);
-    await updatePages(headers, owner, repo, { cname: domain, source });
+    const updateBody = { cname: domain, build_type: pagesBuildType };
+    if (pagesBuildType === 'legacy') {
+        updateBody.source = pages.source
+            ? { branch: pages.source.branch, path: pages.source.path || '/' }
+            : pagesDefaultSource;
+    }
+    await updatePages(headers, owner, repo, updateBody);
     console.log('自定义域名已设置，等待 DNS 验证...\n');
 
     const maxAttempts = 24;
@@ -243,6 +245,6 @@ export async function setupGithubPages() {
     }
 
     console.log('\n域名已验证，启用强制 HTTPS...');
-    await updatePages(headers, owner, repo, { cname: domain, source, https_enforced: true });
+    await updatePages(headers, owner, repo, { ...updateBody, https_enforced: true });
     console.log('已启用强制 HTTPS');
 }

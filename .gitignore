@@ -9,10 +9,15 @@
 secrets/
 credentials/
 
-# ============ 站点 dev 同步产物（ canonical 在仓库根目录 CONSTITUTION.md ） ============
+# ============ 站点 dev 同步产物（canonical 在 content/） ============
 site/src/CONSTITUTION.md
+site/src/DAO-DE-JING.md
+site/src/DAO-DE-JING-CYBERTAOIST.md
+site/src/GUIDE.md
+site/src/llms.txt
 
 # ============ 生成/输出目录 ============
+docs/
 work_dir/
 dist/
 *.log

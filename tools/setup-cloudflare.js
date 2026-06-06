@@ -3,7 +3,7 @@
  * 凭证：.env 中 CLOUDFLARE_API_TOKEN（或 Global Key + CLOUDFLARE_EMAIL）。
  */
 
-import { setupCloudflare } from '../cli/lib/setup.js';
+import { setupCloudflare } from './setup.js';
 
 setupCloudflare().catch((err) => {
     console.error('错误:', err.message);

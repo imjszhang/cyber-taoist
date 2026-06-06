@@ -3,15 +3,16 @@
   "private": true,
   "type": "module",
   "bin": {
-    "cybertaoist": "./cli/cli.js"
+    "cybertaoist": "./tools/cli.js"
   },
   "scripts": {
-    "site:dev": "node scripts/sync-site-constitution.mjs && npx serve site/src",
-    "site:build": "node build/build.js",
+    "content:sync": "node tools/sync-content.mjs",
+    "site:dev": "node tools/build.js && npx serve docs",
+    "site:build": "node tools/build.js",
     "site:preview": "npx serve docs -l 3000",
-    "cli": "node cli/cli.js",
-    "cf:setup": "node scripts/setup-cloudflare.js",
-    "gh:pages": "node scripts/setup-github-pages.js",
+    "cli": "node tools/cli.js",
+    "cf:setup": "node tools/setup-cloudflare.js",
+    "gh:pages": "node tools/setup-github-pages.js",
     "deploy:setup": "npm run cf:setup && npm run gh:pages"
   }
 }

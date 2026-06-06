@@ -4,7 +4,7 @@
 
 以控制论反馈机制重新解读道家自然观的操作化思想框架 —— 探索天道(N)、法则(R)与交易(T)的进化动力学。
 
-🌐 **在线站点**：[cyber-taoist.ai](https://cyber-taoist.ai)　|　📂 **架构版本**：V1.3.0 · [变更日志](CHANGELOG.md)
+🌐 **在线站点**：[cyber-taoist.ai](https://cyber-taoist.ai)　|　📂 **架构版本**：V2.1.0 · [变更日志](CHANGELOG.md)
 
 ---
 
@@ -37,20 +37,21 @@
 ## 项目结构
 
 ```
-site/src/     # 站点源码（HTML、样式、脚本、理论文档）
-docs/         # 构建输出，发布到 GitHub Pages
+content/      # 理论内容（Markdown 与 llms.txt 的唯一真相源）
+site/src/     # 站点源码（HTML 模板、片段、样式、脚本、图片）
+docs/         # 本地构建输出（GitHub Actions 发布产物，不提交）
 journal/      # 开发笔记，按日期记录探索过程
 archive/      # 核心理论文档的历史版本
-build/        # 站点构建脚本
-cli/          # 命令行工具（构建、部署）
-scripts/      # 部署与同步脚本
+tools/        # 构建、内容同步、CLI 与部署脚本
 ```
 
 | 目录 | 说明 |
 |------|------|
-| [site/src/](site/src/) | 站点源码与核心理论 Markdown |
+| [content/](content/) | 宪章、道德经原文、进化学注疏、GUIDE 与 LLM 索引 |
+| [site/src/](site/src/) | 站点代码：主模板、partials、CSS、JS 与图片 |
+| [tools/](tools/) | `build`、`sync-content`、CLI 与部署配置 |
 | [journal/](journal/) | 按日期记录的开发笔记 |
-| [archive/](archive/) | 宪章、注疏、SKILL 等文档的历史快照 |
+| [archive/](archive/) | 宪章、注疏、指南等文档的历史快照 |
 
 ---
 
@@ -60,11 +61,33 @@ scripts/      # 部署与同步脚本
 # 本地预览站点
 npm run site:preview
 
-# 开发模式
+# 开发模式（先构建到 docs/，再启动本地服务）
 npm run site:dev
 
-# 构建站点到 docs/
+# 构建站点到 docs/（渲染 partials，并复制 content/）
 npm run site:build
+
+# 如需把 content/ 同步到 site/src/ 做静态文件调试
+npm run content:sync
+
+# CLI
+npm run cli -- help
+```
+
+---
+
+## 部署
+
+GitHub Pages 使用 GitHub Actions 自动构建发布。推送到 `main` 后，`.github/workflows/pages.yml` 会执行 `npm run site:build`，上传 `docs/` 作为 Pages artifact，并部署到站点。
+
+仓库的 Pages Source 需设置为 **GitHub Actions**。`docs/` 是本地构建产物，已加入 `.gitignore`，不要手动提交。
+
+```bash
+# 本地验证构建产物
+npm run site:build
+
+# 可选：配置自定义域名与 Pages workflow 模式
+npm run gh:pages
 ```
 
 ---

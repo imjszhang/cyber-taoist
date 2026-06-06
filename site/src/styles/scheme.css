@@ -1,0 +1,168 @@
+/*补充 brutal.css 引用但 tokens.css 未定义的变量 */
+:root {
+    --js-color-scrollbar-hover: #333333;
+    --js-color-placeholder: #999999;
+}
+
+/* ═══ SCHEME TOGGLE ═══ */
+.scheme-btn {
+    width: 28px; height: 28px;
+    border: 2px solid #000;
+    cursor: pointer;
+    transition: all 0.1s;
+    position: relative;
+}
+.scheme-btn::after {
+    content: '';
+    position: absolute; inset: 0;
+    border: 2px solid transparent;
+    transition: border-color 0.1s;
+}
+.scheme-btn.active::after { border-color: #FCD228; }
+.scheme-btn:hover { transform: scale(1.1); }
+
+/* ═══ DAYLIGHT SCHEME ═══ */
+html[data-scheme="daylight"] body {
+    background-color: #FCD228;
+    color: #000;
+    background-image:
+        linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+html[data-scheme="daylight"] nav > div {
+    background: #FFF !important;
+    border-color: #000 !important;
+    box-shadow: 4px 4px 0px 0px #000 !important;
+    color: #000;
+}
+html[data-scheme="daylight"] nav a { color: #000; }
+html[data-scheme="daylight"] .logo-wrap { box-shadow: 2px 2px 0px 0px #000; }
+html[data-scheme="daylight"] .scheme-btn { border-color: #000; }
+html[data-scheme="daylight"] h1, html[data-scheme="daylight"] h2 { color: #000; }
+html[data-scheme="daylight"] .text-stroke { -webkit-text-stroke-color: #000; }
+html[data-scheme="daylight"] .brutal-section-title { color: #000; }
+html[data-scheme="daylight"] .hero-desc {
+    border-color: #000 !important;
+    background: rgba(255,255,255,0.5) !important;
+    color: #000;
+}
+html[data-scheme="daylight"] .brutal-terminal {
+    background: #000; color: #FCD228; border-color: #000;
+}
+html[data-scheme="daylight"] footer { border-color: #FCD228 !important; }
+html[data-scheme="daylight"] ::-webkit-scrollbar-track { background: #FCD228; }
+html[data-scheme="daylight"] ::-webkit-scrollbar-thumb { background: #000; border-color: #FCD228; }
+
+/* ═══ DARK SCHEME ═══ */
+html[data-scheme="dark"] {
+    --js-color-brand-white: #111111;
+    --js-border-color: #FCD228;
+    --js-shadow-brutal: 4px 4px 0px 0px #FCD228;
+    --js-shadow-brutal-lg: 8px 8px 0px 0px #FCD228;
+    --js-shadow-brutal-hover: 2px 2px 0px 0px #FCD228;
+    --js-shadow-brutal-card: 6px 6px 0px 0px #FCD228;
+    --js-shadow-brutal-card-hover: 4px 4px 0px 0px #FCD228;
+    --js-shadow-brutal-white: 4px 4px 0px 0px #FCD228;
+}
+html[data-scheme="dark"] body {
+    background-color: #000;
+    color: #FCD228;
+    background-image:
+        linear-gradient(rgba(252,210,40,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(252,210,40,0.06) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+html[data-scheme="dark"] nav > div {
+    background: #111 !important;
+    border-color: #FCD228 !important;
+    box-shadow: 4px 4px 0px 0px #FCD228 !important;
+    color: #FCD228;
+}
+html[data-scheme="dark"] nav a { color: #FCD228; }
+html[data-scheme="dark"] .logo-wrap { box-shadow: 2px 2px 0px 0px #FCD228; }
+html[data-scheme="dark"] .logo-bg { fill: #000000; stroke: #FCD228; }
+html[data-scheme="dark"] .logo-yin { fill: #FCD228; }
+html[data-scheme="dark"] .logo-dot-a { fill: #FCD228; }
+html[data-scheme="dark"] .logo-dot-b { fill: #000000; }
+html[data-scheme="dark"] .logo-ring { stroke: #FCD228; }
+html[data-scheme="dark"] #lang-toggle { border-color: #FCD228; color: #FCD228; }
+html[data-scheme="dark"] #lang-toggle:hover { background-color: #FCD228; color: #000; }
+html[data-scheme="dark"] .scheme-btn { border-color: #FCD228; }
+html[data-scheme="dark"] h1, html[data-scheme="dark"] h2 { color: #FCD228; }
+html[data-scheme="dark"] .text-stroke { -webkit-text-stroke-color: #FCD228; }
+html[data-scheme="dark"] .brutal-section-title { color: #FCD228; }
+html[data-scheme="dark"] .hero-desc {
+    border-color: #FCD228 !important;
+    background: rgba(17,17,17,0.7) !important;
+    color: #ccc;
+}
+html[data-scheme="dark"] .hero-badge {
+    box-shadow: 4px 4px 0px 0px #FCD228 !important;
+}
+html[data-scheme="dark"] main .bg-white {
+    background-color: #111 !important;
+    color: #FCD228;
+}
+html[data-scheme="dark"] main .bg-white .text-black { color: #FCD228 !important; }
+html[data-scheme="dark"] main .bg-white .text-black\/60 { color: rgba(252,210,40,0.6) !important; }
+html[data-scheme="dark"] main .bg-white .text-black\/70 { color: rgba(252,210,40,0.7) !important; }
+html[data-scheme="dark"] main .bg-white .border-black { border-color: #FCD228 !important; }
+html[data-scheme="dark"] main .border-3.border-black:not(.bg-black) {
+    border-color: #FCD228 !important;
+}
+html[data-scheme="dark"] .brutal-card.bg-brand-yellow {
+    background-color: #1a1a1a !important;
+}
+html[data-scheme="dark"] .mapping-card {
+    background: #111 !important;
+    border-color: #FCD228 !important;
+}
+html[data-scheme="dark"] .mapping-card .mapping-symbol {
+    background: #FCD228 !important;
+    color: #000 !important;
+}
+html[data-scheme="dark"] .mapping-card h3 { color: #FCD228 !important; }
+html[data-scheme="dark"] .mapping-card p { color: rgba(252,210,40,0.7) !important; }
+html[data-scheme="dark"] .brutal-terminal {
+    background: #111; color: #FCD228; border-color: #FCD228;
+}
+html[data-scheme="dark"] .brutal-terminal .terminal-dots { border-color: #333; }
+html[data-scheme="dark"] .quote-block {
+    background: #111 !important;
+    border-color: #FCD228 !important;
+    color: #ccc !important;
+}
+html[data-scheme="dark"] .quote-block .border-black { border-color: #FCD228 !important; }
+html[data-scheme="dark"] .annotation-block {
+    background: #1a1a1a !important;
+    border-color: #FCD228 !important;
+}
+html[data-scheme="dark"] .annotation-block h3 { color: #FCD228 !important; }
+html[data-scheme="dark"] .annotation-block p { color: #ccc !important; }
+html[data-scheme="dark"] .works-card {
+    background: #111 !important;
+    border-color: #FCD228 !important;
+}
+html[data-scheme="dark"] .works-card h3 { color: #FCD228 !important; }
+html[data-scheme="dark"] .works-card p { color: rgba(252,210,40,0.7) !important; }
+html[data-scheme="dark"] .works-card .text-black\/40 { color: rgba(252,210,40,0.4) !important; }
+html[data-scheme="dark"] footer { border-color: #FCD228 !important; }
+html[data-scheme="dark"] ::-webkit-scrollbar-track { background: #000; }
+html[data-scheme="dark"] ::-webkit-scrollbar-thumb { background: #FCD228; border-color: #000; }
+
+/* ═══ MOBILE OPTIMIZATIONS ═══ */
+@media (max-width: 640px) {
+    #canvas-container { opacity: 0.15 !important; }
+    .brutal-terminal {
+        font-size: 0.8125rem;
+        padding: 12px;
+    }
+    #constitution .brutal-terminal [class*="pl-6"] {
+        padding-left: 0.75rem;
+    }
+    .brutal-section-title {
+        font-size: 1.5rem;
+    }
+}
+

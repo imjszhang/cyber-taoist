@@ -126,7 +126,7 @@
 
         works: {
             title: '应用',
-            corpusTag: '// CORPUS · 81 章注疏 · v1.0.3',
+            corpusTag: '// COMMENTARY · 81 章注疏 · v1.0.3',
             corpusName: '道德经 · 进化学注疏',
             corpusDesc: '以 Cyber-Taoist 进化学框架对《道德经》八十一章的系统性注疏 —— 揭示道家思想与控制论反馈的结构性同构',
             corpusBtn: '在 GitHub 阅读 ↗',

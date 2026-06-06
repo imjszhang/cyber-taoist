@@ -3,7 +3,7 @@
  * 凭证：.env 中 GITHUB_TOKEN（需 repo 或 Pages 写权限）。
  */
 
-import { setupGithubPages } from '../cli/lib/setup.js';
+import { setupGithubPages } from './setup.js';
 
 setupGithubPages().catch((err) => {
     console.error('错误:', err.message);

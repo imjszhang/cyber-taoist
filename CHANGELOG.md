@@ -4,6 +4,36 @@
 
 版本规则见 [README — 版本管理](README.md#版本管理)。
 
+## V2.1.0 — 2026-06-06
+
+拆分单体 `index.html`，保留无框架静态站点形态，同时降低页面维护成本。
+
+### 变更
+
+- 将 `site/src/index.html` 拆为主模板 + `site/src/partials/`
+- 将内联配色样式抽出到 `site/src/styles/scheme.css`
+- 将底部交互脚本抽出到 `site/src/js/app.js`
+- 构建脚本支持 `<!-- @include partials/*.html -->` 模板拼接
+- 将公开应用指南文件名从 `SKILL.md` 改为 `GUIDE.md`
+- 将历史归档目录 `archive/cybertaoist-docs-history/SKILL/` 重命名为 `GUIDE/`
+- 新增 GitHub Actions Pages workflow，推送到 `main` 后自动构建并部署
+- `docs/` 改为本地/CI 构建产物，不再作为源码提交
+- Pages 配置脚本默认使用 `workflow` 构建模式
+
+## V2.0.0 — 2026-06-06
+
+目录层次重组：分离理论内容、站点代码与工具脚本。
+
+### 变更
+
+- 新增 `content/` 作为理论 Markdown 与 `llms.txt` 的唯一真相源
+- `site/src/` 调整为站点代码目录，不再提交内容 Markdown
+- 合并 `build/`、`cli/`、`scripts/` 为 `tools/`
+- 构建流程改为复制 `site/src/` 代码并从 `content/` 发布内容文件
+- dev 预览改为先构建到 `docs/` 再启动本地服务
+- 新增 `content:sync` 脚本，可按需从 `content/` 同步公开内容到 `site/src/`
+- `package.json` 的 CLI 与 npm scripts 全部指向 `tools/`
+
 ## V1.3.0 — 2026-06-06
 
 移除 Knowledge Prism 知识管线，项目聚焦为静态理论站点 + 开发笔记。
@@ -36,4 +66,4 @@
 ### 涉及范围（示例）
 
 - 核心理论：`CONSTITUTION.md`（宪章 v1.0.1）、`DAO-DE-JING-CYBERTAOIST.md`（注疏 v1.0.3）、`README.md`
-- 站点：`site/src/`（含 i18n、`llms.txt`、`SKILL.md`）及 `docs/` 构建输出
+- 站点：`site/src/`（含 i18n、`llms.txt`、应用指南）及 `docs/` 构建输出

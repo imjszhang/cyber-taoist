@@ -8,7 +8,7 @@ import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-export const ROOT = resolve(__dirname, '..', '..');
+export const ROOT = resolve(__dirname, '..');
 
 const DEFAULT_DOMAIN = 'cyber-taoist.ai';
 const DEFAULT_REPO = 'imjszhang/cyber-taoist';
@@ -54,6 +54,7 @@ function repoFromGit() {
  *   githubRepo: string,
  *   githubOwner: string,
  *   githubPagesTarget: string,
+ *   pagesBuildType: 'workflow' | 'legacy',
  *   pagesDefaultSource: { branch: string, path: string }
  * }}
  */
@@ -64,6 +65,7 @@ export function getDeployConfig() {
     const [githubOwner] = githubRepo.split('/');
     const githubPagesTarget =
         env.GITHUB_PAGES_CNAME_TARGET || `${githubOwner}.github.io`;
+    const pagesBuildType = env.PAGES_BUILD_TYPE || 'workflow';
     const branch = env.PAGES_BRANCH || 'main';
     return {
         root: ROOT,
@@ -71,6 +73,7 @@ export function getDeployConfig() {
         githubRepo,
         githubOwner,
         githubPagesTarget,
+        pagesBuildType,
         pagesDefaultSource: { branch, path: '/docs' },
     };
 }

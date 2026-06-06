@@ -2,16 +2,16 @@
 /**
  * cyber-taoist CLI — 站点构建与部署辅助
  *
- *   node cli/cli.js build
- *   node cli/cli.js setup-cloudflare
- *   node cli/cli.js setup-github-pages
- *   node cli/cli.js help
+ *   node tools/cli.js build
+ *   node tools/cli.js setup-cloudflare
+ *   node tools/cli.js setup-github-pages
+ *   node tools/cli.js help
  */
 
 import { spawnSync } from 'child_process';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { setupCloudflare, setupGithubPages } from './lib/setup.js';
+import { setupCloudflare, setupGithubPages } from './setup.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -23,7 +23,7 @@ function parseArgs(argv) {
 }
 
 function cmdBuild() {
-    const r = spawnSync(process.execPath, [resolve(ROOT, 'build', 'build.js')], {
+    const r = spawnSync(process.execPath, [resolve(ROOT, 'tools', 'build.js')], {
         cwd: ROOT,
         stdio: 'inherit',
     });
@@ -34,10 +34,10 @@ function printHelp() {
     console.log(`cyber-taoist CLI
 
 用法:
-  node cli/cli.js <command>
+  node tools/cli.js <command>
 
 命令:
-  build               执行 site:build（site/src → docs/）
+  build               执行 site:build（site/src + content → docs/）
   setup-cloudflare    配置 Cloudflare DNS（需 CLOUDFLARE_API_TOKEN 等）
   setup-github-pages  配置 GitHub Pages 自定义域名 + HTTPS（需 GITHUB_TOKEN）
   help                显示本说明
@@ -46,7 +46,8 @@ function printHelp() {
   DEPLOY_DOMAIN           默认 cyber-taoist.ai
   GITHUB_REPO             默认从 git remote 推断，否则 imjszhang/cyber-taoist
   GITHUB_PAGES_CNAME_TARGET  默认 <owner>.github.io
-  PAGES_BRANCH            仅在未启用 Pages 时作为提示；已启用则沿用仓库设置
+  PAGES_BUILD_TYPE        默认 workflow（GitHub Actions 自动部署）
+  PAGES_BRANCH            仅 legacy 模式下用于 Pages source
 `);
 }
 
@@ -70,7 +71,7 @@ async function main() {
             break;
         default:
             if (!command) {
-                console.error('请指定命令。运行: node cli/cli.js help');
+                console.error('请指定命令。运行: node tools/cli.js help');
                 process.exit(1);
             }
             console.error(`未知命令: ${command}`);
