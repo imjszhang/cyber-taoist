@@ -19,6 +19,8 @@
 - 新增 GitHub Actions Pages workflow，推送到 `main` 后自动构建并部署
 - 构建产物目录从 `docs/` 改为 `dist/`，不再作为源码提交
 - Pages 配置脚本默认使用 `workflow` 构建模式
+- 新增 `content/CHANGELOG.md`，内容版本改由 Git 提交、Git tag 与内容版本记录管理
+- `archive/` 降级为迁移前旧快照目录，后续不再新增内容版本
 
 ## V2.0.0 — 2026-06-06
 
@@ -66,4 +68,4 @@
 ### 涉及范围（示例）
 
 - 核心理论：`CONSTITUTION.md`（宪章 v1.0.1）、`DAO-DE-JING-CYBERTAOIST.md`（注疏 v1.0.3）、`README.md`
-- 站点：`site/src/`（含 i18n、`llms.txt`、应用指南）及 `docs/` 构建输出
+- 站点：`site/src/`（含 i18n 与应用指南入口）及 `dist/` 构建输出

@@ -13,6 +13,7 @@ const contentFiles = new Set([
     'DAO-DE-JING.md',
     'DAO-DE-JING-CYBERTAOIST.md',
     'GUIDE.md',
+    'CHANGELOG.md',
     'llms.txt',
 ]);
 

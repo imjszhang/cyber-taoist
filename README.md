@@ -41,17 +41,17 @@ content/      # 理论内容（Markdown 与 llms.txt 的唯一真相源）
 site/src/     # 站点源码（HTML 模板、片段、样式、脚本、图片）
 dist/         # 构建输出（本地预览与 GitHub Actions 发布产物，不提交）
 journal/      # 开发笔记，按日期记录探索过程
-archive/      # 核心理论文档的历史版本
+archive/      # 迁移前历史快照（已弃用，不再新增）
 tools/        # 构建、内容同步、CLI 与部署脚本
 ```
 
 | 目录 | 说明 |
 |------|------|
-| [content/](content/) | 宪章、道德经原文、进化学注疏、GUIDE 与 LLM 索引 |
+| [content/](content/) | 宪章、道德经原文、进化学注疏、GUIDE、内容版本记录与 LLM 索引 |
 | [site/src/](site/src/) | 站点代码：主模板、partials、CSS、JS 与图片 |
 | [tools/](tools/) | `build`、`sync-content`、CLI 与部署配置 |
 | [journal/](journal/) | 按日期记录的开发笔记 |
-| [archive/](archive/) | 宪章、注疏、指南等文档的历史快照 |
+| [archive/](archive/) | 迁移前旧快照，仅作历史参考；新内容版本使用 Git tag 管理 |
 
 ---
 
@@ -102,6 +102,6 @@ npm run gh:pages
 | MINOR | 新增结构组件或显著的工作流调整 | 引入 CI 自动部署、拆分 HTML 片段 |
 | PATCH | 模板微调、README 补充、目录命名规范等小幅改动 | 模板字段增删、导航链接修正 |
 
-日常内容写入（新增 journal、更新理论文档等）不触发版本变更。
+内容版本由 [`content/CHANGELOG.md`](content/CHANGELOG.md)、Git 提交和 Git tag 管理。日常内容写入（新增 journal、更新理论文档等）不触发架构版本变更。
 
 → [完整变更日志](CHANGELOG.md)
