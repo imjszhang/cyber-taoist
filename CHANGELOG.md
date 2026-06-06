@@ -17,7 +17,7 @@
 - 将公开应用指南文件名从 `SKILL.md` 改为 `GUIDE.md`
 - 将历史归档目录 `archive/cybertaoist-docs-history/SKILL/` 重命名为 `GUIDE/`
 - 新增 GitHub Actions Pages workflow，推送到 `main` 后自动构建并部署
-- `docs/` 改为本地/CI 构建产物，不再作为源码提交
+- 构建产物目录从 `docs/` 改为 `dist/`，不再作为源码提交
 - Pages 配置脚本默认使用 `workflow` 构建模式
 
 ## V2.0.0 — 2026-06-06
@@ -30,7 +30,7 @@
 - `site/src/` 调整为站点代码目录，不再提交内容 Markdown
 - 合并 `build/`、`cli/`、`scripts/` 为 `tools/`
 - 构建流程改为复制 `site/src/` 代码并从 `content/` 发布内容文件
-- dev 预览改为先构建到 `docs/` 再启动本地服务
+- dev 预览改为先构建到 `dist/` 再启动本地服务
 - 新增 `content:sync` 脚本，可按需从 `content/` 同步公开内容到 `site/src/`
 - `package.json` 的 CLI 与 npm scripts 全部指向 `tools/`
 

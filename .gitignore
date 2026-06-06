@@ -17,9 +17,8 @@ site/src/GUIDE.md
 site/src/llms.txt
 
 # ============ 生成/输出目录 ============
-docs/
-work_dir/
 dist/
+work_dir/
 *.log
 
 # ============ 操作系统 ============

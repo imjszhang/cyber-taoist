@@ -37,7 +37,7 @@ function printHelp() {
   node tools/cli.js <command>
 
 命令:
-  build               执行 site:build（site/src + content → docs/）
+  build               执行 site:build（site/src + content → dist/）
   setup-cloudflare    配置 Cloudflare DNS（需 CLOUDFLARE_API_TOKEN 等）
   setup-github-pages  配置 GitHub Pages 自定义域名 + HTTPS（需 GITHUB_TOKEN）
   help                显示本说明

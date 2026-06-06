@@ -7,9 +7,9 @@
   },
   "scripts": {
     "content:sync": "node tools/sync-content.mjs",
-    "site:dev": "node tools/build.js && npx serve docs",
+    "site:dev": "node tools/build.js && npx serve dist",
     "site:build": "node tools/build.js",
-    "site:preview": "npx serve docs -l 3000",
+    "site:preview": "npx serve dist -l 3000",
     "cli": "node tools/cli.js",
     "cf:setup": "node tools/setup-cloudflare.js",
     "gh:pages": "node tools/setup-github-pages.js",
