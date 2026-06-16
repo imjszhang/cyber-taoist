@@ -1,107 +1,139 @@
-# CYBER-TAOIST
+<p align="center">
+  <img src="site/src/shared/img/logo.svg" alt="Cyber-Taoist logo" width="96" />
+</p>
 
-> **控制论 × 道家自然观**
+<h1 align="center">CYBER-TAOIST</h1>
 
-以控制论反馈机制重新解读道家自然观的操作化思想框架 —— 探索天道(N)、法则(R)与交易(T)的进化动力学。
+<p align="center">
+  <strong>Cybernetics × Taoist Naturalism</strong><br/>
+  An operational thought framework reinterpreting Taoist naturalism through cybernetic feedback
+</p>
 
-🌐 **在线站点**：[cyber-taoist.ai](https://cyber-taoist.ai)　|　📂 **架构版本**：V2.1.0 · [变更日志](CHANGELOG.md)
+<p align="center">
+  <a href="https://cyber-taoist.ai"><strong>Explore Online</strong></a> ·
+  <a href="https://github.com/imjszhang/cyber-taoist"><strong>GitHub</strong></a> ·
+  <a href="content/llms.txt"><strong>LLM Index</strong></a>
+</p>
 
----
-
-## 进化学宪章
-
-宇宙万物流变不息，生存为一切主体之元规则。本宪章立 Cyber-Taoist 进化学之根本，明分形结构之自相似，述生存、规则、交易、生态、生态位之奥义。
-
-| 条目 | 符号 | 概念 | 要义 |
-|------|------|------|------|
-| 第一条 | — | **生存** | 一切主体的根本驱动力与终极目标。任何无法维持自身存在之主体，必被淘汰 |
-| 第二条 | **N** | **自然** | 客观环境及其内在演化法则——天道。不可违背、不可观测，只能通过后果感知 |
-| 第三条 | **R** | **法则** | 主体构建的规则、文化、技术、制度。对天道的近似模拟，永远滞后。功能为防火墙 |
-| 第四条 | **T** | **交易** | 主体感知天道的主要途径。与环境及其他主体之间的交互与反馈过程。防火墙内外的动态探头 |
-| 第五条 | **EC** | **生态** | 由主体及其法则(R)和交易(T)共同构建的动态场域。每一生态本身亦为更高层次的主体 |
-| 第六条 | **NI** | **生态位** | 主体在生态中的功能定位。反映主体与法则的相容程度。随法则变化与交易策略调整而动态漂移 |
-
-→ [阅读完整宪章](content/CONSTITUTION.md) · [在线版](https://cyber-taoist.ai/CONSTITUTION.md)
+<p align="center">
+  <img src="https://img.shields.io/badge/Site-cyber--taoist.ai-FCD228?style=flat-square&labelColor=000000" alt="cyber-taoist.ai" />
+</p>
 
 ---
 
-## 内容产出
+## What Is This?
 
-| 产出 | 说明 | 链接 |
-|------|------|------|
-| **道德经 · 进化学注疏** | 以 Cyber-Taoist 进化学框架对《道德经》八十一章的系统性注疏 —— 揭示道家思想与控制论反馈的结构性同构 | [content/DAO-DE-JING-CYBERTAOIST.md](content/DAO-DE-JING-CYBERTAOIST.md) |
-| **进化学宪章** | Cyber-Taoist 进化学的公理体系 —— 二十条基本法则，从生存驱动到代谢淘汰的完整进化论述 | [content/CONSTITUTION.md](content/CONSTITUTION.md) |
+**Cyber-Taoist** is an open evolution-theory framework — not a software product, but an **operational thought system** for observing change and aligning with the Way.
 
----
+It fuses:
 
-## 项目结构
+- **Cybernetics** — feedback, adaptation, control under uncertainty
+- **Taoist naturalism** — the Way (*Tian Dao*) as an ever-changing environment that cannot be directly observed, only inferred through consequences
 
-```
-content/      # 理论内容（Markdown 与 llms.txt 的唯一真相源）
-site/src/     # 站点源码（HTML 模板、片段、样式、脚本、图片）
-dist/         # 构建输出（本地预览与 GitHub Actions 发布产物，不提交）
-journal/      # 开发笔记，按日期记录探索过程
-archive/      # 迁移前历史快照（已弃用，不再新增）
-tools/        # 构建、内容同步、CLI 与部署脚本
-```
+Agents cannot face the ultimate law head-on. They build **Rules (R)** as firewalls, conduct **Transactions (T)** to probe **Nature (N)**, and compete for **Niche (NI)** within **Ecology (EC)**. Rules always lag; clinging to them brings extinction, while breakthrough carries risk — yet may yield renewal. This logic repeats fractally from individuals to civilizations.
 
-| 目录 | 说明 |
-|------|------|
-| [content/](content/) | 宪章、道德经原文、进化学注疏、GUIDE、内容版本记录与 LLM 索引 |
-| [site/src/](site/src/) | 站点代码：主模板、partials、CSS、JS 与图片 |
-| [tools/](tools/) | `build`、`sync-content`、CLI 与部署配置 |
-| [journal/](journal/) | 按日期记录的开发笔记 |
-| [archive/](archive/) | 迁移前旧快照，仅作历史参考；新内容版本使用 Git tag 管理 |
+> All things in the universe are in perpetual flux; survival is the meta-rule of all agents.
+
+The [live site](https://cyber-taoist.ai) is the public portal: browse core concepts, read the Constitution, and copy framework text for analysis or AI prompts. This repository holds the source theory documents.
 
 ---
 
-## 开发
+## Core Framework
 
-```bash
-# 本地预览站点
-npm run site:preview
+Six concepts form the shared vocabulary. Each scales fractally — from personal habits to global ecosystems.
 
-# 开发模式（先构建到 dist/，再启动本地服务）
-npm run site:dev
+| Symbol | Concept | Summary |
+|:------:|---------|---------|
+| **S** | **Survival** | The fundamental drive of all agents. Those unable to sustain existence are eliminated. |
+| **N** | **Nature** | The objective environment and its intrinsic laws — the Way of Heaven. Perceived only through consequences. |
+| **R** | **Rules** | Rules, culture, technology, and institutions built by agents. An approximate, always-lagging simulation of Nature. Functions as a firewall. |
+| **T** | **Transactions** | The primary channel for perceiving Nature — interaction and feedback with the environment and other agents. Dynamic probes across the firewall. |
+| **EC** | **Ecology** | A dynamic field jointly built by agents, their Rules, and Transactions. Each ecology is itself a higher-level agent. |
+| **NI** | **Niche** | An agent's functional position within an ecology. Reflects compatibility with current Rules; drifts as Rules and strategies change. |
 
-# 构建站点到 dist/（渲染 partials，并复制 content/）
-npm run site:build
-
-# 如需把 content/ 同步到 site/src/ 做静态文件调试
-npm run content:sync
-
-# CLI
-npm run cli -- help
-```
+**Key mapping** (Taoist terms → evolution symbols): *Dao* → N · *De* → compatibility with N · *Wu wei* → not forcing R · *Sage* → the fittest (A\*) · *You/Wu* → R/N · *Pu* → pre-R
 
 ---
 
-## 部署
+## Content Stack
 
-GitHub Pages 使用 GitHub Actions 自动构建发布。推送到 `main` 后，`.github/workflows/pages.yml` 会执行 `npm run site:build`，上传 `dist/` 作为 Pages artifact，并部署到站点。
+The framework is organized in three layers — the same structure as the site:
 
-仓库的 Pages Source 需设置为 **GitHub Actions**。`dist/` 是构建产物，已加入 `.gitignore`，不要手动提交。
+| Layer | Document | Role |
+|-------|----------|------|
+| **Axioms** | [Constitution](content/CONSTITUTION.md) | Defines *what* the framework is — 20 articles from the meta-rule of survival to fractal structure and the meaning of death |
+| **Protocol** | [Field Guide](content/GUIDE.md) | Defines *how to use* it — a 7-step analysis protocol with Guard/Break heuristics and fractal templates. Not prediction; perception through consequences |
+| **Application** | [Dao De Jing · Evolution Theory Commentary](content/DAO-DE-JING-CYBERTAOIST.md) | Applies the framework to all 81 chapters — revealing structural isomorphism between Taoist thought and cybernetic feedback |
 
-```bash
-# 本地验证构建产物
-npm run site:build
-
-# 可选：配置自定义域名与 Pages workflow 模式
-npm run gh:pages
-```
+→ [Online Constitution](https://cyber-taoist.ai/CONSTITUTION.md) · [Online Field Guide](https://cyber-taoist.ai/GUIDE.md) · [Content changelog](content/CHANGELOG.md)
 
 ---
 
-## 版本管理
+## Use Cases
 
-架构版本采用语义化版本号 `MAJOR.MINOR.PATCH`，跟踪的是**架构本身**（目录结构、方法论、工作流程），而非内容：
+The same N/R/T logic applies at every scale. The Field Guide helps when feedback turns ambiguous, Rules may be lagging, and you need to decide what to guard, what to sacrifice, and where to probe.
 
-| 版本段 | 变更范围 | 示例 |
-|--------|---------|------|
-| MAJOR | 架构范式变更（项目定位、目录层次重组） | 弃用知识管线、站点与内容分离 |
-| MINOR | 新增结构组件或显著的工作流调整 | 引入 CI 自动部署、拆分 HTML 片段 |
-| PATCH | 模板微调、README 补充、目录命名规范等小幅改动 | 模板字段增删、导航链接修正 |
+| Scale | Scenario | What the framework clarifies |
+|-------|----------|------------------------------|
+| **Micro** — Individual | A stable career path suddenly produces weaker returns; credentials and reputation no longer convert into opportunity | Is your high **Niche (NI)** built on lagging **Rules (R)**, or still aligned with **Nature (N)**? Should you optimize within the old playbook or run small **Transactions (T)** to probe a shift? |
+| **Micro** — Individual | Choosing between doubling down on a proven skill vs. learning something unproven but adjacent | Fractal Guard/Break: what is core function (must survive), what is buffer (can shrink), what is probe (can fail in isolation)? |
+| **Meso** — Organization | A profitable business line keeps growing, but customer behavior and unit economics are sending mixed signals | Evolutionary stage diagnosis — routine optimization or perception lag? When does "keep executing" become clinging to obsolete **R**? |
+| **Meso** — Organization | A team must cut costs while still exploring a new product direction | Design **death boundaries**: which projects can die without killing the org? How does probe failure feed back into **R** updates? |
+| **Meso** — Organization | Internal culture ("how we do things here") conflicts with what the market is actually rewarding | Separate explicit **R**, implicit norms, and technical paradigms — often the lag hides in the middle layer |
+| **Macro** — Ecology | An entire industry faces a platform or regulatory shift; incumbents with dominant **Niche** are the most exposed | Why high **NI** under old **R** is the highest risk during rule updates; read selection signals from who survives breakthrough **T** |
+| **Macro** — Ecology | Cross-border competition, supply-chain realignment, or civilizational norm change affecting many agents at once | Treat the field itself as an **Ecology (EC)** agent: how do lower-level breakthroughs accumulate into higher-level **R** evolution? |
 
-内容版本由 [`content/CHANGELOG.md`](content/CHANGELOG.md)、Git 提交和 Git tag 管理。日常内容写入（新增 journal、更新理论文档等）不触发架构版本变更。
+These are illustrative — the protocol is domain-agnostic. Any situation where an agent survives through **Transactions**, operates inside **Rules**, and must read **Nature** through consequences is a valid subject.
 
-→ [完整变更日志](CHANGELOG.md)
+---
+
+## How to Use
+
+### 1. Learn the framework
+
+Start with the [Constitution](content/CONSTITUTION.md) to grasp the axioms and symbols. The [live site](https://cyber-taoist.ai) presents the full text in a bilingual, browsable format — use **Copy Text** or **Copy Link** to bring it into your notes or AI context.
+
+### 2. Analyze a situation
+
+Open the [Field Guide](content/GUIDE.md) when facing a complex decision or structural shift. Work through the protocol in order:
+
+1. **Define the agent & scale** — individual, organization, or ecology
+2. **List observed consequences** — facts only; distinguish fact, inference, and guess
+3. **Infer Nature (N)** — what do consequences point to? What would falsify the inference?
+4. **Map Ecology (EC) & Rules (R)** — explicit rules, implicit norms, technical paradigms
+5. **Examine Transactions (T) & Niche (NI)** — how does the agent acquire resources? Is the niche aligned with Nature or only with lagging Rules?
+6. **Judge evolutionary stage** — routine → perception lag → exploratory breakthrough → selection → rule update
+7. **Design fractal Guard/Break** — what to protect, what can absorb damage, what probes to send, and where death is acceptable
+
+The guide includes an output template and usage boundaries: no fortune-telling, no macro narratives without consequences, high niche ≠ safety.
+
+On the site, use **Copy Full Text** on the Field Guide card to paste the entire protocol into an AI assistant as a system prompt.
+
+### 3. Explore the classical mapping
+
+Read the [Dao De Jing commentary](content/DAO-DE-JING-CYBERTAOIST.md) to see how each chapter maps onto N/R/T dynamics. The [original text](content/DAO-DE-JING.md) (Silk Manuscript edition) is included as the base layer.
+
+### 4. Use with LLMs
+
+Point any AI agent to [`content/llms.txt`](content/llms.txt) — a structured index of all theory documents with descriptions and direct links. This is the recommended entry point for automated retrieval or RAG setups.
+
+---
+
+## Repository
+
+| Path | Contents |
+|------|----------|
+| [content/](content/) | Source of truth — Constitution, Field Guide, commentary, and LLM index |
+| [site/src/](site/src/) | Static site that publishes the framework at [cyber-taoist.ai](https://cyber-taoist.ai) |
+| [journal/](journal/) | Dated notes on framework development |
+| [archive/](archive/) | Pre-migration snapshots (historical reference only) |
+
+Theory lives in `content/`. The site is a read-and-copy portal — not the framework itself.
+
+→ [Architecture changelog](CHANGELOG.md)
+
+---
+
+<p align="center">
+  <sub>Cybernetic Feedback × Taoist Naturalism</sub>
+</p>
