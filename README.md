@@ -12,11 +12,13 @@
 <p align="center">
   <a href="https://cyber-taoist.ai"><strong>Explore Online</strong></a> ·
   <a href="https://github.com/imjszhang/cyber-taoist"><strong>GitHub</strong></a> ·
+  <a href="https://x.com/imjszhang"><strong>X @imjszhang</strong></a> ·
   <a href="content/llms.txt"><strong>LLM Index</strong></a>
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Site-cyber--taoist.ai-FCD228?style=flat-square&labelColor=000000" alt="cyber-taoist.ai" />
+  <img src="https://img.shields.io/badge/License-MIT-FCD228?style=flat-square&labelColor=000000" alt="MIT License" />
 </p>
 
 ---
@@ -147,6 +149,13 @@ Theory lives in `content/`. The site is a read-and-copy portal — not the frame
 
 ---
 
+## License
+
+This project is open source under the [MIT License](LICENSE).
+
+---
+
 <p align="center">
+  <sub>MIT License · <a href="https://x.com/imjszhang">@imjszhang</a></sub><br/>
   <sub>Cybernetic Feedback × Taoist Naturalism</sub>
 </p>
