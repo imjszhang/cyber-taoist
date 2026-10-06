@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" data-scheme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <title>{{TITLE}} — Cyber-Taoism</title>
+    <meta name="description" content="{{DESCRIPTION}}">
+    <meta property="og:title" content="{{TITLE}} — Cyber-Taoism">
+    <meta property="og:description" content="{{DESCRIPTION}}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://cyber-taoist.ai/{{PAGE}}">
+    <meta property="og:image" content="https://cyber-taoist.ai/assets/hero-way.webp">
+    <link rel="canonical" href="https://cyber-taoist.ai/{{PAGE}}">
+    <link rel="icon" href="./shared/img/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./styles/fonts.css">
+    <link rel="stylesheet" href="./styles/home.css">
+    <link rel="stylesheet" href="./styles/reading.css">
+    <script src="./js/reading.js" defer></script>
+</head>
+<body data-document-title="{{TITLE}}" data-document-title-zh="{{TITLE_ZH}}">
+    <a class="skip-link" href="#main" data-reader="skip">Skip to content</a>
+    <!-- @include reading-header.html -->
+    <main id="main" class="shell document-main">
+        <section class="reading-intro">
+            <a class="back-link" href="./philosophy.html" data-reader="backPhilosophy">← Back to the philosophy</a>
+            <p class="eyebrow">CYBER-TAOISM / LIBRARY</p>
+            <h1 data-document-heading>{{TITLE}}</h1>
+            <p class="source-note" data-reader="sourceNote">Original text in Chinese. The source document is preserved in full.</p>
+            <div class="reading-actions">
+                <a class="button button-outline" href="./{{SOURCE}}" download data-reader="download">Download Markdown ↗</a>
+                <button class="button button-outline" type="button" data-copy-source="{{SOURCE}}" data-reader="copy">Copy source</button>
+                <span class="copy-status" role="status" aria-live="polite"></span>
+            </div>
+        </section>
+        <div class="document-layout">
+            <aside class="document-sidebar">
+                <details open class="toc"><summary data-reader="contents">On this page</summary><nav aria-label="Document contents">{{TOC}}</nav></details>
+            </aside>
+            <article class="document-content" lang="zh-CN">{{CONTENT}}</article>
+        </div>
+        <section class="reader-bottom"><a href="./philosophy.html" data-reader="backPhilosophy">← Back to the philosophy</a><a href="#main" data-reader="top">Back to top ↑</a></section>
+    </main>
+    <!-- @include reading-footer.html -->
+</body>
+</html>

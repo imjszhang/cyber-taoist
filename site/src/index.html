@@ -1,122 +1,154 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-scheme="dark">
+<html lang="en" data-scheme="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber-Taoism | 进化学框架</title>
-    <meta name="description" content="Cyber-Taoism —— 以控制论反馈机制重新解读道家自然观的操作化思想框架">
-    <meta name="keywords" content="cyber-taoism, cyber-taoist, 进化学, 控制论, 道家, 道德经, 注疏">
-
-    <!-- Open Graph -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <title>Cyber-Taoist — Find your own way</title>
+    <meta name="description" content="Expand your possibilities. Find your own way. A Cyber-Taoist uses technology to extend their capabilities, learns through practice, and adapts as the world changes.">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Cyber-Taoism | 进化学框架">
-    <meta property="og:description" content="Cyber-Taoism —— 以控制论反馈机制重新解读道家自然观的操作化思想框架">
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Three.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
-
-    <!-- Tailwind Config -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Space Grotesk', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    },
-                    colors: {
-                        brand: { yellow: '#FCD228', black: '#000000', white: '#FFFFFF' }
-                    },
-                    boxShadow: {
-                        'brutal': '4px 4px 0px 0px #000000',
-                        'brutal-lg': '8px 8px 0px 0px #000000',
-                        'brutal-hover': '2px 2px 0px 0px #000000',
-                        'brutal-white': '4px 4px 0px 0px #FFFFFF',
-                    },
-                    borderWidth: { '3': '3px' },
-                    animation: {
-                        'slide-up': 'slideUp 0.8s ease-out forwards',
-                    },
-                    keyframes: {
-                        slideUp: {
-                            '0%': { opacity: '0', transform: 'translateY(40px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' }
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-
-    <!-- Design System CSS -->
-    <link rel="stylesheet" href="./shared/css/tokens.css">
-    <link rel="stylesheet" href="./shared/css/brutal.css">
-
-    <link rel="stylesheet" href="./styles/scheme.css">
+    <meta property="og:title" content="Cyber-Taoist — Find your own way">
+    <meta property="og:description" content="Think for yourself. Stay open to change. Explore the practice and philosophy of Cyber-Taoism.">
+    <meta property="og:url" content="https://cyber-taoist.ai/">
+    <meta property="og:image" content="https://cyber-taoist.ai/assets/hero-way.webp">
+    <link rel="canonical" href="https://cyber-taoist.ai/">
+    <link rel="icon" href="./shared/img/logo.svg" type="image/svg+xml">
+    <link rel="preload" href="./assets/fonts/HTxwL3I-JCGChYJ8VI-L6OO_au7B47b1_3E.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="stylesheet" href="./styles/fonts.css">
+    <link rel="stylesheet" href="./styles/home.css">
+    <link rel="stylesheet" href="./styles/practice.css">
+    <script src="./js/home.js" defer></script>
+    <script src="./js/practice.js" defer></script>
 </head>
-<body class="min-h-screen font-sans selection:bg-black selection:text-brand-yellow overflow-x-hidden">
-
-    <!-- Three.js Background -->
-    <div id="canvas-container" class="fixed inset-0 -z-10 opacity-40 pointer-events-none"></div>
-
-    <!-- ====== NAVIGATION ====== -->
-    <nav class="fixed top-0 left-0 right-0 z-50 p-4">
-        <div class="max-w-7xl mx-auto bg-white border-3 border-black shadow-brutal flex justify-between items-center px-6 py-4">
-            <a href="#" class="flex items-center gap-3 no-underline">
-                <div class="logo-wrap w-10 h-10 rounded-full transition-transform hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" class="w-full h-full">
-                        <circle class="logo-bg" cx="54" cy="54" r="52" fill="#FCD228" stroke="#000000" stroke-width="4"/>
-                        <path class="logo-yin" d="M54 2 A52 52 0 0 0 54 106 A26 26 0 0 0 54 54 A26 26 0 0 1 54 2Z" fill="#000000"/>
-                        <circle class="logo-dot-a" cx="54" cy="28" r="12" fill="#000000"/>
-                        <circle class="logo-dot-b" cx="54" cy="80" r="12" fill="#FCD228"/>
-                        <circle class="logo-ring" cx="54" cy="54" r="52" fill="none" stroke="#000000" stroke-width="4"/>
-                    </svg>
+<body>
+    <a class="skip-link" href="#main" data-copy="skip">Skip to content</a>
+    <header class="site-header">
+        <div class="shell header-inner">
+            <a class="wordmark" href="./" aria-label="Cyber-Taoist home">CYBER-TAOIST</a>
+            <span class="brand-note" data-copy="brandNote">TECHNOLOGY × SELF × POSSIBILITY</span>
+            <nav class="main-nav" aria-label="Main navigation">
+                <a href="#practice" data-copy="navPractice">Practice</a>
+                <a href="#philosophy" data-copy="navPhilosophy">Philosophy</a>
+                <button type="button" data-open-about data-copy="navAbout">About</button>
+                <button type="button" data-language aria-label="Switch to Chinese">ZH</button>
+            </nav>
+        </div>
+    </header>
+    <main id="main">
+        <section class="hero shell" aria-labelledby="hero-title">
+            <div class="hero-copy">
+                <p class="eyebrow" data-copy="eyebrow">A WAY OF BEING</p>
+                <h1 id="hero-title"><span data-copy="heroLine1">Expand your</span><span data-copy="heroLine2">possibilities.</span><span class="hero-last" data-copy="heroLine3">Find your own way.</span></h1>
+                <p class="hero-description" data-copy="heroDescription">A Cyber-Taoist uses technology to extend their capabilities, learns through practice, and adapts as the world changes.</p>
+                <div class="hero-actions">
+                    <button class="button button-primary" type="button" data-open-practice><span data-copy="start">Start a practice</span><span aria-hidden="true">↗</span></button>
+                    <a class="button button-outline" href="#identity" data-copy="meet">Meet the Cyber-Taoist</a>
                 </div>
-                <span class="text-xl font-black tracking-tight uppercase">CYBER-TAOIST</span>
-            </a>
-            <div class="flex items-center gap-3">
-                <button id="lang-toggle" onclick="toggleLocale()" class="font-mono font-bold text-xs border-2 border-black px-2 py-1 bg-transparent cursor-pointer hover:bg-brand-yellow hover:text-black transition-all">EN</button>
-                <div class="flex gap-1" data-i18n-title="nav.schemeTitle" title="配色方案">
-                    <button class="scheme-btn" data-scheme="daylight" onclick="setScheme('daylight')" style="background:#FCD228" aria-label="Daylight"></button>
-                    <button class="scheme-btn active" data-scheme="dark" onclick="setScheme('dark')" style="background:#000" aria-label="Dark"></button>
+                <p class="hero-footnote" data-copy="heroFootnote">Think for yourself. Stay open to change.</p>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+                <img src="./assets/hero-way.webp" srcset="./assets/hero-way-small.webp 640w, ./assets/hero-way.webp 1254w" sizes="(max-width: 650px) 100vw, 50vw" alt="" width="1254" height="1254" fetchpriority="high">
+                <p class="art-note" data-copy="artNote">Observe change.<br>Stay curious.<br>Walk your own path.</p>
+                <span class="art-caption">MORE HUMAN<br>IN A CHANGING WORLD</span>
+            </div>
+        </section>
+
+        <section class="identity shell" id="identity" aria-labelledby="identity-title">
+            <div class="section-heading">
+                <h2 id="identity-title" data-copy="identityTitle">How we meet the world</h2>
+                <span class="heading-rule" aria-hidden="true"></span>
+                <p data-copy="identityAside">Technology is a tool. Life gives it purpose.</p>
+            </div>
+            <div class="principles">
+                <article><span class="principle-number" aria-hidden="true">01</span><h3 data-copy="principle1">Extend your reach</h3><p data-copy="principle1Body">Use technology to expand your abilities while keeping your own judgment.</p></article>
+                <article><span class="principle-number" aria-hidden="true">02</span><h3 data-copy="principle2">Learn from reality</h3><p data-copy="principle2Body">Put ideas into action.<br>Let the results reshape your approach.</p></article>
+                <article><span class="principle-number" aria-hidden="true">03</span><h3 data-copy="principle3">Leave room</h3><p data-copy="principle3Body">Protect what matters.<br>Make space to explore what comes next.</p></article>
+            </div>
+        </section>
+
+        <section class="practice-band" id="practice" aria-labelledby="practice-title">
+            <div class="shell practice-grid">
+                <div class="practice-intro">
+                    <h2 id="practice-title" data-copy="practiceTitle">Start with a real question</h2>
+                    <p data-copy="practiceSubtitle">Turn what you read into a judgment of your own.</p>
+                    <div class="rock-art" aria-hidden="true">
+                        <p data-copy="rockNote">A question<br>is a beginning.</p>
+                        <img src="./assets/practice-rock.webp" srcset="./assets/practice-rock-small.webp 640w, ./assets/practice-rock.webp 1280w" sizes="(max-width: 650px) 75vw, 40vw" width="1536" height="1024" alt="" loading="lazy">
+                    </div>
+                </div>
+                <div class="example-card">
+                    <p class="eyebrow" data-copy="exampleLabel">PRACTICE EXAMPLE / PERSONAL KNOWLEDGE</p>
+                    <h3 data-copy="exampleTitle">From an idea to an experiment</h3>
+                    <ol class="practice-flow" aria-label="Practice process">
+                        <li data-copy="flow1">Sources</li><li data-copy="flow2">Judgment</li><li data-copy="flow3">Action</li><li data-copy="flow4">Feedback</li><li data-copy="flow5">Revision</li>
+                    </ol>
+                    <details class="example-details">
+                        <summary><span data-copy="explore">Explore the practice</span><span class="detail-arrow" aria-hidden="true">↗</span></summary>
+                        <div class="example-story">
+                            <p class="example-context" data-copy="exampleContext">An illustrative experiment, not a reported result.</p>
+                            <dl>
+                                <dt data-copy="storyQuestion">The question</dt><dd data-copy="storyQuestionBody">Will writing a short note in my own words help me use what I read?</dd>
+                                <dt data-copy="storyTry">The experiment</dt><dd data-copy="storyTryBody">After each of three articles this week, write one claim, its source, and one way to use it.</dd>
+                                <dt data-copy="storyObserve">The feedback</dt><dd data-copy="storyObserveBody">At the end of the week, check whether any note helped with a real decision or piece of work.</dd>
+                                <dt data-copy="storyRevise">The revision</dt><dd data-copy="storyReviseBody">If the notes did not help, change the format or the question. Keep what proves useful.</dd>
+                            </dl>
+                            <button class="text-link" type="button" data-open-practice><span data-copy="tryOwn">Try your own question</span> ↗</button>
+                        </div>
+                    </details>
                 </div>
             </div>
-        </div>
-    </nav>
+        </section>
 
-    <!-- ====== MAIN CONTENT ====== -->
-    <main class="pt-32 pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <section class="first-practice shell" aria-labelledby="first-title">
+            <div class="first-intro">
+                <h2 id="first-title" data-copy="firstTitle">Your first practice</h2>
+                <p data-copy="firstSubtitle">Choose a question you face. Try one small experiment.</p>
+                <img class="path-art" src="./assets/practice-path.webp" srcset="./assets/practice-path-small.webp 640w, ./assets/practice-path.webp 1280w" sizes="(max-width: 650px) 100vw, 45vw" width="1774" height="887" alt="" loading="lazy">
+            </div>
+            <div class="first-actions">
+                <ol class="practice-steps">
+                    <li><span aria-hidden="true">01</span><p data-copy="step1">Write down your view and evidence</p></li>
+                    <li><span aria-hidden="true">02</span><p data-copy="step2">Try something you can afford to get wrong</p></li>
+                    <li><span aria-hidden="true">03</span><p data-copy="step3">Set a time to reflect and revise</p></li>
+                </ol>
+                <button class="button button-outline" type="button" data-open-practice><span data-copy="begin">Begin your notes</span><span aria-hidden="true">↗</span></button>
+            </div>
+        </section>
 
-        <!-- @include partials/hero.html -->
-
-
-        <!-- @include partials/concepts.html -->
-
-
-        <!-- @include partials/constitution.html -->
-
-
-        <!-- @include partials/works.html -->
-
-
+        <section class="philosophy" id="philosophy" aria-labelledby="philosophy-title">
+            <div class="shell philosophy-grid">
+                <div id="constitution">
+                    <h2 id="philosophy-title">CYBER-TAOISM</h2>
+                    <h3 data-copy="philosophySubtitle">The philosophy behind the practice</h3>
+                    <p data-copy="philosophyBasis">Cybernetic feedback × Taoist thought</p>
+                    <span class="short-rule" aria-hidden="true"></span>
+                </div>
+                <div class="philosophy-content">
+                    <p data-copy="philosophyBody">Understand change.<br>Live and create with greater clarity.</p>
+                    <div class="reading-links">
+                        <a href="./philosophy.html#constitution"><span data-copy="charter">Charter</span><span aria-hidden="true">↗</span></a>
+                        <a href="./guide.html"><span data-copy="guide">Practice guide</span><span aria-hidden="true">↗</span></a>
+                        <a href="./commentary.html"><span data-copy="commentary">Tao Te Ching commentary</span><span aria-hidden="true">↗</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-
-    <!-- @include partials/footer.html -->
-
-
-    <!-- Three.js Background -->
-    <script src="./shared/js/threejs-bg.js"></script>
-
-    <!-- i18n -->
-    <script src="./shared/js/i18n/index.js"></script>
-    <script src="./shared/js/i18n/locales/zh-CN.js"></script>
-    <script src="./shared/js/i18n/locales/en-US.js"></script>
-
-    <!-- App -->
-    <script src="./js/app.js"></script>
+    <footer class="site-footer">
+        <div class="shell footer-inner">
+            <a class="wordmark" href="./">CYBER-TAOIST</a>
+            <p data-copy="footerNote">Become who you choose to be, through practice.</p>
+            <nav aria-label="Footer navigation"><a href="#practice" data-copy="navPractice">Practice</a><a href="#philosophy" data-copy="navPhilosophy">Philosophy</a><button type="button" data-open-about data-copy="navAbout">About</button><button type="button" data-language aria-label="Switch to Chinese">ZH</button></nav>
+        </div>
+    </footer>
+    <dialog class="about-dialog" id="about-dialog" aria-labelledby="about-title">
+        <button class="dialog-close" type="button" data-close-about aria-label="Close">×</button>
+        <p class="eyebrow" data-copy="aboutEyebrow">A WAY OF BEING</p>
+        <h2 id="about-title">CYBER-TAOIST</h2>
+        <p data-copy="aboutBody">A shared identity for people who use technology, learn from reality, and make room to change. Cyber-Taoism is the evolving philosophy behind that practice.</p>
+        <p data-copy="aboutInvite">You can begin with a question and a small experiment. You do not need to agree with every idea to explore your own way.</p>
+        <p class="about-credit" data-copy="aboutCredit">An open project by @imjszhang.</p>
+        <div class="about-links"><a href="https://x.com/imjszhang" target="_blank" rel="noopener noreferrer">X / @imjszhang ↗</a><a href="https://github.com/imjszhang/cyber-taoist" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="./philosophy.html" data-copy="readPhilosophy">Read the philosophy ↗</a></div>
+    </dialog>
 </body>
 </html>

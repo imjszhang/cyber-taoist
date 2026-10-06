@@ -5,8 +5,8 @@
 <h1 align="center">CYBER-TAOIST</h1>
 
 <p align="center">
-  <strong>Cybernetics × Taoist Naturalism</strong><br/>
-  An operational thought framework reinterpreting Taoist naturalism through cybernetic feedback
+  <strong>Expand your possibilities. Find your own way.</strong><br/>
+  A way of being, grounded in cybernetic feedback and Taoist thought
 </p>
 
 <p align="center">
@@ -25,7 +25,7 @@
 
 ## What Is This?
 
-**Cyber-Taoist** is an open evolution-theory framework — not a software product, but an **operational thought system** for observing change and aligning with the Way.
+**Cyber-Taoist** is a shared identity for people who use technology to extend their capabilities, learn through practice, and adapt as the world changes. **Cyber-Taoism** is the evolving philosophy behind that practice.
 
 It fuses:
 
@@ -36,7 +36,7 @@ Agents cannot face the ultimate law head-on. They build **Rules (R)** as firewal
 
 > All things in the universe are in perpetual flux; survival is the meta-rule of all agents.
 
-The [live site](https://cyber-taoist.ai) is the public portal: browse core concepts, read the Constitution, and copy framework text for analysis or AI prompts. This repository holds the source theory documents.
+The [site](https://cyber-taoist.ai) introduces the identity and offers a small practice notebook. Drafts stay in the visitor's browser and can be exported as Markdown. The [philosophy page](https://cyber-taoist.ai/philosophy.html) preserves the core concepts, Constitution, and copy controls. This repository holds the source theory documents.
 
 ---
 
@@ -59,7 +59,7 @@ Six concepts form the shared vocabulary. Each scales fractally — from personal
 
 ## Content Stack
 
-The framework is organized in three layers — the same structure as the site:
+The philosophy documents are organized in three layers:
 
 | Layer | Document | Role |
 |-------|----------|------|
@@ -106,7 +106,7 @@ These are illustrative — the protocol is domain-agnostic. Any situation where 
 
 ### 1. Learn the framework
 
-Start with the [Constitution](content/CONSTITUTION.md) to grasp the axioms and symbols. The [live site](https://cyber-taoist.ai) presents the full text in a bilingual, browsable format — use **Copy Text** or **Copy Link** to bring it into your notes or AI context.
+Start with the [Constitution](content/CONSTITUTION.md) to grasp the axioms and symbols. The [philosophy page](https://cyber-taoist.ai/philosophy.html) presents the full text in a bilingual, browsable format — use **Copy Text** or **Copy Link** to bring it into your notes or AI context.
 
 ### 2. Analyze a situation
 
@@ -122,7 +122,7 @@ Open the [Field Guide](content/GUIDE.md) when facing a complex decision or struc
 
 The guide includes an output template and usage boundaries: no fortune-telling, no macro narratives without consequences, high niche ≠ safety.
 
-On the site, use **Copy Full Text** on the Field Guide card to paste the entire protocol into an AI assistant as a system prompt.
+On the [practice guide page](https://cyber-taoist.ai/guide.html), use **Copy source** or **Download Markdown** to bring the protocol into your notes or AI context.
 
 ### 3. Explore the classical mapping
 
@@ -143,7 +143,18 @@ Point any AI agent to [`content/llms.txt`](content/llms.txt) — a structured in
 | [journal/](journal/) | Dated notes on framework development |
 | [archive/](archive/) | Pre-migration snapshots (historical reference only) |
 
-Theory lives in `content/`. The site is a read-and-copy portal — not the framework itself.
+Theory lives in `content/`. The homepage introduces the Cyber-Taoist identity; `philosophy.html` provides the theory reading portal. Install build dependencies with `npm ci`, run `npm run site:validate`, then preview with `npm run site:preview` (Node.js 22+). All page fonts and artwork are served locally; illustration provenance is in [assets/README.md](site/src/assets/README.md).
+
+### Publishing and verification
+
+Pushes to `main` build and validate the site before GitHub Pages deployment. Pull requests run the same checks without deploying. The lockfile pins build dependencies.
+
+- `npm run site:build`: expand HTML templates, generate reading pages from `content/`, and create responsive WebP images from the original PNG artwork.
+- `npm run site:check`: verify document rendering, all 81 commentary chapters, internal links and anchors, published source integrity, and the image size budget.
+- `npm run site:validate`: run the complete build and checks.
+- `https://cyber-taoist.ai/version.json`: inspect the deployed version and commit.
+
+The image source PNGs and private generation notes remain in the repository and are excluded from the deployed site. Original Markdown URLs stay available for existing links and AI retrieval.
 
 → [Architecture changelog](CHANGELOG.md)
 

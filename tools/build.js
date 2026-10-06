@@ -8,6 +8,9 @@
 import { cpSync, copyFileSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync, existsSync } from 'fs';
 import { join, resolve, dirname, relative } from 'path';
 import { fileURLToPath } from 'url';
+import { execFileSync } from 'node:child_process';
+import { writeDocuments, DOCUMENTS } from './documents.js';
+import { optimizeAssets } from './assets.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -27,6 +30,7 @@ function shouldCopySiteFile(srcPath) {
     const rel = relative(SRC, srcPath);
     const parts = rel.split(/[\\/]/);
     if (parts[0] === 'partials') return false;
+    if (parts[0] === 'assets' && (parts.at(-1) === 'README.md' || /\.png$/i.test(srcPath))) return false;
     return !CONTENT_FILES.has(parts[0]);
 }
 
@@ -62,9 +66,15 @@ mkdirSync(OUT, { recursive: true });
 console.log('  [2/5] Copying site/src/ -> dist/ ...');
 cpSync(SRC, OUT, { recursive: true, filter: shouldCopySiteFile });
 
-// 3. Render index.html includes
-console.log('  [3/5] Rendering index.html ...');
-writeFileSync(join(OUT, 'index.html'), renderIncludes(join(SRC, 'index.html')));
+// 3. Render includes for every root HTML page.
+console.log('  [3/5] Rendering HTML pages ...');
+for (const entry of readdirSync(SRC, { withFileTypes: true })) {
+    if (entry.isFile() && /\.html$/i.test(entry.name)) {
+        writeFileSync(join(OUT, entry.name), renderIncludes(join(SRC, entry.name)));
+    }
+}
+writeDocuments(CONTENT, OUT, renderIncludes(join(SRC, 'partials', 'document.html')));
+await optimizeAssets(SRC, OUT);
 
 // 4. Copy content/ -> dist/
 console.log('  [4/5] Copying content/ -> dist/ ...');
@@ -78,6 +88,15 @@ for (const file of readdirSync(CONTENT)) {
 // 5. Write .nojekyll
 console.log('  [5/5] Writing .nojekyll ...');
 writeFileSync(join(OUT, '.nojekyll'), '');
+const pages = ['index.html', 'philosophy.html', ...DOCUMENTS.map(doc => doc.page)];
+writeFileSync(join(OUT, 'sitemap.xml'), '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + pages.map(page => '<url><loc>https://cyber-taoist.ai/' + (page === 'index.html' ? '' : page) + '</loc></url>').join('') + '</urlset>\n');
+writeFileSync(join(OUT, 'robots.txt'), 'User-agent: *\nAllow: /\nSitemap: https://cyber-taoist.ai/sitemap.xml\n');
+const version = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8')).version;
+let revision = process.env.GITHUB_SHA || null;
+if (!revision) {
+    try { revision = execFileSync('git', ['rev-parse', 'HEAD'], { cwd: ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim(); } catch { /* Source archives may not contain Git history. */ }
+}
+writeFileSync(join(OUT, 'version.json'), JSON.stringify({ version, revision }) + '\n');
 
 const elapsed = Date.now() - start;
 console.log('  ' + '='.repeat(40));

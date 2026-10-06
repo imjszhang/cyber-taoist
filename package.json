@@ -13,6 +13,16 @@
     "cli": "node tools/cli.js",
     "cf:setup": "node tools/setup-cloudflare.js",
     "gh:pages": "node tools/setup-github-pages.js",
-    "deploy:setup": "npm run cf:setup && npm run gh:pages"
+    "deploy:setup": "npm run cf:setup && npm run gh:pages",
+    "site:check": "node --test tools/site.test.js && node tools/check-site.js",
+    "site:validate": "npm run site:build && npm run site:check"
+  },
+  "devDependencies": {
+    "marked": "18.1.0",
+    "sharp": "0.35.5"
+  },
+  "version": "2.2.0",
+  "engines": {
+    "node": ">=22"
   }
 }

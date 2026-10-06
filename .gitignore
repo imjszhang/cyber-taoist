@@ -19,6 +19,7 @@ site/src/llms.txt
 
 # ============ 生成/输出目录 ============
 dist/
+node_modules/
 work_dir/
 *.log
 
