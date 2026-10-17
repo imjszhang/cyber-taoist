@@ -10,8 +10,7 @@
 
 - 新增 Discover 列表 `discover.html` 与文章模板 `discover/<slug>.html`，稿件目录为 `content/discover/`。当前只有一篇标明 PLACEHOLDER 的占位稿，不是已发布内容。
 - 首页在身份介绍与 Practice 区块之后增加 Explore 入口，含 Discover 主题锚点与 Newsletter。文案为占位，沿用首页中英切换。
-- 新增 `newsletter.html`（AI × PKM Weekly）。订阅表单未接入，没有外部脚本。
-- 开放问题：周刊订阅选 Buttondown、Beehiiv，还是不加载外部脚本的 form POST。`site:check` 仍拒绝 HTML 里的外链 script / img。
+- 新增 `newsletter.html`（AI × PKM Weekly）。2026-10-17 JS 定案：这一版只做落地页，不接邮件服务，不要求真实订阅，地址保持 `*.html`。表单保持禁用，没有外部脚本。
 
 ## V2.2.0 — 2026-10-06
 

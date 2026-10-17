@@ -152,9 +152,7 @@ The homepage Explore block, `discover.html`, and `newsletter.html` are a V1 cont
 
 - Put a Discover note in `content/discover/<slug>.md` with `title`, `date`, `summary`, `tags`, `source`, and `type` (`method`, `workflow`, or `research-note`). The build writes `discover.html` and `discover/<slug>.html`.
 - An entry is published only when it sets `status: published` and its `source` is an `http` or `https` URL. Anything else stays marked as unpublished and is kept out of indexing with `noindex`. This repository currently has one placeholder entry so the list can render. It is not an article to cite.
-- `newsletter.html` is the **AI × PKM Weekly** landing page. The form is disabled on purpose.
-
-**Open question — Newsletter provider.** The choice is still **Buttondown**, **Beehiiv**, or a **form POST that does not load an external script**. `tools/check-site.js` rejects outbound `<script>` and `<img>` URLs, so do not embed a third-party widget until that choice is explicit.
+- `newsletter.html` is the **AI × PKM Weekly** landing page. JS locked this on 2026-10-17: the page stays a landing page, no email provider is wired, a real test-inbox subscription is not required for V1, and routes stay on `*.html` (no Pages rewrite). The form stays disabled. No third-party script.
 
 ### Publishing and verification
 

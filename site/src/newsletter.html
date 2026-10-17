@@ -40,12 +40,7 @@
         </section>
         <section class="newsletter-form" id="subscribe" aria-labelledby="subscribe-title">
             <h2 id="subscribe-title" data-copy="formTitle">Subscribe</h2>
-            <!--
-              Open question for the project manager — do not wire a provider in this scaffold.
-              Candidates: Buttondown, Beehiiv, or a form POST that does not load an external script.
-              tools/check-site.js rejects outbound script and img URLs in HTML.
-              An embed that needs a third-party runtime script has to wait for an explicit allowlist decision.
-            -->
+            <!-- deferred: no ESP until a later task -->
             <form class="subscribe-form" action="#" method="post" aria-describedby="subscribe-note">
                 <fieldset disabled>
                     <legend class="visually-hidden" data-copy="formTitle">Subscribe</legend>
@@ -54,7 +49,7 @@
                     <button class="button button-primary" type="submit"><span data-copy="subscribe">Subscribe — not connected</span></button>
                 </fieldset>
             </form>
-            <p id="subscribe-note" class="source-note" data-copy="formNote">Placeholder only. Nothing you type is sent. Buttondown, Beehiiv, and a script-free form POST are still open choices.</p>
+            <p id="subscribe-note" class="source-note" data-copy="formNote">Subscription is intentionally not connected yet. Nothing you type is sent.</p>
             <p class="reading-actions"><a class="button button-outline" href="{{ROOT}}discover.html"><span data-copy="relatedDiscover">Browse Discover</span> <span aria-hidden="true">↗</span></a></p>
         </section>
     </main>

@@ -42,7 +42,7 @@
         formTitle: '订阅',
         emailLabel: '邮箱',
         subscribe: '订阅 — 尚未接入',
-        formNote: '这里只是占位。你输入的内容不会被发送。Buttondown、Beehiiv，以及不加载外部脚本的 form POST，都还没有选定。',
+        formNote: '订阅暂时故意不接入。你输入的内容不会被发送。',
         relatedDiscover: '去 Discover'
     };
 

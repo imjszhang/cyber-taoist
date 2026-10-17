@@ -9,7 +9,7 @@
 
 1. **Discover**：`content/discover/*.md` 走现有 Markdown → HTML 阅读管线，生成 `discover.html` 和 `discover/<slug>.html`。元数据至少要有 title、date、summary、tags、source、type。当前只有一篇 `placeholder`，正文标明 **PLACEHOLDER**，不是已发表文章。未发布条目带 `noindex`。
 2. **首页 Explore**：放在身份介绍和 Practice 区块之后、Philosophy 之前。入口为 Latest Discoveries、三个主题锚点（AI Second Brain / Codex × PKM / Tools for Thought）、Newsletter。中英占位文案走原来的首页切换。
-3. **Newsletter**：`newsletter.html`，定位 **AI × PKM Weekly**。订阅表单是禁用占位，没有外链 script / img。
+3. **Newsletter**：`newsletter.html`，定位 **AI × PKM Weekly**。订阅表单保持禁用。这一版不接邮件服务，也没有外链 script / img。
 4. 导航、sitemap 接上新页面。Philosophy、Practice、身份首屏和宪章原文没有改写。
 
 ## 怎么验
@@ -20,9 +20,10 @@ npm run site:validate
 
 构建后打开 `dist/index.html`、`dist/discover.html`、`dist/discover/placeholder.html`、`dist/newsletter.html`。占位稿应能从首页走进去，来源字段可见，订阅按钮不可提交。
 
-## 开放问题（请项目经理 / JS 拍板）
+## JS 决定（2026-10-17）
 
-1. **Newsletter 选哪家？** 候选：Buttondown、Beehiiv，或不加载外部脚本的 form POST。`tools/check-site.js` 会拒绝 HTML 里的外链 script 和 img。在拍板前不要改白名单，也不要嵌第三方控件。
-2. 真实订阅要不要作为 V1 验收？这一版按任务单只留骨架，测试邮箱还不能完成订阅。
-3. Discover 的 URL 目前是 `discover.html` 和 `discover/<slug>.html`。没有加 Pages rewrite，所以没有无后缀的 `/discover`。
-4. 种子稿：占位 1 篇，不是待审的 `2026-10-17-llm-wiki-vs-rag` 正文。正式英文稿仍等人审，这一 PR 不假装已经发布。
+1. Newsletter 这一版只做落地页，不接任何邮件服务。
+2. V1 不要求测试邮箱完成真实订阅。
+3. 地址保持 `*.html`（`discover.html`、`discover/<slug>.html`、`newsletter.html`），不加 Pages rewrite。
+
+正式 Discover 正文仍等审稿之后的单独任务。当前这篇 `placeholder` 不是待审的 `2026-10-17-llm-wiki-vs-rag`，也不当作已发布文章。
