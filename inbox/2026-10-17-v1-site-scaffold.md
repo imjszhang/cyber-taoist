@@ -3,7 +3,7 @@
 - 日期：2026-10-17
 - 分支：`cursor/v1-discover-newsletter-scaffold-d887`
 - 状态：可审 PR，不合并，不发版
-- PR：待打开后补链接
+- PR：https://github.com/imjszhang/cyber-taoist/pull/1（草稿，不合并）
 
 ## 改了什么
 
