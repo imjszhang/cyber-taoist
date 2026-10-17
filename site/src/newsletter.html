@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" data-scheme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="robots" content="noindex">
+    <title>AI × PKM Weekly — Cyber-Taoist</title>
+    <meta name="description" content="AI × PKM Weekly is a short letter on using AI with a personal knowledge practice. The subscribe form is not connected yet.">
+    <meta property="og:title" content="AI × PKM Weekly — Cyber-Taoist">
+    <meta property="og:description" content="A weekly letter on AI and personal knowledge. Subscription is not connected yet.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cyber-taoist.ai/newsletter.html">
+    <meta property="og:image" content="https://cyber-taoist.ai/assets/hero-way.webp">
+    <link rel="canonical" href="https://cyber-taoist.ai/newsletter.html">
+    <link rel="icon" href="{{ROOT}}shared/img/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="{{ROOT}}styles/fonts.css">
+    <link rel="stylesheet" href="{{ROOT}}styles/home.css">
+    <link rel="stylesheet" href="{{ROOT}}styles/reading.css">
+    <link rel="stylesheet" href="{{ROOT}}styles/explore.css">
+    <script src="{{ROOT}}js/explore.js" defer></script>
+</head>
+<body data-title-en="AI × PKM Weekly — Cyber-Taoist" data-title-zh="AI × PKM Weekly — Cyber-Taoist" data-description-en="AI × PKM Weekly is a short letter on using AI with a personal knowledge practice. The subscribe form is not connected yet." data-description-zh="AI × PKM Weekly 是一封关于把 AI 用进个人知识实践的短周报。订阅表单尚未接入。">
+    <a class="skip-link" href="#main" data-copy="skip">Skip to content</a>
+    <!-- @include partials/explore-header.html -->
+    <main id="main" class="shell document-main">
+        <section class="reading-intro catalog-intro">
+            <a class="back-link" href="{{ROOT}}" data-copy="backHome">← Back to the homepage</a>
+            <p class="eyebrow" data-copy="newsletterEyebrow">NEWSLETTER</p>
+            <h1 data-copy="newsletterTitle">AI × PKM Weekly</h1>
+            <p data-copy="newsletterLead">A short weekly letter on using AI with a personal knowledge practice.</p>
+        </section>
+        <section class="newsletter-value" aria-labelledby="value-title">
+            <h2 id="value-title" data-copy="valueTitle">What the letter is for</h2>
+            <ol>
+                <li data-copy="value1">One idea you can try in your notes</li>
+                <li data-copy="value2">A source, not a recap of the whole internet</li>
+                <li data-copy="value3">Room to ignore what does not fit</li>
+            </ol>
+        </section>
+        <section class="newsletter-form" id="subscribe" aria-labelledby="subscribe-title">
+            <h2 id="subscribe-title" data-copy="formTitle">Subscribe</h2>
+            <!--
+              Open question for the project manager — do not wire a provider in this scaffold.
+              Candidates: Buttondown, Beehiiv, or a form POST that does not load an external script.
+              tools/check-site.js rejects outbound script and img URLs in HTML.
+              An embed that needs a third-party runtime script has to wait for an explicit allowlist decision.
+            -->
+            <form class="subscribe-form" action="#" method="post" aria-describedby="subscribe-note">
+                <fieldset disabled>
+                    <legend class="visually-hidden" data-copy="formTitle">Subscribe</legend>
+                    <label for="newsletter-email" data-copy="emailLabel">Email</label>
+                    <input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
+                    <button class="button button-primary" type="submit"><span data-copy="subscribe">Subscribe — not connected</span></button>
+                </fieldset>
+            </form>
+            <p id="subscribe-note" class="source-note" data-copy="formNote">Placeholder only. Nothing you type is sent. Buttondown, Beehiiv, and a script-free form POST are still open choices.</p>
+            <p class="reading-actions"><a class="button button-outline" href="{{ROOT}}discover.html"><span data-copy="relatedDiscover">Browse Discover</span> <span aria-hidden="true">↗</span></a></p>
+        </section>
+    </main>
+    <!-- @include partials/explore-footer.html -->
+</body>
+</html>

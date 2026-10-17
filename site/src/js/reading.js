@@ -2,7 +2,7 @@
     const en = {};
     document.querySelectorAll('[data-reader]').forEach(el => { en[el.dataset.reader] = el.textContent; });
     const zh = {
-        practice: '实践', philosophy: '思想', home: '首页', skip: '跳至正文',
+        practice: '实践', philosophy: '思想', discover: '发现', newsletter: '周刊', home: '首页', skip: '跳至正文',
         footer: '在实践中，成为你选择成为的人。', top: '返回顶部 ↑',
         back: '← 返回首页', backPhilosophy: '← 返回思想页',
         eyebrow: '实践背后的思想', basis: '控制论反馈 × 道家自然观。',

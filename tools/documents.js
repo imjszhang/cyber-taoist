@@ -10,7 +10,8 @@ export const DOCUMENTS = [
 ];
 export const escapeHtml = text => String(text).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 
-export function renderDocument(markdown) {
+export function renderDocument(markdown, options = {}) {
+    const root = options.root ?? './';
     const toc = [];
     const ids = new Map();
     const parser = new Marked({
@@ -30,7 +31,7 @@ export function renderDocument(markdown) {
                 const route = DOCUMENTS.find(doc => doc.source === href);
                 const safeHref = /^(?:https?:|mailto:|#|\.?\.?\/|[A-Za-z0-9])/i.test(href) && !/^(?:javascript|data|vbscript):/i.test(href);
                 return safeHref
-                    ? '<a href="' + escapeHtml(route ? './' + route.page : href) + '"' + (title ? ' title="' + escapeHtml(title) + '"' : '') + '>' + this.parser.parseInline(tokens) + '</a>'
+                    ? '<a href="' + escapeHtml(route ? root + route.page : href) + '"' + (title ? ' title="' + escapeHtml(title) + '"' : '') + '>' + this.parser.parseInline(tokens) + '</a>'
                     : this.parser.parseInline(tokens);
             }
         }
