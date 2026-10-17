@@ -139,11 +139,20 @@ Point any AI agent to [`content/llms.txt`](content/llms.txt) — a structured in
 | Path | Contents |
 |------|----------|
 | [content/](content/) | Source of truth — Constitution, Field Guide, commentary, and LLM index |
+| [content/discover/](content/discover/) | Discover notes. The current entry is a placeholder, not published writing |
 | [site/src/](site/src/) | Static site that publishes the framework at [cyber-taoist.ai](https://cyber-taoist.ai) |
 | [journal/](journal/) | Dated notes on framework development |
 | [archive/](archive/) | Pre-migration snapshots (historical reference only) |
 
 Theory lives in `content/`. The homepage introduces the Cyber-Taoist identity; `philosophy.html` provides the theory reading portal. Install build dependencies with `npm ci`, run `npm run site:validate`, then preview with `npm run site:preview` (Node.js 22+). All page fonts and artwork are served locally; illustration provenance is in [assets/README.md](site/src/assets/README.md).
+
+### Discover and Newsletter
+
+The homepage Explore block, `discover.html`, and `newsletter.html` are a V1 content entrance. They do not change the identity hero, Practice notebook, or philosophy documents.
+
+- Put a Discover note in `content/discover/<slug>.md` with `title`, `date`, `summary`, `tags`, `source`, and `type` (`method`, `workflow`, or `research-note`). The build writes `discover.html` and `discover/<slug>.html`.
+- An entry is published only when it sets `status: published` and its `source` is an `http` or `https` URL. Anything else stays marked as unpublished and is kept out of indexing with `noindex`. This repository currently has one placeholder entry so the list can render. It is not an article to cite.
+- `newsletter.html` is the **AI × PKM Weekly** landing page. JS locked this on 2026-10-17: the page stays a landing page, no email provider is wired, a real test-inbox subscription is not required for V1, and routes stay on `*.html` (no Pages rewrite). The form stays disabled. No third-party script.
 
 ### Publishing and verification
 

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" data-scheme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    {{ROBOTS}}
+    <title>Discover — Cyber-Taoist</title>
+    <meta name="description" content="A scaffold for AI × PKM notes: methods, workflows, and research sketches. Published articles are not in this version.">
+    <meta property="og:title" content="Discover — Cyber-Taoist">
+    <meta property="og:description" content="A scaffold for AI × PKM notes. Published articles are not in this version.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cyber-taoist.ai/{{PAGE}}">
+    <meta property="og:image" content="https://cyber-taoist.ai/assets/hero-way.webp">
+    <link rel="canonical" href="https://cyber-taoist.ai/{{PAGE}}">
+    <link rel="icon" href="{{ROOT}}shared/img/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="{{ROOT}}styles/fonts.css">
+    <link rel="stylesheet" href="{{ROOT}}styles/home.css">
+    <link rel="stylesheet" href="{{ROOT}}styles/reading.css">
+    <link rel="stylesheet" href="{{ROOT}}styles/explore.css">
+    <script src="{{ROOT}}js/explore.js" defer></script>
+</head>
+<body data-title-en="Discover — Cyber-Taoist" data-title-zh="发现 — Cyber-Taoist" data-description-en="A scaffold for AI × PKM notes: methods, workflows, and research sketches. Published articles are not in this version." data-description-zh="AI × 个人知识笔记的脚手架，用来放方法、工作流和研究札记。这一版还没有已发布文章。">
+    <a class="skip-link" href="#main" data-copy="skip">Skip to content</a>
+    <!-- @include explore-header.html -->
+    <main id="main" class="shell document-main">
+        <section class="reading-intro catalog-intro">
+            <a class="back-link" href="{{ROOT}}" data-copy="backHome">← Back to the homepage</a>
+            <p class="eyebrow" data-copy="discoverEyebrow">DISCOVER / AI × PKM</p>
+            <h1 data-copy="discoverTitle">Discover</h1>
+            <p data-copy="discoverLead">Method notes, workflow notes, and research sketches on AI and personal knowledge will be listed here. This version is a scaffold, not a published archive.</p>
+        </section>
+        <section aria-labelledby="topics-title">
+            <h2 id="topics-title" data-copy="topicsTitle">Topics</h2>
+            <p class="source-note" data-copy="topicsNote">These anchors are entry points only. They do not hide other notes.</p>
+            <nav class="topic-list" aria-label="Discover topics">{{TOPICS}}</nav>
+        </section>
+        <section id="discover-list" aria-labelledby="discover-list-title">
+            <h2 id="discover-list-title" class="visually-hidden" data-copy="discoverTitle">Discover</h2>
+            {{SCAFFOLD_NOTE}}
+            <div class="discover-list">{{ENTRIES}}</div>
+        </section>
+    </main>
+    <!-- @include explore-footer.html -->
+</body>
+</html>

@@ -1,0 +1,35 @@
+.catalog-intro h1 { font-size: clamp(48px, 6vw, 84px); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.topic-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin: 18px 0 36px; }
+.topic-list a { display: block; border-top: 1px solid var(--rule); padding-top: 12px; color: var(--gold); font: 600 22px/1.3 var(--display); }
+.topic-list a:hover { color: #fff; }
+.discover-list { display: grid; gap: 16px; margin: 28px 0 56px; }
+.discover-card { border: 1px solid var(--rule); background: #0b0b0b; padding: 28px; }
+.discover-card h3 { font-size: clamp(28px, 3vw, 40px); margin: 10px 0; }
+.discover-card h3 a:hover { color: #fff; }
+.discover-meta, .discover-source { color: var(--muted); font-size: 15px; }
+.discover-meta { display: flex; flex-wrap: wrap; gap: 8px 16px; letter-spacing: .08em; text-transform: uppercase; }
+.discover-source span, .discover-tags a { color: var(--gold); }
+.discover-tags { display: flex; flex-wrap: wrap; gap: 8px 14px; }
+.placeholder-flag, .placeholder-banner { border: 1px solid var(--gold); color: var(--gold); background: #141208; }
+.placeholder-flag { display: inline-block; margin: 0 0 12px; padding: 4px 8px; font: 700 13px/1.4 var(--display); letter-spacing: .14em; }
+.placeholder-banner { padding: 14px 16px; margin: 0 0 22px; }
+.discover-facts { display: grid; gap: 14px; margin: 8px 0 0; }
+.discover-facts div { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 12px; }
+.discover-facts dt { color: var(--gold); font: 600 16px/1.4 var(--display); letter-spacing: .04em; }
+.discover-facts dd { margin: 0; }
+.document-layout-single { grid-template-columns: minmax(0, 1fr); }
+.newsletter-value, .newsletter-form { max-width: 760px; padding-bottom: 28px; }
+.newsletter-value ol { margin: 16px 0 0; padding-left: 1.2em; }
+.newsletter-value li + li { margin-top: 10px; }
+.subscribe-form { margin-top: 18px; }
+.subscribe-form fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 12px; max-width: 520px; }
+.subscribe-form fieldset:disabled { opacity: .72; }
+.subscribe-form label { color: var(--gold); font: 600 18px/1.3 var(--display); }
+.subscribe-form input { width: 100%; min-height: 52px; padding: 12px 14px; border: 1px solid var(--rule); background: #000; color: var(--text); }
+.subscribe-form .button { justify-content: flex-start; }
+.newsletter-form .reading-actions { margin-bottom: 36px; }
+@media (max-width: 800px) {
+    .topic-list { grid-template-columns: 1fr; }
+    .discover-facts div { grid-template-columns: 1fr; gap: 4px; }
+}
