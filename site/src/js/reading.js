@@ -2,7 +2,7 @@
     const en = {};
     document.querySelectorAll('[data-reader]').forEach(el => { en[el.dataset.reader] = el.textContent; });
     const zh = {
-        practice: '实践', philosophy: '思想', home: '首页', skip: '跳至正文',
+        practice: '实践', philosophy: '思想', discover: '发现', newsletter: '周刊', home: '首页', skip: '跳至正文',
         footer: '在实践中，成为你选择成为的人。', top: '返回顶部 ↑',
         back: '← 返回首页', backPhilosophy: '← 返回思想页',
         eyebrow: '实践背后的思想', basis: '控制论反馈 × 道家自然观。',
@@ -12,7 +12,6 @@
         guideDesc: '从观察到的后果出发，设计一次小而明确的尝试。',
         commentaryLabel: '注疏 / 八十一章', commentaryTitle: '道德经注疏',
         commentaryDesc: '探索道家思想与控制论反馈之间的对话。',
-        agentDesc: '对行动、验证和反馈的开源工程探索。',
         sourceNote: '以下完整保留中文原始文档。', download: '下载 Markdown ↗',
         copy: '复制原文', contents: '本文目录'
     };

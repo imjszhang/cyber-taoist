@@ -10,6 +10,7 @@ import { join, resolve, dirname, relative } from 'path';
 import { fileURLToPath } from 'url';
 import { execFileSync } from 'node:child_process';
 import { writeDocuments, DOCUMENTS } from './documents.js';
+import { writeDiscover } from './discover.js';
 import { optimizeAssets } from './assets.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -74,6 +75,14 @@ for (const entry of readdirSync(SRC, { withFileTypes: true })) {
     }
 }
 writeDocuments(CONTENT, OUT, renderIncludes(join(SRC, 'partials', 'document.html')));
+const discoverPages = writeDiscover(CONTENT, OUT, {
+    list: renderIncludes(join(SRC, 'partials', 'discover-list.html')),
+    article: renderIncludes(join(SRC, 'partials', 'discover-article.html'))
+});
+const newsletterFile = join(OUT, 'newsletter.html');
+const newsletterHtml = readFileSync(newsletterFile, 'utf8').replaceAll('{{ROOT}}', './');
+if (/\{\{[A-Z0-9_]+\}\}/.test(newsletterHtml)) throw new Error('newsletter.html has an unresolved template token');
+writeFileSync(newsletterFile, newsletterHtml);
 await optimizeAssets(SRC, OUT);
 
 // 4. Copy content/ -> dist/
@@ -88,7 +97,7 @@ for (const file of readdirSync(CONTENT)) {
 // 5. Write .nojekyll
 console.log('  [5/5] Writing .nojekyll ...');
 writeFileSync(join(OUT, '.nojekyll'), '');
-const pages = ['index.html', 'philosophy.html', ...DOCUMENTS.map(doc => doc.page)];
+const pages = ['index.html', 'philosophy.html', 'newsletter.html', ...DOCUMENTS.map(doc => doc.page), ...discoverPages];
 writeFileSync(join(OUT, 'sitemap.xml'), '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + pages.map(page => '<url><loc>https://cyber-taoist.ai/' + (page === 'index.html' ? '' : page) + '</loc></url>').join('') + '</urlset>\n');
 writeFileSync(join(OUT, 'robots.txt'), 'User-agent: *\nAllow: /\nSitemap: https://cyber-taoist.ai/sitemap.xml\n');
 const version = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8')).version;

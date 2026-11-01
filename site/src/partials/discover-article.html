@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" data-scheme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    {{ROBOTS}}
+    <title>{{TITLE}} — Discover</title>
+    <meta name="description" content="{{DESCRIPTION}}">
+    <meta property="og:title" content="{{TITLE}} — Discover">
+    <meta property="og:description" content="{{DESCRIPTION}}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://cyber-taoist.ai/{{PAGE}}">
+    <meta property="og:image" content="https://cyber-taoist.ai/assets/hero-way.webp">
+    <link rel="canonical" href="https://cyber-taoist.ai/{{PAGE}}">
+    <link rel="icon" href="{{ROOT}}shared/img/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="{{ROOT}}styles/fonts.css">
+    <link rel="stylesheet" href="{{ROOT}}styles/home.css">
+    <link rel="stylesheet" href="{{ROOT}}styles/reading.css">
+    <link rel="stylesheet" href="{{ROOT}}styles/explore.css">
+    <script src="{{ROOT}}js/explore.js" defer></script>
+</head>
+<body data-title-en="{{TITLE}} — Discover" data-title-zh="{{TITLE_ZH}} — Discover" data-description-en="{{DESCRIPTION}}" data-description-zh="{{DESCRIPTION_ZH}}">
+    <a class="skip-link" href="#main" data-copy="skip">Skip to content</a>
+    <!-- @include explore-header.html -->
+    <main id="main" class="shell document-main">
+        <section class="reading-intro catalog-intro">
+            <a class="back-link" href="{{ROOT}}discover.html" data-copy="backDiscover">← Back to Discover</a>
+            {{BANNER}}
+            <p class="eyebrow" data-copy="discoverEyebrow">DISCOVER / AI × PKM</p>
+            <h1 data-zh="{{TITLE_ZH}}">{{TITLE}}</h1>
+            <dl class="discover-facts">
+                <div><dt data-copy="dateLabel">Date</dt><dd><time datetime="{{DATE}}">{{DATE}}</time></dd></div>
+                <div><dt data-copy="typeLabel">Type</dt><dd data-zh="{{TYPE_ZH}}">{{TYPE_EN}}</dd></div>
+                <div><dt data-copy="sourceLabel">Source</dt><dd>{{SOURCE}}</dd></div>
+                <div><dt data-copy="tagsLabel">Tags</dt><dd class="discover-tags">{{TAGS}}</dd></div>
+            </dl>
+            <div class="reading-actions">
+                <a class="button button-outline" href="{{SLUG}}.md"><span data-copy="markdownSource">Markdown source</span> <span aria-hidden="true">↗</span></a>
+            </div>
+        </section>
+        <div class="document-layout{{LAYOUT_CLASS}}">
+            {{TOC_BLOCK}}
+            <article class="document-content" lang="en">{{CONTENT}}</article>
+        </div>
+        <section class="reader-bottom"><a href="{{ROOT}}discover.html" data-copy="backDiscover">← Back to Discover</a><a href="#main" data-copy="backTop">Back to top ↑</a></section>
+    </main>
+    <!-- @include explore-footer.html -->
+</body>
+</html>
