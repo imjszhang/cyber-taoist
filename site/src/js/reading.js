@@ -12,7 +12,6 @@
         guideDesc: '从观察到的后果出发，设计一次小而明确的尝试。',
         commentaryLabel: '注疏 / 八十一章', commentaryTitle: '道德经注疏',
         commentaryDesc: '探索道家思想与控制论反馈之间的对话。',
-        agentDesc: '对行动、验证和反馈的开源工程探索。',
         sourceNote: '以下完整保留中文原始文档。', download: '下载 Markdown ↗',
         copy: '复制原文', contents: '本文目录'
     };

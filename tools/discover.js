@@ -167,8 +167,16 @@ export function renderEntryCard(entry) {
 
 function scaffoldNote(entries) {
     if (!entries.length) return '<p class="source-note" data-copy="emptyDiscover">No published notes yet. This page is the Discover scaffold.</p>';
-    if (entries.some(entry => entry.status !== 'published')) {
+    const hasPlaceholder = entries.some(entry => entry.status === 'placeholder');
+    const hasUnreviewed = entries.some(entry => entry.status === 'unreviewed');
+    if (hasPlaceholder && hasUnreviewed) {
+        return '<p class="source-note" data-copy="scaffoldNoteMixed">Entries marked PLACEHOLDER or UNREVIEWED are not published writing.</p>';
+    }
+    if (hasPlaceholder) {
         return '<p class="source-note" data-copy="scaffoldNote">Entries marked PLACEHOLDER are not published writing. They keep the list and article template renderable.</p>';
+    }
+    if (hasUnreviewed) {
+        return '<p class="source-note" data-copy="unreviewedNote">Entries marked UNREVIEWED are drafts awaiting editorial sign-off. They are not published writing.</p>';
     }
     return '';
 }

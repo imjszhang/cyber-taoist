@@ -66,15 +66,26 @@ test('homepage topic links match Discover anchors', () => {
     for (const id of anchors) assert.match(topics, new RegExp('id="' + id + '"'));
 });
 
-test('discover scaffold stays placeholder-only', () => {
+test('discover content supports multiple real entries', () => {
     const entries = loadDiscoverEntries(fileURLToPath(new URL('../content/discover/', import.meta.url)));
-    assert.ok(entries.length <= 1);
+    assert.ok(entries.length >= 1);
+    const slugs = new Set();
     for (const entry of entries) {
-        assert.equal(entry.status, 'placeholder');
-        assert.match(entry.body, /PLACEHOLDER/);
-        assert.match(renderEntryCard(entry), /PLACEHOLDER/);
-        assert.match(renderEntryCard(entry), /no published source yet/);
-        assert.doesNotMatch(renderEntryCard(entry), /href="https?:/);
+        assert.ok(['placeholder', 'published', 'unreviewed'].includes(entry.status), entry.slug);
+        assert.ok(!slugs.has(entry.slug), 'duplicate slug ' + entry.slug);
+        slugs.add(entry.slug);
+        const card = renderEntryCard(entry);
+        assert.match(card, new RegExp('href="./discover/' + entry.slug + '\\.html"'));
+        if (entry.status === 'placeholder') {
+            assert.match(entry.body, /PLACEHOLDER/);
+            assert.match(card, /PLACEHOLDER/);
+            assert.doesNotMatch(card, /href="https?:/);
+        } else {
+            assert.doesNotMatch(entry.body, /PLACEHOLDER/);
+            assert.match(entry.source, /^https?:\/\//i);
+            assert.match(card, /href="https?:/);
+            if (entry.status === 'unreviewed') assert.match(card, /UNREVIEWED/);
+        }
     }
 });
 
@@ -98,19 +109,55 @@ test('discover templates render without leftover tokens', () => {
     const out = join(root, 'out');
     mkdirSync(content, { recursive: true });
     mkdirSync(out, { recursive: true });
-    writeFileSync(join(content, 'placeholder.md'), readFileSync(new URL('../content/discover/placeholder.md', import.meta.url)));
+    writeFileSync(join(content, 'sample-stub.md'), `---
+title: Sample Stub
+date: 2026-10-17
+summary: Fixture for template tokens
+tags: ai-second-brain, tools-for-thought
+type: research-note
+source: not-a-url-yet
+sourceLabel: Local fixture
+status: placeholder
+---
+
+PLACEHOLDER
+
+## What this stub is for
+
+Keeps the Discover templates renderable in tests without depending on shipped content.
+`);
+    writeFileSync(join(content, 'sample-real.md'), `---
+title: Sample Real Entry
+date: 2026-10-17
+summary: Second fixture proves multi-entry render
+tags: ai-pkm, ai-second-brain
+type: method
+source: https://example.com/sample-real
+sourceLabel: Example.com
+status: unreviewed
+---
+
+## Why multi-entry matters
+
+Body without the placeholder marker so list and article pages can carry more than one card.
+`);
     const pages = writeDiscover(join(root, 'content'), out, {
         list: '<main id="main">{{ROOT}}|{{PAGE}}|{{ROBOTS}}|{{TOPICS}}|{{SCAFFOLD_NOTE}}|{{ENTRIES}}</main>',
         article: '<main id="main">{{ROOT}}|{{PAGE}}|{{TITLE}}|{{BANNER}}|{{SOURCE}}|{{CONTENT}}|{{TOC_BLOCK}}|{{SLUG}}</main>'
     });
-    assert.deepEqual(pages, ['discover.html', 'discover/placeholder.html']);
+    assert.deepEqual(pages, ['discover.html', 'discover/sample-real.html', 'discover/sample-stub.html']);
     const list = readFileSync(join(out, 'discover.html'), 'utf8');
-    const article = readFileSync(join(out, 'discover', 'placeholder.html'), 'utf8');
+    const stub = readFileSync(join(out, 'discover', 'sample-stub.html'), 'utf8');
+    const real = readFileSync(join(out, 'discover', 'sample-real.html'), 'utf8');
     assert.match(list, /id="tag-ai-second-brain"/);
     assert.match(list, /PLACEHOLDER/);
+    assert.match(list, /UNREVIEWED/);
+    assert.match(list, /Sample Real Entry/);
     assert.match(list, /noindex/);
-    assert.match(article, /href="\.\.\/charter\.html"|What this stub is for/);
-    assert.match(article, /<h2 id="what-this-stub-is-for">/);
-    assert.doesNotMatch(list + article, /\{\{[A-Z0-9_]+\}\}/);
+    assert.match(stub, /What this stub is for/);
+    assert.match(stub, /<h2 id="what-this-stub-is-for">/);
+    assert.match(real, /Why multi-entry matters/);
+    assert.match(real, /href="https:\/\/example\.com\/sample-real"/);
+    assert.doesNotMatch(list + stub + real, /\{\{[A-Z0-9_]+\}\}/);
     rmSync(root, { recursive: true, force: true });
 });

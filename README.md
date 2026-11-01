@@ -78,9 +78,7 @@ Theory documents define *what* and *how to analyze*. These projects apply the fr
 | Project | Type | Role |
 |---------|------|------|
 | [Dao De Jing · Evolution Theory Commentary](content/DAO-DE-JING-CYBERTAOIST.md) | Classical mapping | Applies N/R/T dynamics to all 81 chapters — structural isomorphism between Taoist thought and cybernetic feedback |
-| [js-evolution-agent](https://github.com/imjszhang/js-evolution-agent) | Engineering host | Controlled self-evolution agent that embeds the OADA runtime, reads Constitution and Field Guide as authoritative context, and runs closed-loop cycles (`intel → exec → verify → intelligence receipts`) with multi-subject support via `js-intel-store` |
 
-**[js-evolution-agent](https://github.com/imjszhang/js-evolution-agent)** is the reference implementation for operationalizing Cyber-Taoist analysis in software. Each *subject* defines an agent under analysis (with `SUBJECT.md` / `SOUL.md` policy); the host injects full Cyber-Taoist documents into AI prompts, records observations and probe results locally, and keeps core theory docs read-only — evolution proposals surface as human-review requests, not silent rewrites.
 
 ---
 
